@@ -1,0 +1,64 @@
+
+# SEO settings
+title: Robert Y. Lewis
+#description: "The personal website of Robert Y. Lewis"
+keywords: "computer science, math, formal, proof, itp, interactive theorem proving"
+url: https://robertylewis.com
+#baseurl: ""
+#baseurl: null
+
+#google_analytics: UA-52446115-1
+#repo: http://github.com/nandomoreirame/simplest
+#disqus_shortname: "nandothemes"
+
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : pygments
+
+paginate: 10
+paginate_path: "/page/:num/"
+comments: true
+
+source: source
+destination: _site
+
+# Sass configuration
+sass:
+  sass_dir: assets/scss
+  style: compressed # expanded
+
+# Author settings
+author:
+  name     : Robert Y. Lewis
+  job      : postdoc
+  bio      : "Enthusiast performance, responsive design and usability, always looking for the best project and good coffee."
+  thumb    : /images/author.jpg
+  email    : r.y.lewis@vu.nl
+  url      : https://robertylewis.com
+  github   : http://github.com/robertylewis
+#  twitter  : http://twitter.com/nandomoreirame
+#  facebook : http://facebook.com/fernando.dev
+#  linkedin : http://linkedin.com/in/nandomoreirame
+
+# social settings
+#og_locale: "pt_BR"
+#twitter_card: "summary_large_image"
+#twitter_site: "@nandomoreirame"
+
+collections:
+  pages:
+    output: true
+
+gems:
+  - bourbon
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
