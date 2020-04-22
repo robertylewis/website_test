@@ -666,7 +666,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 194973202,
+            "latest_id": 194983638,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1001,8 +1001,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587580468,
-                    "size": 4
+                    "latest_date": 1587585509,
+                    "size": 8
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -12394,7 +12394,7 @@
         },
         "maths": {
             "id": 116395,
-            "latest_id": 194963150,
+            "latest_id": 194981930,
             "topic_data": {
                 "\"nice\" group homs": {
                     "latest_date": 1584024523,
@@ -13455,6 +13455,10 @@
                 "abelian categories": {
                     "latest_date": 1576217018,
                     "size": 16
+                },
+                "absurd": {
+                    "latest_date": 1587584668,
+                    "size": 5
                 },
                 "add_comm_group tactic": {
                     "latest_date": 1533764324,
@@ -19645,5 +19649,5 @@
             }
         }
     },
-    "time": 1587582092.5973432
+    "time": 1587585719.3873754
 }

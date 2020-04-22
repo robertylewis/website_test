@@ -22,5 +22,29 @@
         "id": 194973202,
         "sender_full_name": "Johan Commelin",
         "timestamp": 1587580468
+    },
+    {
+        "content": "<p>½ or <code>2 ≠ 0</code>?</p>",
+        "id": 194982845,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587585124
+    },
+    {
+        "content": "<p>Probably ½</p>",
+        "id": 194982889,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587585149
+    },
+    {
+        "content": "<p>You need ½ for this quadratic forms business (e.g., Z[½] is fine even though it's not a field, but Z is not even though 2 ≠ 0). But it's not clear to me how to organize it with respect to the algebraic hierarchy.</p>",
+        "id": 194983593,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587585489
+    },
+    {
+        "content": "<p>I mean, obviously you need some axioms about ½</p>",
+        "id": 194983638,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587585509
     }
 ]
