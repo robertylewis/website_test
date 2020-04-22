@@ -58,5 +58,11 @@
         "id": 194958749,
         "sender_full_name": "Bhavik Mehta",
         "timestamp": 1587573926
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"kn\">notation</span> <span class=\"n\">B</span> <span class=\"bp\">`</span> <span class=\"bp\">&amp;</span> <span class=\"bp\">`</span> <span class=\"n\">f</span> <span class=\"bp\">`#</span> <span class=\"bp\">`</span> <span class=\"n\">A</span> <span class=\"bp\">`</span> <span class=\"bp\">#`</span> <span class=\"n\">g</span> <span class=\"bp\">`</span> <span class=\"bp\">&amp;</span> <span class=\"bp\">`</span> <span class=\"n\">C</span> <span class=\"o\">:=</span> <span class=\"o\">(</span><span class=\"n\">f</span> <span class=\"o\">:</span> <span class=\"n\">B</span> <span class=\"err\">⟶</span> <span class=\"n\">A</span><span class=\"o\">)</span> <span class=\"err\">≫</span> <span class=\"o\">(</span><span class=\"n\">g</span> <span class=\"o\">:</span> <span class=\"n\">A</span> <span class=\"err\">⟶</span> <span class=\"n\">C</span><span class=\"o\">)</span>\n</pre></div>\n\n\n<p>doesn't work either</p>",
+        "id": 194963968,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587576138
     }
 ]

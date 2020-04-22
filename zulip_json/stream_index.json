@@ -666,7 +666,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 194896738,
+            "latest_id": 194963719,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -998,6 +998,10 @@
                 },
                 "#2471 nth_rewrite": {
                     "latest_date": 1587540918,
+                    "size": 1
+                },
+                "#2480 bilinear forms": {
+                    "latest_date": 1587576040,
                     "size": 1
                 },
                 "#311 dfinsupp and direct sum": {
@@ -1594,7 +1598,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 194958749,
+            "latest_id": 194966671,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -4089,8 +4093,8 @@
                     "size": 2
                 },
                 "Show the objects for an equality of morphisms": {
-                    "latest_date": 1587573926,
-                    "size": 10
+                    "latest_date": 1587576138,
+                    "size": 11
                 },
                 "Showing automatically obtained typeclass instances": {
                     "latest_date": 1527556449,
@@ -4908,6 +4912,10 @@
                     "latest_date": 1541866318,
                     "size": 2
                 },
+                "`precedence` command": {
+                    "latest_date": 1587577086,
+                    "size": 2
+                },
                 "`rfl` pattern in `rcases`": {
                     "latest_date": 1553936628,
                     "size": 17
@@ -4945,8 +4953,8 @@
                     "size": 40
                 },
                 "`variables` introduction rules": {
-                    "latest_date": 1587554085,
-                    "size": 2
+                    "latest_date": 1587577324,
+                    "size": 3
                 },
                 "a": {
                     "latest_date": 1540251522,
@@ -12386,7 +12394,7 @@
         },
         "maths": {
             "id": 116395,
-            "latest_id": 194955792,
+            "latest_id": 194963150,
             "topic_data": {
                 "\"nice\" group homs": {
                     "latest_date": 1584024523,
@@ -14449,8 +14457,8 @@
                     "size": 4
                 },
                 "how to find where the instance are define ?": {
-                    "latest_date": 1587572459,
-                    "size": 5
+                    "latest_date": 1587575807,
+                    "size": 9
                 },
                 "how to prove of find simple theorem": {
                     "latest_date": 1535747715,
@@ -15820,7 +15828,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 194956103,
+            "latest_id": 194965179,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -18903,8 +18911,8 @@
                     "size": 4
                 },
                 "noob question(s)": {
-                    "latest_date": 1587572620,
-                    "size": 4387
+                    "latest_date": 1587576677,
+                    "size": 4397
                 },
                 "noob question: vscode and LEAN_PATH": {
                     "latest_date": 1570517846,
@@ -19637,5 +19645,5 @@
             }
         }
     },
-    "time": 1587574879.5610938
+    "time": 1587578491.452066
 }

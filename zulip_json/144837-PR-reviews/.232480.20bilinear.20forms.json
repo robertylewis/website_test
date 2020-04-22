@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"238446\">@Anne Baanen</span> has made a really nice PR with the definition of bilinear forms. At some point in the theory, you need to konw that <code>2</code> is invertible in the base ring. We need to make a design choice here. I would like to have some more eyes and brains on this code. Will the current approach play well, or should we try something else?</p>",
+        "id": 194963719,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587576040
+    }
+]

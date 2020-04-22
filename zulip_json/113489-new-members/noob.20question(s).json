@@ -26320,5 +26320,65 @@
         "id": 194956103,
         "sender_full_name": "Ashwin Iyengar",
         "timestamp": 1587572620
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"n\">def</span> <span class=\"n\">x</span> <span class=\"o\">(</span><span class=\"n\">r</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h1</span><span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">(</span><span class=\"n\">h2</span><span class=\"o\">:</span> <span class=\"n\">s</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"bp\">=</span> <span class=\"n\">s</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n  <span class=\"n\">exact</span> <span class=\"n\">eq</span><span class=\"bp\">.</span><span class=\"n\">trans</span> <span class=\"n\">h1</span> <span class=\"n\">h2</span><span class=\"bp\">.</span><span class=\"n\">symm</span>\n<span class=\"kn\">end</span>\n</pre></div>",
+        "id": 194963505,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587575945
+    },
+    {
+        "content": "<p><code>rw</code> only works up to syntactic equality, whereas many other things (e.g. term mode) work up to definitional equality.</p>",
+        "id": 194963573,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587575978
+    },
+    {
+        "content": "<p>(and you don't want the h_i in square brackets)</p>",
+        "id": 194964323,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587576316
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"n\">def</span> <span class=\"n\">x</span> <span class=\"o\">(</span><span class=\"n\">r</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h1</span><span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">(</span><span class=\"n\">h2</span><span class=\"o\">:</span> <span class=\"n\">s</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"bp\">=</span> <span class=\"n\">s</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n  <span class=\"n\">change</span> <span class=\"n\">r</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span> <span class=\"n\">at</span> <span class=\"n\">h1</span><span class=\"o\">,</span>\n  <span class=\"n\">rw</span> <span class=\"n\">h1</span><span class=\"o\">,</span>\n  <span class=\"n\">exact</span> <span class=\"n\">h2</span><span class=\"bp\">.</span><span class=\"n\">symm</span> <span class=\"c1\">-- h2 has type eq _ _ so h2.symm means eq.symm h2</span>\n<span class=\"kn\">end</span>\n</pre></div>",
+        "id": 194964583,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587576423
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"n\">def</span> <span class=\"n\">x</span> <span class=\"o\">(</span><span class=\"n\">r</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h1</span><span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">(</span><span class=\"n\">h2</span><span class=\"o\">:</span> <span class=\"n\">s</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"bp\">=</span> <span class=\"n\">s</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n  <span class=\"n\">unfold</span> <span class=\"n\">has_mem</span><span class=\"bp\">.</span><span class=\"n\">mem</span> <span class=\"n\">set</span><span class=\"bp\">.</span><span class=\"n\">mem</span> <span class=\"n\">S</span> <span class=\"n\">set_of</span> <span class=\"n\">at</span> <span class=\"n\">h1</span><span class=\"o\">,</span>\n  <span class=\"n\">rw</span> <span class=\"n\">h1</span><span class=\"o\">,</span>\n  <span class=\"n\">exact</span> <span class=\"n\">h2</span><span class=\"bp\">.</span><span class=\"n\">symm</span>\n<span class=\"kn\">end</span>\n</pre></div>",
+        "id": 194964754,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587576485
+    },
+    {
+        "content": "<p>(you can see what to unfold if you write <code>set_option pp.notation false</code>)</p>",
+        "id": 194964788,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587576507
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"kn\">set_option</span> <span class=\"n\">pp</span><span class=\"bp\">.</span><span class=\"kn\">notation</span> <span class=\"n\">false</span>\n<span class=\"n\">def</span> <span class=\"n\">x</span> <span class=\"o\">(</span><span class=\"n\">r</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h1</span><span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">(</span><span class=\"n\">h2</span><span class=\"o\">:</span> <span class=\"n\">s</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"bp\">=</span> <span class=\"n\">s</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n  <span class=\"n\">unfold</span> <span class=\"n\">has_mem</span><span class=\"bp\">.</span><span class=\"n\">mem</span> <span class=\"n\">at</span> <span class=\"n\">h1</span><span class=\"o\">,</span> <span class=\"c1\">-- h1 : set.mem r S</span>\n  <span class=\"n\">unfold</span> <span class=\"n\">set</span><span class=\"bp\">.</span><span class=\"n\">mem</span> <span class=\"n\">at</span> <span class=\"n\">h1</span><span class=\"o\">,</span> <span class=\"c1\">-- h1 : S r</span>\n  <span class=\"n\">unfold</span> <span class=\"n\">S</span> <span class=\"n\">at</span> <span class=\"n\">h1</span><span class=\"o\">,</span> <span class=\"c1\">-- h1 : set_of (λ (r : R), eq r 0) r</span>\n  <span class=\"n\">unfold</span> <span class=\"n\">set_of</span> <span class=\"n\">at</span> <span class=\"n\">h1</span><span class=\"o\">,</span> <span class=\"c1\">-- h1 : eq r 0</span>\n  <span class=\"n\">rw</span> <span class=\"n\">h1</span><span class=\"o\">,</span>\n  <span class=\"n\">exact</span> <span class=\"n\">h2</span><span class=\"bp\">.</span><span class=\"n\">symm</span>\n<span class=\"kn\">end</span>\n</pre></div>",
+        "id": 194965041,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587576616
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"n\">def</span> <span class=\"n\">x</span> <span class=\"o\">(</span><span class=\"n\">r</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">h1</span><span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">(</span><span class=\"n\">h2</span><span class=\"o\">:</span> <span class=\"n\">s</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">))</span> <span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"bp\">=</span> <span class=\"n\">s</span> <span class=\"o\">:=</span>\n<span class=\"n\">eq</span><span class=\"bp\">.</span><span class=\"n\">trans</span> <span class=\"n\">h1</span> <span class=\"n\">h2</span><span class=\"bp\">.</span><span class=\"n\">symm</span>\n</pre></div>",
+        "id": 194965102,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587576646
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"n\">def</span> <span class=\"n\">x</span> <span class=\"o\">(</span><span class=\"n\">r</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">s</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">h1</span><span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">)]</span> <span class=\"o\">[</span><span class=\"n\">h2</span><span class=\"o\">:</span> <span class=\"n\">s</span> <span class=\"err\">∈</span> <span class=\"o\">(</span><span class=\"n\">S</span> <span class=\"o\">:</span> <span class=\"n\">set</span> <span class=\"n\">R</span><span class=\"o\">)]</span> <span class=\"o\">:</span> <span class=\"n\">r</span> <span class=\"bp\">=</span> <span class=\"n\">s</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n  <span class=\"n\">cases</span> <span class=\"n\">h1</span><span class=\"o\">,</span> <span class=\"n\">cases</span> <span class=\"n\">h2</span><span class=\"o\">,</span> <span class=\"n\">refl</span>\n<span class=\"kn\">end</span>\n</pre></div>",
+        "id": 194965159,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587576669
+    },
+    {
+        "content": "<p>also it's a <code>theorem</code> not a <code>def</code></p>",
+        "id": 194965179,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587576677
     }
 ]

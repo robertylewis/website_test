@@ -9,13 +9,14 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Show the objects for an equality of morphisms](topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html) (10 messages, latest: Apr 22 2020 at 16:45)
+* [`variables` introduction rules](topic/.60variables.60.20introduction.20rules.html) (3 messages, latest: Apr 22 2020 at 17:42)
+* [`precedence` command](topic/.60precedence.60.20command.html) (2 messages, latest: Apr 22 2020 at 17:38)
+* [Show the objects for an equality of morphisms](topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html) (11 messages, latest: Apr 22 2020 at 17:22)
 * [Case tags](topic/Case.20tags.html) (6 messages, latest: Apr 22 2020 at 15:49)
 * [lean-client-python](topic/lean-client-python.html) (31 messages, latest: Apr 22 2020 at 14:28)
 * [universe enlargement](topic/universe.20enlargement.html) (7 messages, latest: Apr 22 2020 at 14:17)
 * [universe inequalities](topic/universe.20inequalities.html) (15 messages, latest: Apr 22 2020 at 14:16)
 * [typeclass for has_coe_to_fun is slow?](topic/typeclass.20for.20has_coe_to_fun.20is.20slow.3F.html) (31 messages, latest: Apr 22 2020 at 11:50)
-* [`variables` introduction rules](topic/.60variables.60.20introduction.20rules.html) (2 messages, latest: Apr 22 2020 at 11:14)
 * [autogenerating `*_hom` and `sub*`](topic/autogenerating.20.60*_hom.60.20and.20.60sub*.60.html) (37 messages, latest: Apr 21 2020 at 23:52)
 * [Proposal: `fix x` for `assume x`](topic/Proposal.3A.20.60fix.20x.60.20for.20.60assume.20x.60.html) (121 messages, latest: Apr 21 2020 at 16:20)
 * [de Bruijn factor of Lean?](topic/de.20Bruijn.20factor.20of.20Lean.3F.html) (6 messages, latest: Apr 21 2020 at 15:21)
@@ -2692,4 +2693,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 22 2020 at 17:01 UTC</p>
+<hr><p>Last updated: Apr 22 2020 at 18:01 UTC</p>
