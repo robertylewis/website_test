@@ -1,0 +1,38 @@
+[
+    {
+        "content": "<p>I'm currently trying to understand how case tags work, and they are rather more complicated than expected. There seem to be two ways to tag a goal as a 'case', <code>_case.n</code> (where <code>n</code> is a natural number; what's this for?) and <code>_case_simple</code>. Both seem to be in use. When the <code>case</code> tactic tries to find a case that matches the name given by the user, it inspects the term constructed so far <a href=\"https://github.com/leanprover-community/lean/blob/c59125c188468fb83ca95353376e1ce953b57a5e/library/init/meta/interactive.lean#L629\" title=\"https://github.com/leanprover-community/lean/blob/c59125c188468fb83ca95353376e1ce953b57a5e/library/init/meta/interactive.lean#L629\">in some unholy fashion</a> -- but only for <code>_case_simple</code> tags. Does anyone know why all this is necessary? I would have expected <code>case</code> to just look for a goal with a matching name.</p>",
+        "id": 194832958,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587488894
+    },
+    {
+        "content": "<p>The \"interesting\" code is from my original implementation of <code>case</code>, before Leo added any tag management. As the comment at the use site of <code>find_case</code> explains, it is not being used for actually locating the goal anymore. I don't know/remember much about the tags themselves.</p>",
+        "id": 194857600,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1587501142
+    },
+    {
+        "content": "<p>Thanks, that helps a lot! Perhaps a refactoring to remove <code>_case_simple</code> is in order.</p>",
+        "id": 194937444,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587565096
+    },
+    {
+        "content": "<p>I think I broadly understand what's happening now. Documenting it here (for myself if noone else):</p>\n<ul>\n<li>A tag is a list of names.</li>\n<li><code>induction</code> and <code>cases</code> (and variants) tag each goal they generate with the tag <code>['_case_simple, cname]</code> where <code>cname</code> is the name of the constructor (fully qualified).</li>\n<li><code>with_cases t</code> runs the tactic <code>t</code>. Then, for any new goal <code>g</code> produced by <code>t</code>, it reverts any hypotheses of <code>g</code> that did not occur in the original goal. Finally, <code>g</code>'s tag gets prefixed with <code>'_case.n</code> where <code>n</code> is the number of hypotheses that were reverted.</li>\n<li><code>case name : x, y, ...</code> first finds a goal whose tag matches <code>name</code>. It then proceeds according to whether the goal's tag starts with <code>'_case.n</code> or <code>'_case_simple</code>.<ul>\n<li>For <code>'_case.n</code>, it introduces <code>n</code> arguments, using the names <code>x, y, ...</code> (if available).</li>\n<li>For <code>'_case_simple</code>, it determines the number of arguments of the constructor which generated this case. (This is what the linked <code>find_case</code> does, as far as I can tell.) It then renames these arguments to <code>x, y, ...</code> (if available).</li>\n</ul>\n</li>\n</ul>",
+        "id": 194949985,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587570017
+    },
+    {
+        "content": "<p>A PR to add this info in the form of doc strings to leanprover-community/lean would be greatly appreciated!</p>",
+        "id": 194950171,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1587570103
+    },
+    {
+        "content": "<p>Can do, but at the moment I want to redesign the whole thing anyway. Besides being ugly, the <code>find_case</code> hack leads to such tight coupling between <code>induction</code>/<code>cases</code> and <code>case</code> that I can't use case tags with an alternative induction tactic that I'm working on.</p>",
+        "id": 194951189,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587570569
+    }
+]

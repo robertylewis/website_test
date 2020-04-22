@@ -1,0 +1,66 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/Case.20tags.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/website_test/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html">Case tags</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="194832958"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/194832958" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#194832958">(Apr 21 2020 at 17:08)</a>:</h4>
+<p>I'm currently trying to understand how case tags work, and they are rather more complicated than expected. There seem to be two ways to tag a goal as a 'case', <code>_case.n</code> (where <code>n</code> is a natural number; what's this for?) and <code>_case_simple</code>. Both seem to be in use. When the <code>case</code> tactic tries to find a case that matches the name given by the user, it inspects the term constructed so far <a href="https://github.com/leanprover-community/lean/blob/c59125c188468fb83ca95353376e1ce953b57a5e/library/init/meta/interactive.lean#L629" title="https://github.com/leanprover-community/lean/blob/c59125c188468fb83ca95353376e1ce953b57a5e/library/init/meta/interactive.lean#L629">in some unholy fashion</a> -- but only for <code>_case_simple</code> tags. Does anyone know why all this is necessary? I would have expected <code>case</code> to just look for a goal with a matching name.</p>
+
+
+
+<a name="194857600"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/194857600" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#194857600">(Apr 21 2020 at 20:32)</a>:</h4>
+<p>The "interesting" code is from my original implementation of <code>case</code>, before Leo added any tag management. As the comment at the use site of <code>find_case</code> explains, it is not being used for actually locating the goal anymore. I don't know/remember much about the tags themselves.</p>
+
+
+
+<a name="194937444"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/194937444" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#194937444">(Apr 22 2020 at 14:18)</a>:</h4>
+<p>Thanks, that helps a lot! Perhaps a refactoring to remove <code>_case_simple</code> is in order.</p>
+
+
+
+<a name="194949985"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/194949985" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#194949985">(Apr 22 2020 at 15:40)</a>:</h4>
+<p>I think I broadly understand what's happening now. Documenting it here (for myself if noone else):</p>
+<ul>
+<li>A tag is a list of names.</li>
+<li><code>induction</code> and <code>cases</code> (and variants) tag each goal they generate with the tag <code>['_case_simple, cname]</code> where <code>cname</code> is the name of the constructor (fully qualified).</li>
+<li><code>with_cases t</code> runs the tactic <code>t</code>. Then, for any new goal <code>g</code> produced by <code>t</code>, it reverts any hypotheses of <code>g</code> that did not occur in the original goal. Finally, <code>g</code>'s tag gets prefixed with <code>'_case.n</code> where <code>n</code> is the number of hypotheses that were reverted.</li>
+<li><code>case name : x, y, ...</code> first finds a goal whose tag matches <code>name</code>. It then proceeds according to whether the goal's tag starts with <code>'_case.n</code> or <code>'_case_simple</code>.<ul>
+<li>For <code>'_case.n</code>, it introduces <code>n</code> arguments, using the names <code>x, y, ...</code> (if available).</li>
+<li>For <code>'_case_simple</code>, it determines the number of arguments of the constructor which generated this case. (This is what the linked <code>find_case</code> does, as far as I can tell.) It then renames these arguments to <code>x, y, ...</code> (if available).</li>
+</ul>
+</li>
+</ul>
+
+
+
+<a name="194950171"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/194950171" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Bryan Gin-ge Chen <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#194950171">(Apr 22 2020 at 15:41)</a>:</h4>
+<p>A PR to add this info in the form of doc strings to leanprover-community/lean would be greatly appreciated!</p>
+
+
+
+<a name="194951189"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/194951189" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#194951189">(Apr 22 2020 at 15:49)</a>:</h4>
+<p>Can do, but at the moment I want to redesign the whole thing anyway. Besides being ugly, the <code>find_case</code> hack leads to such tight coupling between <code>induction</code>/<code>cases</code> and <code>case</code> that I can't use case tags with an alternative induction tactic that I'm working on.</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 22 2020 at 16:25 UTC</p>

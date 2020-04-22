@@ -1,0 +1,50 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/unknown.20local.20constant.3A.20_ffresh.2E0.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/website_test/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unknown.20local.20constant.3A.20_ffresh.2E0.html">unknown local constant: _ffresh.0</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="169356858"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unknown%20local%20constant%3A%20_ffresh.0/near/169356858" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unknown.20local.20constant.3A.20_ffresh.2E0.html#169356858">(Jun 30 2019 at 22:37)</a>:</h4>
+<p>Has anyone seen an otherwise successful <code>def</code> error with <code>unknown local constant: _ffresh.0</code>?</p>
+
+
+
+<a name="169356956"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unknown%20local%20constant%3A%20_ffresh.0/near/169356956" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Simon Hudon <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unknown.20local.20constant.3A.20_ffresh.2E0.html#169356956">(Jun 30 2019 at 22:41)</a>:</h4>
+<p>do you use <code>variable</code> or <code>parameter</code>? Do you use <code>include</code>?</p>
+
+
+
+<a name="169357004"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unknown%20local%20constant%3A%20_ffresh.0/near/169357004" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unknown.20local.20constant.3A.20_ffresh.2E0.html#169357004">(Jun 30 2019 at 22:43)</a>:</h4>
+<p>Yes to all of the above. :-) Changing the name of an argument of the function solved the problem.... Looks bug-ish to me, but I don't have time to minimise now so will proceed with slightly strange argument names!</p>
+
+
+
+<a name="169357047"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unknown%20local%20constant%3A%20_ffresh.0/near/169357047" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Simon Hudon <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unknown.20local.20constant.3A.20_ffresh.2E0.html#169357047">(Jun 30 2019 at 22:44)</a>:</h4>
+<p>you probably have variable <code>x</code>, assumption <code>h</code> mentioning <code>x</code>, <code>include h</code> and then you declare <code>x</code> as an argument to your definition</p>
+
+
+
+<a name="169357054"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unknown%20local%20constant%3A%20_ffresh.0/near/169357054" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Simon Hudon <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unknown.20local.20constant.3A.20_ffresh.2E0.html#169357054">(Jun 30 2019 at 22:45)</a>:</h4>
+<p>Lean does not include the <code>variable</code> but includes <code>h</code></p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 22 2020 at 16:25 UTC</p>

@@ -1,0 +1,68 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113489-new-members/topic/supremum.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/website_test/stream/113489-new-members/index.html">new members</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html">supremum</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="167930813"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167930813" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Keeley Hoek <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167930813">(Jun 12 2019 at 09:49)</a>:</h4>
+<p>Is there a <code>has_Sup</code> instance for <code>enat</code>? If not, why not?</p>
+
+
+
+<a name="167931018"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167931018" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167931018">(Jun 12 2019 at 09:52)</a>:</h4>
+<p>No. Because nobody got round to writing one yet.</p>
+
+
+
+<a name="167931071"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167931071" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Keeley Hoek <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167931071">(Jun 12 2019 at 09:53)</a>:</h4>
+<p>Thanks!</p>
+
+
+
+<a name="167931181"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167931181" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Keeley Hoek <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167931181">(Jun 12 2019 at 09:55)</a>:</h4>
+<p>Is there any machinery which already handles given some finite upper bound of nats finding a minimal witness? (something to do with lattices? Sorry, I don't know anything about them)</p>
+
+
+
+<a name="167931298"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167931298" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167931298">(Jun 12 2019 at 09:56)</a>:</h4>
+<p><code>nat.find</code> and <code>nat.find_greatest</code> will help. You should write a <code>complete_linear_order</code> instance.</p>
+
+
+
+<a name="167931466"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167931466" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167931466">(Jun 12 2019 at 09:59)</a>:</h4>
+<p>You could prove that <code>nat</code> is a <code>conditionally_complete_linear_order_bot</code> first</p>
+
+
+
+<a name="167932386"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167932386" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167932386">(Jun 12 2019 at 10:12)</a>:</h4>
+<p>You should write a <code>transfer</code> tactic which just transports everything on nat to enat ;-)</p>
+
+
+
+<a name="167932424"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/supremum/near/167932424" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Chris Hughes <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/supremum.html#167932424">(Jun 12 2019 at 10:12)</a>:</h4>
+<p>Is there a galois insertion thing you can do here?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 22 2020 at 16:25 UTC</p>
