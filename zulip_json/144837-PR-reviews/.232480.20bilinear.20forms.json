@@ -4,5 +4,23 @@
         "id": 194963719,
         "sender_full_name": "Johan Commelin",
         "timestamp": 1587576040
+    },
+    {
+        "content": "<p>½ is such a fundamental thing. Maybe it even makes sense to add a type class specifically for this.</p>",
+        "id": 194972204,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587579997
+    },
+    {
+        "content": "<p>I agree. Characteristic different from <code>2</code> is an assumption that shows up really often (notably when dealing with quadratic forms :)</p>",
+        "id": 194972814,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587580306
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110032\">Reid Barton</span> <a href=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/194972204\" title=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/194972204\">said</a>:</p>\n<blockquote>\n<p>½ is such a fundamental thing. Maybe it even makes sense to add a type class specifically for this.</p>\n</blockquote>\n<p>I like the notation!</p>",
+        "id": 194973202,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587580468
     }
 ]

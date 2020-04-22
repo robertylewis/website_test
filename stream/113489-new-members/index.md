@@ -9,11 +9,11 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [permutation](topic/permutation.html) (6 messages, latest: Apr 22 2020 at 18:25)
 * [noob question(s)](topic/noob.20question(s).html) (4397 messages, latest: Apr 22 2020 at 17:31)
 * [problem with old_structure_cmd](topic/problem.20with.20old_structure_cmd.html) (17 messages, latest: Apr 22 2020 at 15:40)
 * [why doesn't this work?](topic/why.20doesn't.20this.20work.3F.html) (9 messages, latest: Apr 22 2020 at 13:52)
 * [exhausting finite possibilities](topic/exhausting.20finite.20possibilities.html) (5 messages, latest: Apr 22 2020 at 09:12)
-* [permutation](topic/permutation.html) (5 messages, latest: Apr 22 2020 at 08:16)
 * [more casting issues](topic/more.20casting.20issues.html) (6 messages, latest: Apr 22 2020 at 00:56)
 * [Finishing off induction for pigeonhole](topic/Finishing.20off.20induction.20for.20pigeonhole.html) (218 messages, latest: Apr 21 2020 at 19:54)
 * [\[decideable_pred p\]](topic/.5Bdecideable_pred.20p.5D.html) (3 messages, latest: Apr 21 2020 at 17:08)
@@ -963,4 +963,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 22 2020 at 18:01 UTC</p>
+<hr><p>Last updated: Apr 22 2020 at 19:01 UTC</p>

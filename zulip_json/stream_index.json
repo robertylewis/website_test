@@ -666,7 +666,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 194963719,
+            "latest_id": 194973202,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1001,8 +1001,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587576040,
-                    "size": 1
+                    "latest_date": 1587580468,
+                    "size": 4
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -15828,7 +15828,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 194965179,
+            "latest_id": 194972043,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -18979,8 +18979,8 @@
                     "size": 3
                 },
                 "permutation": {
-                    "latest_date": 1587543393,
-                    "size": 5
+                    "latest_date": 1587579908,
+                    "size": 6
                 },
                 "piecewise functions": {
                     "latest_date": 1545339017,
@@ -19645,5 +19645,5 @@
             }
         }
     },
-    "time": 1587578491.452066
+    "time": 1587582092.5973432
 }
