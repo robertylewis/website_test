@@ -46,5 +46,17 @@
         "id": 194983638,
         "sender_full_name": "Reid Barton",
         "timestamp": 1587585509
+    },
+    {
+        "content": "<p><code>is_unit 2</code>?</p>",
+        "id": 194984876,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587586090
+    },
+    {
+        "content": "<p>Or <code>½ * 2 = 2 * ½ = 1</code> if we want to allow computable instances (probably yes).</p>",
+        "id": 194984942,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587586128
     }
 ]
