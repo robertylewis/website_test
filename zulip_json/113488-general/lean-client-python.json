@@ -184,5 +184,17 @@
         "id": 194939202,
         "sender_full_name": "Jason Rute",
         "timestamp": 1587565694
+    },
+    {
+        "content": "<p>I'm sorry I had no time at all this afternoon and this evening. I just tried and I can reproduce the problem with polynomial.lean. We haven't understood all the mysteries of the Lean server protocol yet. I'll investigate.</p>",
+        "id": 194993384,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587590738
+    },
+    {
+        "content": "<p>Hopefully fixed in <a href=\"https://github.com/PatrickMassot/lean-client-python/commit/746eb30b98f340296a723da115bd1e5f49d421fd\" title=\"https://github.com/PatrickMassot/lean-client-python/commit/746eb30b98f340296a723da115bd1e5f49d421fd\">https://github.com/PatrickMassot/lean-client-python/commit/746eb30b98f340296a723da115bd1e5f49d421fd</a> (see commit message for the explanation).</p>",
+        "id": 194994587,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587591504
     }
 ]

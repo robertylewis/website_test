@@ -1598,7 +1598,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 194966671,
+            "latest_id": 194994587,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -4953,8 +4953,8 @@
                     "size": 40
                 },
                 "`variables` introduction rules": {
-                    "latest_date": 1587577324,
-                    "size": 3
+                    "latest_date": 1587590183,
+                    "size": 4
                 },
                 "a": {
                     "latest_date": 1540251522,
@@ -8241,8 +8241,8 @@
                     "size": 11
                 },
                 "lean-client-python": {
-                    "latest_date": 1587565694,
-                    "size": 31
+                    "latest_date": 1587591504,
+                    "size": 33
                 },
                 "lean-nightly": {
                     "latest_date": 1519725068,
@@ -19649,5 +19649,5 @@
             }
         }
     },
-    "time": 1587589289.0164967
+    "time": 1587592901.1463382
 }
