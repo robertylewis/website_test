@@ -22,5 +22,11 @@
         "id": 194950252,
         "sender_full_name": "Reid Barton",
         "timestamp": 1587570129
+    },
+    {
+        "content": "<p>An other little question what is the difference between <code> rw </code> and <code>erw </code> ?  I thinck <code>erw</code> is more powerful but i don't understand really the difference ?</p>",
+        "id": 194955792,
+        "sender_full_name": "orlando",
+        "timestamp": 1587572459
     }
 ]

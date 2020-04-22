@@ -26296,5 +26296,29 @@
         "id": 194955707,
         "sender_full_name": "Ashwin Iyengar",
         "timestamp": 1587572415
+    },
+    {
+        "content": "<p>Sorry i mean <code>r=0</code></p>",
+        "id": 194955773,
+        "sender_full_name": "Ashwin Iyengar",
+        "timestamp": 1587572449
+    },
+    {
+        "content": "<p><code>rw (show r = 0, from h1)</code></p>",
+        "id": 194955881,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587572513
+    },
+    {
+        "content": "<p>You are not wrong about this, however <code>rw</code> wants to see something that's <em>syntactically</em> an equality or iff.</p>",
+        "id": 194955941,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587572526
+    },
+    {
+        "content": "<p>Oh ok. Is there another, better tactic to use besides rw? Or is <span class=\"user-mention\" data-user-id=\"110064\">@Kenny Lau</span>'s solution the best one?</p>",
+        "id": 194956103,
+        "sender_full_name": "Ashwin Iyengar",
+        "timestamp": 1587572620
     }
 ]

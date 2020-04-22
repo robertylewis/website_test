@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [how to find where the instance are define ?](topic/how.20to.20find.20where.20the.20instance.20are.20define.20.3F.html) (4 messages, latest: Apr 22 2020 at 15:42)
+* [how to find where the instance are define ?](topic/how.20to.20find.20where.20the.20instance.20are.20define.20.3F.html) (5 messages, latest: Apr 22 2020 at 16:20)
 * [Hedetniemi](topic/Hedetniemi.html) (319 messages, latest: Apr 21 2020 at 04:57)
 * [NBG](topic/NBG.html) (11 messages, latest: Apr 20 2020 at 12:15)
 * [Algebraic closure Roadmap](topic/Algebraic.20closure.20Roadmap.html) (6 messages, latest: Apr 20 2020 at 11:27)
@@ -867,4 +867,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 22 2020 at 16:25 UTC</p>
+<hr><p>Last updated: Apr 22 2020 at 17:01 UTC</p>
