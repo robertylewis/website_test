@@ -15832,7 +15832,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 194972043,
+            "latest_id": 195005121,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -18915,8 +18915,8 @@
                     "size": 4
                 },
                 "noob question(s)": {
-                    "latest_date": 1587576677,
-                    "size": 4397
+                    "latest_date": 1587599623,
+                    "size": 4398
                 },
                 "noob question: vscode and LEAN_PATH": {
                     "latest_date": 1570517846,
@@ -19649,5 +19649,5 @@
             }
         }
     },
-    "time": 1587596529.9134178
+    "time": 1587600112.1806307
 }

@@ -26380,5 +26380,11 @@
         "id": 194965179,
         "sender_full_name": "Kenny Lau",
         "timestamp": 1587576677
+    },
+    {
+        "content": "<p>how do i get a \"decidable\" version of <code>{a : Type} [has_le a]</code>? it looks like <code>has_decidable_le</code> is only for <code>list</code>.</p>",
+        "id": 195005121,
+        "sender_full_name": "Nam",
+        "timestamp": 1587599623
     }
 ]
