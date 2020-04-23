@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195082462,
+            "latest_id": 195084832,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -7761,8 +7761,8 @@
                     "size": 1
                 },
                 "import order": {
-                    "latest_date": 1587657622,
-                    "size": 1
+                    "latest_date": 1587657916,
+                    "size": 2
                 },
                 "import renaming?": {
                     "latest_date": 1533834158,
@@ -11909,8 +11909,8 @@
                     "size": 5
                 },
                 "unnecessary imports": {
-                    "latest_date": 1587657238,
-                    "size": 33
+                    "latest_date": 1587658634,
+                    "size": 40
                 },
                 "unoption": {
                     "latest_date": 1532029694,
@@ -15856,7 +15856,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195082552,
+            "latest_id": 195087946,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -18686,6 +18686,10 @@
                     "latest_date": 1586130647,
                     "size": 8
                 },
+                "lean code formatter": {
+                    "latest_date": 1587660082,
+                    "size": 3
+                },
                 "lean path": {
                     "latest_date": 1537727760,
                     "size": 9
@@ -19677,5 +19681,5 @@
             }
         }
     },
-    "time": 1587657724.1517825
+    "time": 1587661314.7000515
 }

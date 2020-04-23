@@ -225,6 +225,48 @@ permalink: /stream/113488-general/topic/unnecessary.20imports.html
 
 
 
+<a name="195083026"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unnecessary%20imports/near/195083026" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Simon Hudon <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unnecessary.20imports.html#195083026">(Apr 23 2020 at 16:03)</a>:</h4>
+<p>That's fair. It might be accurate often enough that you'd want to run it first to select candidate redundant imports and try commenting those out only in the process of using your approach. An analysis of the declaration won't tell you that an import is needed when it's not so the analysis is complete but not sound (it will identify all redundant imports and then some)</p>
+
+
+
+<a name="195083530"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unnecessary%20imports/near/195083530" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unnecessary.20imports.html#195083530">(Apr 23 2020 at 16:07)</a>:</h4>
+<p>Assuming that this works from an already built mathlib, you can look at the olean files and immediately pick out all the directly used files based on theorems declared in file A and used in C</p>
+
+
+
+<a name="195083690"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unnecessary%20imports/near/195083690" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unnecessary.20imports.html#195083690">(Apr 23 2020 at 16:08)</a>:</h4>
+<p>and I think this covers 90% or more of imports (not counting those that will be removed)</p>
+
+
+
+<a name="195083746"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unnecessary%20imports/near/195083746" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unnecessary.20imports.html#195083746">(Apr 23 2020 at 16:08)</a>:</h4>
+<p>the hard case is <code>import tactic</code>, which I think is not uncommon</p>
+
+
+
+<a name="195083806"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unnecessary%20imports/near/195083806" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unnecessary.20imports.html#195083806">(Apr 23 2020 at 16:09)</a>:</h4>
+<p>although if you do some C++ magic to flag this in lean that will help</p>
+
+
+
+<a name="195084038"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unnecessary%20imports/near/195084038" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unnecessary.20imports.html#195084038">(Apr 23 2020 at 16:11)</a>:</h4>
+<p>even just the earlier idea of saving all the tactic expressions before <code>by</code> would solve this problem since if they get saved in oleans then you can link def to use</p>
+
+
+
+<a name="195084832"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/unnecessary%20imports/near/195084832" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Simon Hudon <a href="http://robertylewis.com/website_test/stream/113488-general/topic/unnecessary.20imports.html#195084832">(Apr 23 2020 at 16:17)</a>:</h4>
+<p>That's one idea. We could also just work on the C++ data structures so that we don't change the <code>olean</code> files that are produced</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 16:02 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 17:01 UTC</p>
