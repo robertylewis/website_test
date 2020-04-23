@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (4 messages, latest: Apr 23 2020 at 10:33)
 * [lean-client-python](topic/lean-client-python.html) (35 messages, latest: Apr 23 2020 at 09:09)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (114 messages, latest: Apr 23 2020 at 08:19)
 * [Case tags](topic/Case.20tags.html) (10 messages, latest: Apr 23 2020 at 03:48)
@@ -200,7 +201,6 @@ permalink: /stream/113488-general/index.html
 * [modifying just the lean files, in lean core](topic/modifying.20just.20the.20lean.20files.2C.20in.20lean.20core.html) (10 messages, latest: Mar 29 2020 at 03:16)
 * [Resolving goals containing existential quantifiers](topic/Resolving.20goals.20containing.20existential.20quantifiers.html) (5 messages, latest: Mar 29 2020 at 01:02)
 * [help with lean IR](topic/help.20with.20lean.20IR.html) (13 messages, latest: Mar 28 2020 at 17:26)
-* [PRing to mathlib from forks](topic/PRing.20to.20mathlib.20from.20forks.html) (3 messages, latest: Mar 28 2020 at 14:45)
 * [building bindings to lean](topic/building.20bindings.20to.20lean.html) (13 messages, latest: Mar 28 2020 at 12:54)
 * [performance Lean vs Z3](topic/performance.20Lean.20vs.20Z3.html) (56 messages, latest: Mar 28 2020 at 12:06)
 * [Computational interpretation](topic/Computational.20interpretation.html) (3 messages, latest: Mar 28 2020 at 09:58)
@@ -2693,4 +2693,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 10:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 11:01 UTC</p>

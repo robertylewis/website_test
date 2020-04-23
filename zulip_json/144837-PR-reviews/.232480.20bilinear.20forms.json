@@ -574,5 +574,17 @@
         "id": 195034212,
         "sender_full_name": "Patrick Massot",
         "timestamp": 1587632623
+    },
+    {
+        "content": "<p>Any number theorist knows that all rings are commutative...unless expressly stated otherwise.</p>",
+        "id": 195041833,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587637456
+    },
+    {
+        "content": "<p>When I lectured basic homological algebra in Algebra IV a few years ago, I didn't want to talk about abelian categories, so I decided to just talk about the category of R-modules for some fixed commutative ring R. It took a while for me to realise that I never used commutativity of R at all! I was actually quite surprised to find out that R-modules were an abelian category even if R was not an abelian monoid :-)</p>",
+        "id": 195042033,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587637579
     }
 ]

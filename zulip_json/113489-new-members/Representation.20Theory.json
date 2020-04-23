@@ -1636,5 +1636,35 @@
         "id": 195032307,
         "sender_full_name": "orlando",
         "timestamp": 1587631425
+    },
+    {
+        "content": "<p>The computer scientists will tell you to change <code>[group G]</code> to <code>[monoid G]</code> in the <em>definition</em>, because you do not use inverses :-)</p>",
+        "id": 195041768,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587637425
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"270476\">@orlando</span> did you see <a href=\"https://github.com/leanprover-community/mathlib/projects/4\" title=\"https://github.com/leanprover-community/mathlib/projects/4\">the representation theory project</a>?</p>",
+        "id": 195042867,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587638128
+    },
+    {
+        "content": "<p>Yes Kevin, i start with the first file of <span class=\"user-mention\" data-user-id=\"111080\">@Floris van Doorn</span>  but i change the definition because (conversion big problem) ! </p>\n<p>I'm happy cause i understand i little more <code>rfl </code> <span aria-label=\"innocent\" class=\"emoji emoji-1f607\" role=\"img\" title=\"innocent\">:innocent:</span></p>",
+        "id": 195044142,
+        "sender_full_name": "orlando",
+        "timestamp": 1587639176
+    },
+    {
+        "content": "<p>With this project, I feel like the hardest part is choosing the correct initial definition.</p>",
+        "id": 195044240,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587639264
+    },
+    {
+        "content": "<p>ooh, I didn't know we have a kanban board (or whatever the kids call it these days)</p>",
+        "id": 195044503,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587639478
     }
 ]
