@@ -152,6 +152,312 @@ permalink: /stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html
 
 
 
+<a name="195022397"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022397" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022397">(Apr 23 2020 at 06:27)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> So what would your definition of <code>invertible a</code> be? If you want to be able to compute with it (which seems useful, say over finite fields, or the rationals), then we need to record data. But that means that over a generic field of characteristic zero, there will be "another way" to express the constant <code>ainv</code>.</p>
+
+
+
+<a name="195022402"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022402" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022402">(Apr 23 2020 at 06:27)</a>:</h4>
+<p>Or can that be avoided?</p>
+
+
+
+<a name="195022407"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022407" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022407">(Apr 23 2020 at 06:27)</a>:</h4>
+<p>it's just proof relevant <code>is_unit</code></p>
+
+
+
+<a name="195022416"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022416" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022416">(Apr 23 2020 at 06:27)</a>:</h4>
+<p>I actually thought this already existed</p>
+
+
+
+<a name="195022470"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022470" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022470">(Apr 23 2020 at 06:28)</a>:</h4>
+<p>We have <code>units R</code></p>
+
+
+
+<a name="195022481"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022481" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022481">(Apr 23 2020 at 06:28)</a>:</h4>
+<p>But I still don't follow how you want to avoid the extra way of expressing <code>1/a</code>.</p>
+
+
+
+<a name="195022492"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022492" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022492">(Apr 23 2020 at 06:29)</a>:</h4>
+<p>well I want to use <code>has_div</code> to write it, although that is probably an "extra way" no matter how you slice it</p>
+
+
+
+<a name="195022504"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022504" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022504">(Apr 23 2020 at 06:29)</a>:</h4>
+<p>In general you will not have <code>has_div</code> or <code>has_inv</code> on the ring you are interested in. (Say <code>polynomial (zmod p)</code>)</p>
+
+
+
+<a name="195022520"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022520" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022520">(Apr 23 2020 at 06:29)</a>:</h4>
+<p>There is always a way to define it, although it might be noncomputable</p>
+
+
+
+<a name="195022570"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022570" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022570">(Apr 23 2020 at 06:30)</a>:</h4>
+<p>But I'm not sure if we want to go noncomputable here.</p>
+
+
+
+<a name="195022574"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022574" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022574">(Apr 23 2020 at 06:30)</a>:</h4>
+<p>the main important thing is that the function actually has a unique answer, i.e. no rings where there are two candidates for 1/2</p>
+
+
+
+<a name="195022590"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022590" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022590">(Apr 23 2020 at 06:30)</a>:</h4>
+<p>but I think this is impossible in some relatively high generality</p>
+
+
+
+<a name="195022606"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022606" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022606">(Apr 23 2020 at 06:31)</a>:</h4>
+<p>that is, <code>a + a = b + b</code> implies <code>a = b</code></p>
+
+
+
+<a name="195022672"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022672" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022672">(Apr 23 2020 at 06:32)</a>:</h4>
+<p>If <code>(1/2) * 2 = 1</code> and <code>2 * (1/2) = 1</code>, then <code>(1/2)</code> is unique</p>
+
+
+
+<a name="195022680"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022680" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022680">(Apr 23 2020 at 06:32)</a>:</h4>
+<p>yeah, at least in semirings it works</p>
+
+
+
+<a name="195022696"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022696" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022696">(Apr 23 2020 at 06:32)</a>:</h4>
+<p>Which is good enough, I guess?</p>
+
+
+
+<a name="195022728"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022728" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022728">(Apr 23 2020 at 06:33)</a>:</h4>
+<p>But I think that either you are working in a concrete ring, in which case you can set up <code>1 / 2</code> to refer to this element if it exists, or you are in some general situation and you can posit the existence of such an element using <code>invertible 2</code></p>
+
+
+
+<a name="195022781"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022781" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022781">(Apr 23 2020 at 06:34)</a>:</h4>
+<p>maybe even skipping the notation, just <code>u : units R</code> and <code>u = 2</code></p>
+
+
+
+<a name="195022804"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022804" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022804">(Apr 23 2020 at 06:35)</a>:</h4>
+<p>Given an instance of <code>invertible 2</code>, how do you want to refer to the element that is the inverse of <code>2</code>?</p>
+
+
+
+<a name="195022825"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022825" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022825">(Apr 23 2020 at 06:35)</a>:</h4>
+<p><code>invertible.inv 2</code> presumably</p>
+
+
+
+<a name="195022831"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022831" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022831">(Apr 23 2020 at 06:35)</a>:</h4>
+<p>or <code>I.inv</code> where <code>I : invertible 2</code> if it's not a class</p>
+
+
+
+<a name="195022864"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022864" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022864">(Apr 23 2020 at 06:36)</a>:</h4>
+<p>And what would the definition of <code>I.inv x</code> be?</p>
+
+
+
+<a name="195022875"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022875" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022875">(Apr 23 2020 at 06:36)</a>:</h4>
+<p>pull it out of the struct</p>
+
+
+
+<a name="195022893"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022893" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022893">(Apr 23 2020 at 06:36)</a>:</h4>
+<p>Ok, so <code>invertible 2</code> records data? It's not a <code>Prop</code>. Or am I misunderstanding you?</p>
+
+
+
+<a name="195022895"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022895" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022895">(Apr 23 2020 at 06:36)</a>:</h4>
+<p>no props</p>
+
+
+
+<a name="195022914"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022914" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022914">(Apr 23 2020 at 06:37)</a>:</h4>
+<p><code>is_unit</code> is already around if you want the prop</p>
+
+
+
+<a name="195022919"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022919" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022919">(Apr 23 2020 at 06:37)</a>:</h4>
+<p>Yup, certainly</p>
+
+
+
+<a name="195022995"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195022995" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195022995">(Apr 23 2020 at 06:38)</a>:</h4>
+<p>I think I would like <code>invertible</code> to be a class, and I think I would like to have notation for <code>invertible.inv</code>.</p>
+
+
+
+<a name="195023180"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023180" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023180">(Apr 23 2020 at 06:42)</a>:</h4>
+<p>I can't think of anything good, so perhaps a local notation using your funny 1/2 symbol will suffice</p>
+
+
+
+<a name="195023570"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023570" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023570">(Apr 23 2020 at 06:50)</a>:</h4>
+<p>I like <code>⅟</code> <a href="https://en.wiktionary.org/wiki/%E2%85%9F" title="https://en.wiktionary.org/wiki/%E2%85%9F">https://en.wiktionary.org/wiki/%E2%85%9F</a></p>
+
+
+
+<a name="195023593"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023593" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023593">(Apr 23 2020 at 06:51)</a>:</h4>
+<p>Admittedly, this seems to depend on your font a bit, but <code>⅟2</code> and <code>⅟n</code> seem to read okish.</p>
+
+
+
+<a name="195023620"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023620" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023620">(Apr 23 2020 at 06:51)</a>:</h4>
+<p>It's better in the Zulip "write-your-post" window, then when it's rendered after posting.</p>
+
+
+
+<a name="195023683"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023683" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023683">(Apr 23 2020 at 06:52)</a>:</h4>
+<p>Can we prove that <code>1/2</code> is unique?</p>
+
+
+
+<a name="195023699"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023699" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023699">(Apr 23 2020 at 06:53)</a>:</h4>
+<p>Depends on your axioms</p>
+
+
+
+<a name="195023711"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023711" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023711">(Apr 23 2020 at 06:53)</a>:</h4>
+<p>can we construct a semiring with two <code>1/2</code>s?</p>
+
+
+
+<a name="195023774"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023774" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023774">(Apr 23 2020 at 06:54)</a>:</h4>
+<p>What are your axioms on <code>1/2</code>?</p>
+
+
+
+<a name="195023778"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023778" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023778">(Apr 23 2020 at 06:54)</a>:</h4>
+<p>2(1/2) = 1</p>
+
+
+
+<a name="195023781"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023781" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023781">(Apr 23 2020 at 06:55)</a>:</h4>
+<p>Is it a bi-inverse? Or only one-sided?</p>
+
+
+
+<a name="195023788"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023788" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023788">(Apr 23 2020 at 06:55)</a>:</h4>
+<p>oh no</p>
+
+
+
+<a name="195023792"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023792" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023792">(Apr 23 2020 at 06:55)</a>:</h4>
+<p>I didn't realized it wasn't commutative</p>
+
+
+
+<a name="195023807"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023807" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023807">(Apr 23 2020 at 06:55)</a>:</h4>
+<p>Your semiring? It is always noncommutative. Only rings are commutative.</p>
+
+
+
+<a name="195023832"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023832" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023832">(Apr 23 2020 at 06:55)</a>:</h4>
+<p>is there a semiring with left 1/2 but not right 1/2?</p>
+
+
+
+<a name="195023876"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023876" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023876">(Apr 23 2020 at 06:56)</a>:</h4>
+<p>I guess Z&lt;X&gt;/(2X-1) or something like that</p>
+
+
+
+<a name="195023878"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023878" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023878">(Apr 23 2020 at 06:56)</a>:</h4>
+<p><span class="user-mention" data-user-id="110064">@Kenny Lau</span> In a commutative setup <code>coe : units R → R</code> is injective. Lean knows this.</p>
+
+
+
+<a name="195023891"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023891" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023891">(Apr 23 2020 at 06:56)</a>:</h4>
+<p>(removed)</p>
+
+
+
+<a name="195023905"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023905" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023905">(Apr 23 2020 at 06:56)</a>:</h4>
+<p>Exactly, so I suppose we require that it is a bi-inverse.</p>
+
+
+
+<a name="195023917"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023917" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023917">(Apr 23 2020 at 06:56)</a>:</h4>
+<p>do we have R&lt;X&gt;?</p>
+
+
+
+<a name="195023932"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023932" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023932">(Apr 23 2020 at 06:57)</a>:</h4>
+<p>Do we want it?</p>
+
+
+
+<a name="195023941"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195023941" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195023941">(Apr 23 2020 at 06:57)</a>:</h4>
+<p>I don't even know where to start if not do it completely stupidly (quotient of inductive)</p>
+
+
+
+<a name="195024122"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195024122" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195024122">(Apr 23 2020 at 06:59)</a>:</h4>
+<p>what's the other stupid construction that makes it live one universe higher?</p>
+
+
+
+<a name="195024181"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195024181" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kenny Lau <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195024181">(Apr 23 2020 at 07:00)</a>:</h4>
+<p>using the universal property Hom(R&lt;X&gt;,S) = S</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 06:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 07:01 UTC</p>

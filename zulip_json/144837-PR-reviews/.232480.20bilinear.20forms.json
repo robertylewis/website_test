@@ -124,5 +124,311 @@
         "id": 195018593,
         "sender_full_name": "Mario Carneiro",
         "timestamp": 1587617378
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110049\">@Mario Carneiro</span> So what would your definition of <code>invertible a</code> be? If you want to be able to compute with it (which seems useful, say over finite fields, or the rationals), then we need to record data. But that means that over a generic field of characteristic zero, there will be \"another way\" to express the constant <code>ainv</code>.</p>",
+        "id": 195022397,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623232
+    },
+    {
+        "content": "<p>Or can that be avoided?</p>",
+        "id": 195022402,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623243
+    },
+    {
+        "content": "<p>it's just proof relevant <code>is_unit</code></p>",
+        "id": 195022407,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623262
+    },
+    {
+        "content": "<p>I actually thought this already existed</p>",
+        "id": 195022416,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623278
+    },
+    {
+        "content": "<p>We have <code>units R</code></p>",
+        "id": 195022470,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623286
+    },
+    {
+        "content": "<p>But I still don't follow how you want to avoid the extra way of expressing <code>1/a</code>.</p>",
+        "id": 195022481,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623319
+    },
+    {
+        "content": "<p>well I want to use <code>has_div</code> to write it, although that is probably an \"extra way\" no matter how you slice it</p>",
+        "id": 195022492,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623357
+    },
+    {
+        "content": "<p>In general you will not have <code>has_div</code> or <code>has_inv</code> on the ring you are interested in. (Say <code>polynomial (zmod p)</code>)</p>",
+        "id": 195022504,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623370
+    },
+    {
+        "content": "<p>There is always a way to define it, although it might be noncomputable</p>",
+        "id": 195022520,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623398
+    },
+    {
+        "content": "<p>But I'm not sure if we want to go noncomputable here.</p>",
+        "id": 195022570,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623418
+    },
+    {
+        "content": "<p>the main important thing is that the function actually has a unique answer, i.e. no rings where there are two candidates for 1/2</p>",
+        "id": 195022574,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623427
+    },
+    {
+        "content": "<p>but I think this is impossible in some relatively high generality</p>",
+        "id": 195022590,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623454
+    },
+    {
+        "content": "<p>that is, <code>a + a = b + b</code> implies <code>a = b</code></p>",
+        "id": 195022606,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623487
+    },
+    {
+        "content": "<p>If <code>(1/2) * 2 = 1</code> and <code>2 * (1/2) = 1</code>, then <code>(1/2)</code> is unique</p>",
+        "id": 195022672,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623537
+    },
+    {
+        "content": "<p>yeah, at least in semirings it works</p>",
+        "id": 195022680,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623554
+    },
+    {
+        "content": "<p>Which is good enough, I guess?</p>",
+        "id": 195022696,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623572
+    },
+    {
+        "content": "<p>But I think that either you are working in a concrete ring, in which case you can set up <code>1 / 2</code> to refer to this element if it exists, or you are in some general situation and you can posit the existence of such an element using <code>invertible 2</code></p>",
+        "id": 195022728,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623634
+    },
+    {
+        "content": "<p>maybe even skipping the notation, just <code>u : units R</code> and <code>u = 2</code></p>",
+        "id": 195022781,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623674
+    },
+    {
+        "content": "<p>Given an instance of <code>invertible 2</code>, how do you want to refer to the element that is the inverse of <code>2</code>?</p>",
+        "id": 195022804,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623702
+    },
+    {
+        "content": "<p><code>invertible.inv 2</code> presumably</p>",
+        "id": 195022825,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623732
+    },
+    {
+        "content": "<p>or <code>I.inv</code> where <code>I : invertible 2</code> if it's not a class</p>",
+        "id": 195022831,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623750
+    },
+    {
+        "content": "<p>And what would the definition of <code>I.inv x</code> be?</p>",
+        "id": 195022864,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623763
+    },
+    {
+        "content": "<p>pull it out of the struct</p>",
+        "id": 195022875,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623771
+    },
+    {
+        "content": "<p>Ok, so <code>invertible 2</code> records data? It's not a <code>Prop</code>. Or am I misunderstanding you?</p>",
+        "id": 195022893,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623805
+    },
+    {
+        "content": "<p>no props</p>",
+        "id": 195022895,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623811
+    },
+    {
+        "content": "<p><code>is_unit</code> is already around if you want the prop</p>",
+        "id": 195022914,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587623842
+    },
+    {
+        "content": "<p>Yup, certainly</p>",
+        "id": 195022919,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623851
+    },
+    {
+        "content": "<p>I think I would like <code>invertible</code> to be a class, and I think I would like to have notation for <code>invertible.inv</code>.</p>",
+        "id": 195022995,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587623910
+    },
+    {
+        "content": "<p>I can't think of anything good, so perhaps a local notation using your funny 1/2 symbol will suffice</p>",
+        "id": 195023180,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587624148
+    },
+    {
+        "content": "<p>I like <code>⅟</code> <a href=\"https://en.wiktionary.org/wiki/%E2%85%9F\" title=\"https://en.wiktionary.org/wiki/%E2%85%9F\">https://en.wiktionary.org/wiki/%E2%85%9F</a></p>",
+        "id": 195023570,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624621
+    },
+    {
+        "content": "<p>Admittedly, this seems to depend on your font a bit, but <code>⅟2</code> and <code>⅟n</code> seem to read okish.</p>",
+        "id": 195023593,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624671
+    },
+    {
+        "content": "<p>It's better in the Zulip \"write-your-post\" window, then when it's rendered after posting.</p>",
+        "id": 195023620,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624713
+    },
+    {
+        "content": "<p>Can we prove that <code>1/2</code> is unique?</p>",
+        "id": 195023683,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624776
+    },
+    {
+        "content": "<p>Depends on your axioms</p>",
+        "id": 195023699,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624806
+    },
+    {
+        "content": "<p>can we construct a semiring with two <code>1/2</code>s?</p>",
+        "id": 195023711,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624829
+    },
+    {
+        "content": "<p>What are your axioms on <code>1/2</code>?</p>",
+        "id": 195023774,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624888
+    },
+    {
+        "content": "<p>2(1/2) = 1</p>",
+        "id": 195023778,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624898
+    },
+    {
+        "content": "<p>Is it a bi-inverse? Or only one-sided?</p>",
+        "id": 195023781,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624902
+    },
+    {
+        "content": "<p>oh no</p>",
+        "id": 195023788,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624907
+    },
+    {
+        "content": "<p>I didn't realized it wasn't commutative</p>",
+        "id": 195023792,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624916
+    },
+    {
+        "content": "<p>Your semiring? It is always noncommutative. Only rings are commutative.</p>",
+        "id": 195023807,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624937
+    },
+    {
+        "content": "<p>is there a semiring with left 1/2 but not right 1/2?</p>",
+        "id": 195023832,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624956
+    },
+    {
+        "content": "<p>I guess Z&lt;X&gt;/(2X-1) or something like that</p>",
+        "id": 195023876,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624969
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110064\">@Kenny Lau</span> In a commutative setup <code>coe : units R → R</code> is injective. Lean knows this.</p>",
+        "id": 195023878,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624970
+    },
+    {
+        "content": "<p>(removed)</p>",
+        "id": 195023891,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587624985
+    },
+    {
+        "content": "<p>Exactly, so I suppose we require that it is a bi-inverse.</p>",
+        "id": 195023905,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587624999
+    },
+    {
+        "content": "<p>do we have R&lt;X&gt;?</p>",
+        "id": 195023917,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625017
+    },
+    {
+        "content": "<p>Do we want it?</p>",
+        "id": 195023932,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587625035
+    },
+    {
+        "content": "<p>I don't even know where to start if not do it completely stupidly (quotient of inductive)</p>",
+        "id": 195023941,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625040
+    },
+    {
+        "content": "<p>what's the other stupid construction that makes it live one universe higher?</p>",
+        "id": 195024122,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625191
+    },
+    {
+        "content": "<p>using the universal property Hom(R&lt;X&gt;,S) = S</p>",
+        "id": 195024181,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625211
     }
 ]

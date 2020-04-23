@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195018593,
+            "latest_id": 195024181,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1005,8 +1005,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587617378,
-                    "size": 21
+                    "latest_date": 1587625211,
+                    "size": 72
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -15836,7 +15836,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195012578,
+            "latest_id": 195023390,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17779,8 +17779,8 @@
                     "size": 32
                 },
                 "What is going on?": {
-                    "latest_date": 1587370513,
-                    "size": 18
+                    "latest_date": 1587624406,
+                    "size": 19
                 },
                 "What is that `.` in `rbmap`'s definition?": {
                     "latest_date": 1572083117,
@@ -19653,5 +19653,5 @@
             }
         }
     },
-    "time": 1587621680.4524496
+    "time": 1587625300.442189
 }

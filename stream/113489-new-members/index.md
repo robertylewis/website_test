@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [What is going on?](topic/What.20is.20going.20on.3F.html) (19 messages, latest: Apr 23 2020 at 06:46)
 * [noob question(s)](topic/noob.20question(s).html) (4412 messages, latest: Apr 23 2020 at 02:15)
 * [permutation](topic/permutation.html) (6 messages, latest: Apr 22 2020 at 18:25)
 * [problem with old_structure_cmd](topic/problem.20with.20old_structure_cmd.html) (17 messages, latest: Apr 22 2020 at 15:40)
@@ -21,7 +22,6 @@ permalink: /stream/113489-new-members/index.html
 * [Linking / Using mathlib and tactics](topic/Linking.20.2F.20Using.20mathlib.20and.20tactics.html) (10 messages, latest: Apr 21 2020 at 00:48)
 * [List is forced up a universe?](topic/List.20is.20forced.20up.20a.20universe.3F.html) (53 messages, latest: Apr 20 2020 at 10:57)
 * [Universal algebra](topic/Universal.20algebra.html) (19 messages, latest: Apr 20 2020 at 10:44)
-* [What is going on?](topic/What.20is.20going.20on.3F.html) (18 messages, latest: Apr 20 2020 at 08:15)
 * [gcd_domain](topic/gcd_domain.html) (29 messages, latest: Apr 20 2020 at 01:10)
 * [triangle inequality](topic/triangle.20inequality.html) (15 messages, latest: Apr 19 2020 at 16:30)
 * [Some olympiad formalisations](topic/Some.20olympiad.20formalisations.html) (7 messages, latest: Apr 19 2020 at 15:47)
@@ -963,4 +963,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 06:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 07:01 UTC</p>
