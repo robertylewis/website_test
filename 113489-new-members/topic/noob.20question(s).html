@@ -32753,6 +32753,60 @@ yet the idea that if you take any two things that prove a third thing and, then,
 
 
 
+<a name="195006050"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195006050" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195006050">(Apr 23 2020 at 00:07)</a>:</h4>
+<p><code>[decidable_rel ((≤):a-&gt;a-&gt;Prop)]</code></p>
+
+
+
+<a name="195006160"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195006160" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Nam <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195006160">(Apr 23 2020 at 00:09)</a>:</h4>
+<p>i tried with <code>a.has_le.le</code> :'(</p>
+
+
+
+<a name="195006193"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195006193" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Nam <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195006193">(Apr 23 2020 at 00:09)</a>:</h4>
+<p><code>{α : Type} [has_le α] [decidable_rel α.has_le.le]</code></p>
+
+
+
+<a name="195006203"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195006203" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Nam <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195006203">(Apr 23 2020 at 00:09)</a>:</h4>
+<p>why does that not work?</p>
+
+
+
+<a name="195006608"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195006608" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195006608">(Apr 23 2020 at 00:16)</a>:</h4>
+<p>this notation <code>α.has_le.le</code> doesn't work</p>
+
+
+
+<a name="195006623"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195006623" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195006623">(Apr 23 2020 at 00:16)</a>:</h4>
+<p>you can write <code>@has_le.le α _</code> if you don't like the type ascription way (which is I think more readable)</p>
+
+
+
+<a name="195008497"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195008497" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Nam <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195008497">(Apr 23 2020 at 00:46)</a>:</h4>
+<p><code>{α : Type} [has_le α] [decidable_rel (@has_le.le α _)]</code> is certainly more readable. thank you!</p>
+
+
+
+<a name="195008542"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195008542" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195008542">(Apr 23 2020 at 00:47)</a>:</h4>
+<p>What's wrong with using <code>[decidable_rel ((≤):a-&gt;a-&gt;Prop)]</code> instead? (this is the one I was saying was more readable)</p>
+
+
+
+<a name="195008601"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195008601" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Nam <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195008601">(Apr 23 2020 at 00:48)</a>:</h4>
+<p>too many symbols.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 00:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 01:01 UTC</p>

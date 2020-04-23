@@ -34,5 +34,17 @@
         "id": 194951189,
         "sender_full_name": "Jannis Limperg",
         "timestamp": 1587570569
+    },
+    {
+        "content": "<p>New design:</p>\n<ul>\n<li>A case tag has the form <code>['_case, cname_0, ... cname_m, '_arg.x_0, ..., '_arg.x_n, '_end_case]</code> where the <code>cname_i</code> are names associated with the case (usually just one constructor name) and the <code>x_i</code> are the unique names of those local hypotheses which were added for the case.</li>\n<li><code>cases</code>, <code>induction</code> and friends, when called on a goal with tag <code>t</code>, generate one goal per constructor and prepend an appropriate case tag to <code>t</code>.</li>\n<li><code>case c : x y z... { t }</code> searches all goals for one whose tag includes a case tag for <code>c</code>. (The search remains fuzzy, so <code>case zero</code> finds a goal tagged <code>nat.zero</code>.) If it finds exactly one such goal, it renames the <code>_arg</code> hypotheses to <code>x, y, z, ...</code> (if present) and runs <code>t</code> on the goal.</li>\n<li>Some other tactics can also set tags if tags are enabled. As far as I can tell, these are always 'simple' tags, meaning the tag is just one or more names which are associated with the case. For example, <code>apply</code> can set tags for generated subgoals if the arguments that generate these subgoals are named in the applied lemma.</li>\n<li><code>with_cases t</code> runs <code>t</code> with tags enabled. For each new goal <code>g</code>, it then generates a case tag <code>['_case, cname_i, ..., '_arg.x_i, ..., '_end_case]</code> where<ul>\n<li>the <code>cname_i</code> are the associated names of any case tags or simple tags of <code>g</code>;</li>\n<li>the <code>_arg.x_i</code> are those hypotheses of <code>g</code> that did not appear in the original goal.<br>\nThis ensures that <code>with_cases</code> can be used both with <code>cases</code>/<code>induction</code> (though there isn't really any reason to do so any more) and with tactics like <code>apply</code> that generate simple tags. The latter is used occasionally in core, to apply custom induction principles.</li>\n</ul>\n</li>\n</ul>\n<p>This design should cover all current uses of case tags. It doesn't require any C++ changes. It is backwards-incompatible for people setting tags manually, but as far as I can see, there is only direct  use of <code>set_tag</code> in all of Github (the <code>wlog</code> tactic in mathlib, which I can fix).</p>\n<p>Any concerns?</p>",
+        "id": 195007477,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587601880
+    },
+    {
+        "content": "<p>I don't like all this layered information in a <code>list name</code>. Why not just use an <code>expr</code>?</p>",
+        "id": 195008268,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587602574
     }
 ]

@@ -26386,5 +26386,59 @@
         "id": 195005121,
         "sender_full_name": "Nam",
         "timestamp": 1587599623
+    },
+    {
+        "content": "<p><code>[decidable_rel ((≤):a-&gt;a-&gt;Prop)]</code></p>",
+        "id": 195006050,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587600453
+    },
+    {
+        "content": "<p>i tried with <code>a.has_le.le</code> :'(</p>",
+        "id": 195006160,
+        "sender_full_name": "Nam",
+        "timestamp": 1587600542
+    },
+    {
+        "content": "<p><code>{α : Type} [has_le α] [decidable_rel α.has_le.le]</code></p>",
+        "id": 195006193,
+        "sender_full_name": "Nam",
+        "timestamp": 1587600579
+    },
+    {
+        "content": "<p>why does that not work?</p>",
+        "id": 195006203,
+        "sender_full_name": "Nam",
+        "timestamp": 1587600595
+    },
+    {
+        "content": "<p>this notation <code>α.has_le.le</code> doesn't work</p>",
+        "id": 195006608,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587600970
+    },
+    {
+        "content": "<p>you can write <code>@has_le.le α _</code> if you don't like the type ascription way (which is I think more readable)</p>",
+        "id": 195006623,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587600999
+    },
+    {
+        "content": "<p><code>{α : Type} [has_le α] [decidable_rel (@has_le.le α _)]</code> is certainly more readable. thank you!</p>",
+        "id": 195008497,
+        "sender_full_name": "Nam",
+        "timestamp": 1587602792
+    },
+    {
+        "content": "<p>What's wrong with using <code>[decidable_rel ((≤):a-&gt;a-&gt;Prop)]</code> instead? (this is the one I was saying was more readable)</p>",
+        "id": 195008542,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587602855
+    },
+    {
+        "content": "<p>too many symbols.</p>",
+        "id": 195008601,
+        "sender_full_name": "Nam",
+        "timestamp": 1587602883
     }
 ]
