@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195077277,
+            "latest_id": 195115322,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -973,8 +973,8 @@
                     "size": 24
                 },
                 "#2228 Inverse function thm": {
-                    "latest_date": 1585358871,
-                    "size": 1
+                    "latest_date": 1587673749,
+                    "size": 2
                 },
                 "#2242 group with zero": {
                     "latest_date": 1585643855,
@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195094716,
+            "latest_id": 195112467,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -3057,8 +3057,8 @@
                     "size": 141
                 },
                 "Invitation to join the Codewars Lean community, Round 2": {
-                    "latest_date": 1587651990,
-                    "size": 115
+                    "latest_date": 1587672222,
+                    "size": 117
                 },
                 "Is free group a \"recursive type\"?": {
                     "latest_date": 1551233903,
@@ -12414,7 +12414,7 @@
         },
         "maths": {
             "id": 116395,
-            "latest_id": 195102918,
+            "latest_id": 195115450,
             "topic_data": {
                 "\"nice\" group homs": {
                     "latest_date": 1584024523,
@@ -14233,8 +14233,8 @@
                     "size": 5
                 },
                 "finite sum": {
-                    "latest_date": 1587657531,
-                    "size": 12
+                    "latest_date": 1587673810,
+                    "size": 13
                 },
                 "finite sums": {
                     "latest_date": 1551021706,
@@ -15856,7 +15856,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195087946,
+            "latest_id": 195114599,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17042,6 +17042,10 @@
                     "latest_date": 1542759677,
                     "size": 7
                 },
+                "Multiplication in Pattern Matching": {
+                    "latest_date": 1587671540,
+                    "size": 18
+                },
                 "Multiplying by 2": {
                     "latest_date": 1587657657,
                     "size": 20
@@ -17059,8 +17063,8 @@
                     "size": 47
                 },
                 "Natural Numbers Game": {
-                    "latest_date": 1586671340,
-                    "size": 75
+                    "latest_date": 1587673374,
+                    "size": 97
                 },
                 "Naturals plus infinity": {
                     "latest_date": 1541927085,
@@ -18687,8 +18691,8 @@
                     "size": 8
                 },
                 "lean code formatter": {
-                    "latest_date": 1587660082,
-                    "size": 3
+                    "latest_date": 1587669304,
+                    "size": 4
                 },
                 "lean path": {
                     "latest_date": 1537727760,
@@ -19681,5 +19685,5 @@
             }
         }
     },
-    "time": 1587668526.3788095
+    "time": 1587673923.3210993
 }

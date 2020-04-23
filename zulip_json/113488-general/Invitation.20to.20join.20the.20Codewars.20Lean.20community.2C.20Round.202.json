@@ -688,5 +688,17 @@
         "id": 195068403,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1587651990
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243312\">@Jason KY.</span> I published your kata on limits of sequences in a metric space <a href=\"https://www.codewars.com/kata/5ea1f341014f0c0001ec7c5e\" title=\"https://www.codewars.com/kata/5ea1f341014f0c0001ec7c5e\">here</a>. It was more of a hassle than I had expected: I needed to do a <code>letI</code> dance in <code>Preloaded</code>, and an <code>@</code> dance in the test case, because the question involved a typeclass.</p>",
+        "id": 195112346,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672142
+    },
+    {
+        "content": "<p>Thank you for publishing it! :D</p>",
+        "id": 195112467,
+        "sender_full_name": "Jason KY.",
+        "timestamp": 1587672222
     }
 ]

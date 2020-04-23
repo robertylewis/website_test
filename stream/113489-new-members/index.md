@@ -9,7 +9,9 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [lean code formatter](topic/lean.20code.20formatter.html) (3 messages, latest: Apr 23 2020 at 16:41)
+* [Natural Numbers Game](topic/Natural.20Numbers.20Game.html) (97 messages, latest: Apr 23 2020 at 20:22)
+* [Multiplication in Pattern Matching](topic/Multiplication.20in.20Pattern.20Matching.html) (18 messages, latest: Apr 23 2020 at 19:52)
+* [lean code formatter](topic/lean.20code.20formatter.html) (4 messages, latest: Apr 23 2020 at 19:15)
 * [Multiplying by 2](topic/Multiplying.20by.202.html) (20 messages, latest: Apr 23 2020 at 16:00)
 * [What is going on?](topic/What.20is.20going.20on.3F.html) (21 messages, latest: Apr 23 2020 at 11:32)
 * [Representation Theory](topic/Representation.20Theory.html) (278 messages, latest: Apr 23 2020 at 10:57)
@@ -55,7 +57,6 @@ permalink: /stream/113489-new-members/index.html
 * [axiom schemas in Lean?](topic/axiom.20schemas.20in.20Lean.3F.html) (20 messages, latest: Apr 12 2020 at 12:49)
 * [dec_trivial in classical](topic/dec_trivial.20in.20classical.html) (9 messages, latest: Apr 12 2020 at 08:40)
 * [new versions coming out too fast?](topic/new.20versions.20coming.20out.20too.20fast.3F.html) (72 messages, latest: Apr 12 2020 at 07:08)
-* [Natural Numbers Game](topic/Natural.20Numbers.20Game.html) (75 messages, latest: Apr 12 2020 at 06:02)
 * [mathlib install](topic/mathlib.20install.html) (9 messages, latest: Apr 12 2020 at 03:47)
 * [refl for a = b -> a = b?](topic/refl.20for.20a.20.3D.20b.20-.3E.20a.20.3D.20b.3F.html) (24 messages, latest: Apr 11 2020 at 23:04)
 * [advanced addition world level 7](topic/advanced.20addition.20world.20level.207.html) (26 messages, latest: Apr 11 2020 at 20:44)
@@ -965,4 +966,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 19:02 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 20:32 UTC</p>

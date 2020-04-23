@@ -448,5 +448,137 @@
         "id": 193696674,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1586671340
+    },
+    {
+        "content": "<p>Hello there,</p>\n<p>I was making my way through level 6 of inequality when I stumbled on something that has me a bit confused. I was able to finish the level, but the following code that I used to do so bothers me.</p>\n<div class=\"codehilite\"><pre><span></span>  <span class=\"n\">cases</span> <span class=\"n\">hab</span> <span class=\"k\">with</span> <span class=\"n\">c</span> <span class=\"n\">uhab</span><span class=\"o\">,</span>\n  <span class=\"n\">cases</span> <span class=\"n\">hba</span> <span class=\"k\">with</span> <span class=\"n\">d</span> <span class=\"n\">uhba</span><span class=\"o\">,</span>\n  <span class=\"n\">rw</span> <span class=\"n\">uhab</span> <span class=\"n\">at</span> <span class=\"n\">uhba</span><span class=\"o\">,</span>\n  <span class=\"n\">symmetry</span> <span class=\"n\">at</span> <span class=\"n\">uhba</span><span class=\"o\">,</span>\n  <span class=\"n\">rw</span> <span class=\"n\">add_assoc</span> <span class=\"n\">at</span> <span class=\"n\">uhba</span><span class=\"o\">,</span>\n  <span class=\"k\">have</span> <span class=\"n\">h</span> <span class=\"o\">:=</span> <span class=\"n\">eq_zero_of_add_right_eq_self</span> <span class=\"n\">a</span> <span class=\"o\">(</span><span class=\"n\">c</span> <span class=\"bp\">+</span> <span class=\"n\">d</span><span class=\"o\">),</span>\n  <span class=\"k\">have</span> <span class=\"n\">h1</span> <span class=\"o\">:=</span> <span class=\"n\">h</span> <span class=\"n\">uhba</span><span class=\"o\">,</span>\n  <span class=\"k\">have</span> <span class=\"n\">h2</span> <span class=\"o\">:=</span> <span class=\"n\">add_right_eq_zero</span> <span class=\"n\">h1</span><span class=\"o\">,</span> <span class=\"c1\">--why does this work???</span>\n  <span class=\"n\">rw</span> <span class=\"n\">h2</span> <span class=\"n\">at</span> <span class=\"n\">uhab</span><span class=\"o\">,</span>\n  <span class=\"n\">rw</span> <span class=\"n\">uhab</span><span class=\"o\">,</span>\n  <span class=\"n\">ring</span><span class=\"o\">,</span>\n</pre></div>\n\n\n<p>I apologize in advance for my uninformative variable names. Why is it that <code>have h := eq_zero_of_add_right_eq_self </code> expects an expression of the form (a b : mynat), but <code>have h2 := add_right_eq_zero</code> expects a proposition? More specifically, why can't I write <code>have h := eq_zero_of_add_right_eq_self uhba</code> without lean whining like I did with <code>have h2 := add_right_eq_zero h1</code>?</p>",
+        "id": 195112491,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587672230
+    },
+    {
+        "content": "<p>What is the statement of the theorem you're proving?</p>",
+        "id": 195112662,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672303
+    },
+    {
+        "content": "<p><code>theorem le_antisymm (a b : mynat) (hab : a ≤ b) (hba : b ≤ a) : a = b :=</code></p>",
+        "id": 195112734,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587672348
+    },
+    {
+        "content": "<p>If my understanding of what I learned in proposition world is correct, lean treats implications like <code>eq_zero_of_add_right_eq_self</code> as functions from proofs to proofs, so why can't I write <code>have h := eq_zero_of_add_right_eq_self uhba</code> and obtain <code>h := c + d = 0</code> as a result?</p>",
+        "id": 195113139,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587672558
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"n\">mynat</span><span class=\"bp\">.</span><span class=\"n\">eq_zero_of_add_right_eq_self</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">mynat</span><span class=\"o\">),</span> <span class=\"n\">a</span> <span class=\"bp\">+</span> <span class=\"n\">b</span> <span class=\"bp\">=</span> <span class=\"n\">a</span> <span class=\"bp\">→</span> <span class=\"n\">b</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span>\n</pre></div>",
+        "id": 195113290,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672619
+    },
+    {
+        "content": "<p>so</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">a</span> <span class=\"bp\">+</span> <span class=\"o\">(</span><span class=\"n\">c</span> <span class=\"bp\">+</span> <span class=\"n\">d</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"n\">a</span> <span class=\"bp\">→</span> <span class=\"n\">c</span> <span class=\"bp\">+</span> <span class=\"n\">d</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span>\n</pre></div>",
+        "id": 195113367,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672665
+    },
+    {
+        "content": "<p>Aah! But</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"n\">mynat</span><span class=\"bp\">.</span><span class=\"n\">add_right_eq_zero</span> <span class=\"o\">:</span> <span class=\"bp\">∀</span> <span class=\"o\">{</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">mynat</span><span class=\"o\">},</span> <span class=\"n\">a</span> <span class=\"bp\">+</span> <span class=\"n\">b</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span> <span class=\"bp\">→</span> <span class=\"n\">a</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span>\n</pre></div>",
+        "id": 195113442,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672718
+    },
+    {
+        "content": "<p>exactly!</p>",
+        "id": 195113492,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587672730
+    },
+    {
+        "content": "<p>The brackets are different. Does this answer your question? I guess the difference between the () and {} brackets aren't explained in the game.</p>",
+        "id": 195113515,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672744
+    },
+    {
+        "content": "<p>Ah I see! I don't recall the difference ever being explained in game, and I've completed everything except what's left of inequality world and power world</p>",
+        "id": 195113603,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587672810
+    },
+    {
+        "content": "<p>It's because the idiot who designed this stupid game decided to make the numeral inputs explicit in the definition of <code>eq_zero_of_add_right_eq_self</code></p>",
+        "id": 195113615,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672818
+    },
+    {
+        "content": "<p>what is the difference between {} and () then?</p>",
+        "id": 195113723,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587672876
+    },
+    {
+        "content": "<p>With () brackets, Lean expects you to tell it the input. With {} brackets Lean decides it will guess from the context.</p>",
+        "id": 195113780,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587672910
+    },
+    {
+        "content": "<p>It seems to me that in my model solutions, I never use <code>eq_zero_of_add_right_eq_self</code> at all, so I could just change the brackets and it wouldn't break anything.</p>",
+        "id": 195113949,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587673003
+    },
+    {
+        "content": "<p>Ah thanks, this clarifies a lot of confusion I've had throughout the game so far. I couldn't figure out why different theorems were so inconsistent in what they expected as input.</p>",
+        "id": 195113968,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587673017
+    },
+    {
+        "content": "<p>I tried to make it so that the inputs were always \"the things which the user would guess\" because I wanted to avoid having to explain the different kinds of brackets.</p>",
+        "id": 195114026,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587673054
+    },
+    {
+        "content": "<p>I was going to take a look at the natural number game tomorrow, there are some other issues which people pointed out recently. Probably tomorrow evening there will be a new version where this issue works better.</p>",
+        "id": 195114230,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587673166
+    },
+    {
+        "content": "<p>Thanks for the comment :-)</p>",
+        "id": 195114328,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587673207
+    },
+    {
+        "content": "<p>Thanks! Also thanks in general for creating this game. I've learned more about lean in the two days I've been playing it than in the two weeks I spent trying to decipher the resources on the github. You've created something really neat</p>",
+        "id": 195114482,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587673321
+    },
+    {
+        "content": "<p>We're working on a sequel: <a href=\"https://github.com/ImperialCollegeLondon/real-number-game\" title=\"https://github.com/ImperialCollegeLondon/real-number-game\">https://github.com/ImperialCollegeLondon/real-number-game</a></p>",
+        "id": 195114571,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587673356
+    },
+    {
+        "content": "<p>: O</p>",
+        "id": 195114594,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587673371
+    },
+    {
+        "content": "<p>I was going to take a good look at that tomorrow too -- my co-author has been doing everything</p>",
+        "id": 195114599,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587673374
     }
 ]

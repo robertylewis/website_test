@@ -16,5 +16,11 @@
         "id": 195087946,
         "sender_full_name": "Patrick Massot",
         "timestamp": 1587660082
+    },
+    {
+        "content": "<p>Thanks <span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span></p>",
+        "id": 195106615,
+        "sender_full_name": "Rajiv",
+        "timestamp": 1587669304
     }
 ]

@@ -4,5 +4,11 @@
         "id": 192098387,
         "sender_full_name": "Yury G. Kudryashov",
         "timestamp": 1585358871
+    },
+    {
+        "content": "<p>The main file is ready for review. There are many different ways to choose API for inverse/implicit function theorems, and I'm not sure that I made the right choices.<br>\nI'll split my changes to other files into smaller PRs, and drop some of them from <a href=\"https://github.com/leanprover-community/mathlib/issues/2228\" title=\"https://github.com/leanprover-community/mathlib/issues/2228\">#2228</a> because current version of <code>inverse.lean</code> doesn't use them.</p>",
+        "id": 195115322,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587673749
     }
 ]

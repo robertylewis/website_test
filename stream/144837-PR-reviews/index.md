@@ -9,6 +9,7 @@ permalink: /stream/144837-PR-reviews/index.html
 
 ### Topics:
 
+* [#2228 Inverse function thm](topic/.232228.20Inverse.20function.20thm.html) (2 messages, latest: Apr 23 2020 at 20:29)
 * [#2480 bilinear forms](topic/.232480.20bilinear.20forms.html) (187 messages, latest: Apr 23 2020 at 15:23)
 * [#2471 nth_rewrite](topic/.232471.20nth_rewrite.html) (1 message, latest: Apr 22 2020 at 07:35)
 * [#2140 bundled subgroups](topic/.232140.20bundled.20subgroups.html) (24 messages, latest: Apr 14 2020 at 17:47)
@@ -18,7 +19,6 @@ permalink: /stream/144837-PR-reviews/index.html
 * [#2332](topic/.232332.html) (29 messages, latest: Apr 08 2020 at 07:39)
 * [#2242 group with zero](topic/.232242.20group.20with.20zero.html) (14 messages, latest: Mar 31 2020 at 08:37)
 * [#2264 deploy_docs fix](topic/.232264.20deploy_docs.20fix.html) (4 messages, latest: Mar 28 2020 at 17:41)
-* [#2228 Inverse function thm](topic/.232228.20Inverse.20function.20thm.html) (1 message, latest: Mar 28 2020 at 01:27)
 * [#2106 bump lean](topic/.232106.20bump.20lean.html) (2 messages, latest: Mar 18 2020 at 17:24)
 * [#2004 monoid localisation](topic/.232004.20monoid.20localisation.html) (5 messages, latest: Mar 06 2020 at 17:22)
 * [#2064 bump lean](topic/.232064.20bump.20lean.html) (3 messages, latest: Mar 05 2020 at 13:17)
@@ -236,4 +236,4 @@ permalink: /stream/144837-PR-reviews/index.html
 * [documentation PRs](topic/documentation.20PRs.html) (2 messages, latest: Oct 07 2018 at 11:21)
 * [hello](topic/hello.html) (1 message, latest: Oct 07 2018 at 10:24)
 
-<hr><p>Last updated: Apr 23 2020 at 19:02 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 20:32 UTC</p>
