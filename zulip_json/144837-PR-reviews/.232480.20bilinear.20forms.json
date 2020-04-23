@@ -430,5 +430,125 @@
         "id": 195024181,
         "sender_full_name": "Kenny Lau",
         "timestamp": 1587625211
+    },
+    {
+        "content": "<p>I think <code>2*x = x+x = x*2</code> holds in any semiring?</p>",
+        "id": 195024349,
+        "sender_full_name": "David Wärn",
+        "timestamp": 1587625372
+    },
+    {
+        "content": "<p>oh right</p>",
+        "id": 195024370,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625403
+    },
+    {
+        "content": "<p>ok that also implies unicity</p>",
+        "id": 195024394,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625425
+    },
+    {
+        "content": "<p>Hooray! Thanks for that observation <span class=\"user-mention\" data-user-id=\"130377\">@David Wärn</span></p>",
+        "id": 195024446,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587625448
+    },
+    {
+        "content": "<p>yeah, every <code>\\u (n : nat)</code> is in the center of the ring</p>",
+        "id": 195024779,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587625745
+    },
+    {
+        "content": "<p>I don't think the mathematicians here care about non-commutative rings</p>",
+        "id": 195024860,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625807
+    },
+    {
+        "content": "<p>well they need to get over it because they will in 6 months</p>",
+        "id": 195024878,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587625827
+    },
+    {
+        "content": "<p>what's happening in 6 months?</p>",
+        "id": 195024891,
+        "sender_full_name": "Kenny Lau",
+        "timestamp": 1587625852
+    },
+    {
+        "content": "<p>they decide to work on something that needs noncommutative rings</p>",
+        "id": 195024920,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587625876
+    },
+    {
+        "content": "<p>and then we have to do a big refactoring project</p>",
+        "id": 195024943,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587625900
+    },
+    {
+        "content": "<p>Group rings are coming</p>",
+        "id": 195025847,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587626577
+    },
+    {
+        "content": "<p>And if the group is finite (an important special case, even if you're interested in the Langlands philosophy, because Galois groups are a limit of finite groups) then you'll want to be able to say \"and assume the order of the group is invertible in the base field\"</p>",
+        "id": 195025979,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587626689
+    },
+    {
+        "content": "<p>So the consensus until now seems to favour an <code>invertible a</code> typeclass, which is also my preferred option.</p>",
+        "id": 195027977,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587628326
+    },
+    {
+        "content": "<p>My suggestion is to decouple the proposition from the notation, i.e. have a <code>has_inv_of a</code> class which provides <code>inv_of a</code> (notation: <code>⅟ a</code>?) and <code>invertible a</code> which asserts the relevant equation(s). Perhaps split it into <code>left_invertible</code> and <code>right_invertible</code>?</p>",
+        "id": 195027986,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587628342
+    },
+    {
+        "content": "<p>I'm not sure we need a notation typeclass for this</p>",
+        "id": 195028007,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587628368
+    },
+    {
+        "content": "<p>I would be happy to attach the notation simply to the lawful <code>invertible a</code> typeclass</p>",
+        "id": 195028029,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587628389
+    },
+    {
+        "content": "<p>I'm thinking that inverses come up in cases where the operation is not <code>*</code>, e.g. for a matrix or for an arrow in a category</p>",
+        "id": 195028065,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587628420
+    },
+    {
+        "content": "<p>I think once you get to <code>left_invertible</code> or things other than <code>*</code>, you should just have a hypothesis</p>",
+        "id": 195028117,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587628448
+    },
+    {
+        "content": "<p>we aren't even abbreviating much at this point</p>",
+        "id": 195028134,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587628464
+    },
+    {
+        "content": "<p>For me the main point of a typeclass in this area is to be able to talk about \"a field of characteristic not equal to 2 or 3\" when the inverses to 2 and 3 are not the focus of the theorem</p>",
+        "id": 195028171,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587628521
     }
 ]

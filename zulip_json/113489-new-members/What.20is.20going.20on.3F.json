@@ -112,5 +112,11 @@
         "id": 195023390,
         "sender_full_name": "Johan Commelin",
         "timestamp": 1587624406
+    },
+    {
+        "content": "<p>I just looked into that and the design is actually rather interesting. It's for when typeset text need to be read by a program, then an expression like <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>f</mi><mo stretchy=\"false\">(</mo><mi>x</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">f(x)</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord mathdefault\" style=\"margin-right:0.10764em;\">f</span><span class=\"mopen\">(</span><span class=\"mord mathdefault\">x</span><span class=\"mclose\">)</span></span></span></span> can have multiple meanings, either f times x (f is a variable) or f of x (f is a function). So you can put U+2062 between the f and ( if it is a function or  U+2061 if it is a function. I don't know if this is actually used anywhere though...</p>\n<p>and for when you want to break (almost?) all conventions, there is <code>U+2064 INVISIBLE PLUS</code></p>",
+        "id": 195026104,
+        "sender_full_name": "Shing Tak Lam",
+        "timestamp": 1587626781
     }
 ]
