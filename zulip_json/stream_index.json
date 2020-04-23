@@ -12414,7 +12414,7 @@
         },
         "maths": {
             "id": 116395,
-            "latest_id": 195082190,
+            "latest_id": 195102918,
             "topic_data": {
                 "\"nice\" group homs": {
                     "latest_date": 1584024523,
@@ -12773,8 +12773,8 @@
                     "size": 38
                 },
                 "Hedetniemi": {
-                    "latest_date": 1587445049,
-                    "size": 319
+                    "latest_date": 1587667501,
+                    "size": 322
                 },
                 "Heine–Borel": {
                     "latest_date": 1581580040,
@@ -19681,5 +19681,5 @@
             }
         }
     },
-    "time": 1587664897.8483331
+    "time": 1587668526.3788095
 }
