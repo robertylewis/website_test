@@ -9,8 +9,8 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [What is going on?](topic/What.20is.20going.20on.3F.html) (21 messages, latest: Apr 23 2020 at 11:32)
 * [Representation Theory](topic/Representation.20Theory.html) (278 messages, latest: Apr 23 2020 at 10:57)
-* [What is going on?](topic/What.20is.20going.20on.3F.html) (20 messages, latest: Apr 23 2020 at 07:26)
 * [noob question(s)](topic/noob.20question(s).html) (4412 messages, latest: Apr 23 2020 at 02:15)
 * [permutation](topic/permutation.html) (6 messages, latest: Apr 22 2020 at 18:25)
 * [problem with old_structure_cmd](topic/problem.20with.20old_structure_cmd.html) (17 messages, latest: Apr 22 2020 at 15:40)
@@ -963,4 +963,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 11:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 12:01 UTC</p>

@@ -618,6 +618,176 @@ permalink: /stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html
 
 
 
+<a name="195046433"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195046433" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195046433">(Apr 23 2020 at 11:21)</a>:</h4>
+<p><a href="https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2" title="https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2">I have made a start on an <code>invertible</code> typeclass</a>. One good feature would be to automatically infer <code>invertible (3 : ℚ)</code>. I've tried using <code>invertible (bit0 _)</code> and <code>invertible (bit1 _)</code>, but I can't figure out how to formulate the correct instance for <code>invertible (bit1 a)</code>: we need at least that <code>a ≠ -1/2</code>.</p>
+
+
+
+<a name="195047148"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195047148" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195047148">(Apr 23 2020 at 11:30)</a>:</h4>
+<p>Maybe if we had a class that provided the value 1/2...</p>
+
+
+
+<a name="195048874"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195048874" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195048874">(Apr 23 2020 at 11:49)</a>:</h4>
+<p>When all you have is a <del>hammer</del> typeclass inference, everything looks like a<del> nail</del>n instance:</p>
+<div class="codehilite"><pre><span></span><span class="kn">section</span> <span class="n">numeral</span>
+<span class="kn">variables</span> <span class="o">[</span><span class="n">semiring</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span>
+
+<span class="n">class</span> <span class="n">numeral</span> <span class="o">:</span> <span class="kt">Type</span> <span class="o">:=</span> <span class="o">(</span><span class="n">as_nat</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">coe_eq</span> <span class="o">:</span> <span class="err">↑</span><span class="n">as_nat</span> <span class="bp">=</span> <span class="n">a</span><span class="o">)</span>
+
+<span class="kn">lemma</span> <span class="n">coe_as_nat_eq</span> <span class="o">[</span><span class="n">numeral</span> <span class="n">a</span><span class="o">]</span> <span class="o">:</span> <span class="err">↑</span><span class="o">(</span><span class="n">numeral</span><span class="bp">.</span><span class="n">as_nat</span> <span class="n">a</span><span class="o">)</span> <span class="bp">=</span> <span class="n">a</span> <span class="o">:=</span> <span class="n">numeral</span><span class="bp">.</span><span class="n">coe_eq</span>
+
+<span class="kn">instance</span> <span class="n">numeral_zero</span> <span class="o">:</span> <span class="n">numeral</span> <span class="o">(</span><span class="mi">0</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨</span><span class="mi">0</span><span class="o">,</span> <span class="n">rfl</span><span class="bp">⟩</span>
+
+<span class="kn">instance</span> <span class="n">numeral_one</span> <span class="o">:</span> <span class="n">numeral</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨</span><span class="mi">1</span><span class="o">,</span> <span class="n">zero_add</span> <span class="mi">1</span><span class="bp">⟩</span>
+
+<span class="kn">instance</span> <span class="n">numeral_bit0</span> <span class="o">[</span><span class="n">numeral</span> <span class="n">a</span><span class="o">]</span> <span class="o">:</span> <span class="n">numeral</span> <span class="o">(</span><span class="n">bit0</span> <span class="n">a</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨</span><span class="n">bit0</span> <span class="o">(</span><span class="n">numeral</span><span class="bp">.</span><span class="n">as_nat</span> <span class="n">a</span><span class="o">),</span> <span class="k">by</span> <span class="n">simp</span> <span class="o">[</span><span class="n">coe_as_nat_eq</span> <span class="n">a</span><span class="o">]</span><span class="bp">⟩</span>
+
+<span class="kn">instance</span> <span class="n">numeral_bit1</span> <span class="o">[</span><span class="n">numeral</span> <span class="n">a</span><span class="o">]</span> <span class="o">:</span> <span class="n">numeral</span> <span class="o">(</span><span class="n">bit1</span> <span class="n">a</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨</span><span class="n">bit1</span> <span class="o">(</span><span class="n">numeral</span><span class="bp">.</span><span class="n">as_nat</span> <span class="n">a</span><span class="o">),</span> <span class="k">by</span> <span class="n">simp</span> <span class="o">[</span><span class="n">coe_as_nat_eq</span> <span class="n">a</span><span class="o">]</span><span class="bp">⟩</span>
+
+<span class="kn">lemma</span> <span class="n">bit1_nonzero</span> <span class="o">[</span><span class="n">semiring</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">char_zero</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">[</span><span class="n">numeral</span> <span class="n">a</span><span class="o">]</span> <span class="o">:</span> <span class="n">bit1</span> <span class="n">a</span> <span class="bp">≠</span> <span class="mi">0</span> <span class="o">:=</span>
+<span class="bp">λ</span> <span class="n">h</span><span class="o">,</span> <span class="n">nat</span><span class="bp">.</span><span class="n">cast_ne_zero</span><span class="bp">.</span><span class="n">mpr</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">bit1_ne_zero</span> <span class="o">(</span><span class="n">numeral</span><span class="bp">.</span><span class="n">as_nat</span> <span class="n">a</span><span class="o">))</span> <span class="o">(</span><span class="n">trans</span> <span class="o">(</span><span class="n">coe_as_nat_eq</span> <span class="o">(</span><span class="n">bit1</span> <span class="n">a</span><span class="o">))</span> <span class="n">h</span><span class="o">)</span>
+
+<span class="kn">end</span> <span class="n">numeral</span>
+
+<span class="kn">instance</span> <span class="n">invertible_bit1_of_char_zero</span> <span class="o">[</span><span class="n">division_ring</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">char_zero</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">[</span><span class="n">numeral</span> <span class="n">a</span><span class="o">]</span> <span class="o">:</span>
+  <span class="n">invertible</span> <span class="o">(</span><span class="n">bit1</span> <span class="n">a</span><span class="o">)</span> <span class="o">:=</span>
+<span class="n">invertible_of_nonzero</span> <span class="o">(</span><span class="n">bit1_nonzero</span> <span class="n">a</span><span class="o">)</span>
+
+<span class="bp">#</span><span class="kn">eval</span> <span class="o">(</span><span class="err">⅟</span> <span class="mi">3</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span>
+<span class="bp">#</span><span class="kn">eval</span> <span class="o">(</span><span class="err">⅟</span> <span class="mi">37</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span>
+<span class="bp">#</span><span class="kn">eval</span> <span class="o">(</span><span class="err">⅟</span> <span class="mi">256</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span>
+</pre></div>
+
+
+
+<a name="195049157"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049157" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049157">(Apr 23 2020 at 11:52)</a>:</h4>
+<p>It suffices to have a typeclass for <code>ge_zero</code></p>
+
+
+
+<a name="195049206"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049206" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049206">(Apr 23 2020 at 11:52)</a>:</h4>
+<p><code>nonneg</code> is shorter</p>
+
+
+
+<a name="195049230"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049230" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049230">(Apr 23 2020 at 11:53)</a>:</h4>
+<p>but actually I think I would rather just have instances for 2 and 3</p>
+
+
+
+<a name="195049238"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049238" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049238">(Apr 23 2020 at 11:53)</a>:</h4>
+<p>That type class is <code>[fact (0 ≤ n)]</code>, right?</p>
+
+
+
+<a name="195049246"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049246" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049246">(Apr 23 2020 at 11:53)</a>:</h4>
+<p><code>nonneg</code> assumes an order on the ring though</p>
+
+
+
+<a name="195049253"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049253" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049253">(Apr 23 2020 at 11:53)</a>:</h4>
+<p>Q has an order fyi</p>
+
+
+
+<a name="195049267"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049267" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049267">(Apr 23 2020 at 11:53)</a>:</h4>
+<p>Duh</p>
+
+
+
+<a name="195049286"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049286" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049286">(Apr 23 2020 at 11:53)</a>:</h4>
+<p><span class="user-mention" data-user-id="110049">@Mario Carneiro</span> How about <code>zmod 5</code>?</p>
+
+
+
+<a name="195049307"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049307" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049307">(Apr 23 2020 at 11:54)</a>:</h4>
+<p>this isn't true in general... it's true when <code>invertible n</code></p>
+
+
+
+<a name="195049405"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049405" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049405">(Apr 23 2020 at 11:54)</a>:</h4>
+<p>what about zmod 5?</p>
+
+
+
+<a name="195049465"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049465" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049465">(Apr 23 2020 at 11:55)</a>:</h4>
+<p>What about <code>ℂ</code>?</p>
+
+
+
+<a name="195049492"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049492" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049492">(Apr 23 2020 at 11:55)</a>:</h4>
+<p>If you have <code>char_zero</code> then there is no need to play around with invertible assumptions</p>
+
+
+
+<a name="195049569"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049569" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049569">(Apr 23 2020 at 11:56)</a>:</h4>
+<p>But for representation theory you probably just want to assume you have an alg closed field where |G| is invertible</p>
+
+
+
+<a name="195049608"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049608" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049608">(Apr 23 2020 at 11:56)</a>:</h4>
+<p>and you can do that, with a hypothesis</p>
+
+
+
+<a name="195049621"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049621" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049621">(Apr 23 2020 at 11:56)</a>:</h4>
+<p>who cares how it gets inferred</p>
+
+
+
+<a name="195049687"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049687" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049687">(Apr 23 2020 at 11:57)</a>:</h4>
+<p>I don't think we should be trying to come up with some fancy typeclass mechanism to prove that 7 is invertible in zmod 41</p>
+
+
+
+<a name="195049717"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049717" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049717">(Apr 23 2020 at 11:57)</a>:</h4>
+<p>that's what <code>norm_num</code> is for</p>
+
+
+
+<a name="195049904"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049904" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049904">(Apr 23 2020 at 11:59)</a>:</h4>
+<p>Dang, I was just going to propose writing a fancy metaprogram to take the definition of <code>prime</code> and turn it into a pile of type class instances that test primality Prolog-style.</p>
+
+
+
+<a name="195049992"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195049992" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195049992">(Apr 23 2020 at 12:00)</a>:</h4>
+<p>this is absolutely possible, and definitely a bad idea</p>
+
+
+
+<a name="195050069"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195050069" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195050069">(Apr 23 2020 at 12:00)</a>:</h4>
+<p>I have seen a few examples of these kinds of programs, and they fail surprisingly early because the typeclass depth limit is not calibrated well for them</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 11:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 12:01 UTC</p>

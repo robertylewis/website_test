@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195042033,
+            "latest_id": 195050069,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1005,8 +1005,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587637579,
-                    "size": 98
+                    "latest_date": 1587643256,
+                    "size": 121
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195042699,
+            "latest_id": 195049702,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -3749,8 +3749,8 @@
                     "size": 4
                 },
                 "PRing to mathlib from forks": {
-                    "latest_date": 1587637991,
-                    "size": 4
+                    "latest_date": 1587641089,
+                    "size": 7
                 },
                 "PSA for mathlib contributors": {
                     "latest_date": 1552549617,
@@ -7411,6 +7411,10 @@
                 "half assed attempt at mimicking Arend": {
                     "latest_date": 1585231061,
                     "size": 1
+                },
+                "hammers": {
+                    "latest_date": 1587643058,
+                    "size": 30
                 },
                 "hanoi notes": {
                     "latest_date": 1528616192,
@@ -15836,7 +15840,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195044503,
+            "latest_id": 195047394,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17779,8 +17783,8 @@
                     "size": 32
                 },
                 "What is going on?": {
-                    "latest_date": 1587626781,
-                    "size": 20
+                    "latest_date": 1587641570,
+                    "size": 21
                 },
                 "What is that `.` in `rbmap`'s definition?": {
                     "latest_date": 1572083117,
@@ -19653,5 +19657,5 @@
             }
         }
     },
-    "time": 1587639703.938813
+    "time": 1587643304.611239
 }

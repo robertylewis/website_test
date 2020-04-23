@@ -586,5 +586,143 @@
         "id": 195042033,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1587637579
+    },
+    {
+        "content": "<p><a href=\"https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2\" title=\"https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2\">I have made a start on an <code>invertible</code> typeclass</a>. One good feature would be to automatically infer <code>invertible (3 : ℚ)</code>. I've tried using <code>invertible (bit0 _)</code> and <code>invertible (bit1 _)</code>, but I can't figure out how to formulate the correct instance for <code>invertible (bit1 a)</code>: we need at least that <code>a ≠ -1/2</code>.</p>",
+        "id": 195046433,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587640897
+    },
+    {
+        "content": "<p>Maybe if we had a class that provided the value 1/2...</p>",
+        "id": 195047148,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587641402
+    },
+    {
+        "content": "<p>When all you have is a <del>hammer</del> typeclass inference, everything looks like a<del> nail</del>n instance:</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"kn\">section</span> <span class=\"n\">numeral</span>\n<span class=\"kn\">variables</span> <span class=\"o\">[</span><span class=\"n\">semiring</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span>\n\n<span class=\"n\">class</span> <span class=\"n\">numeral</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"o\">:=</span> <span class=\"o\">(</span><span class=\"n\">as_nat</span> <span class=\"o\">:</span> <span class=\"bp\">ℕ</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"n\">coe_eq</span> <span class=\"o\">:</span> <span class=\"err\">↑</span><span class=\"n\">as_nat</span> <span class=\"bp\">=</span> <span class=\"n\">a</span><span class=\"o\">)</span>\n\n<span class=\"kn\">lemma</span> <span class=\"n\">coe_as_nat_eq</span> <span class=\"o\">[</span><span class=\"n\">numeral</span> <span class=\"n\">a</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"err\">↑</span><span class=\"o\">(</span><span class=\"n\">numeral</span><span class=\"bp\">.</span><span class=\"n\">as_nat</span> <span class=\"n\">a</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"n\">a</span> <span class=\"o\">:=</span> <span class=\"n\">numeral</span><span class=\"bp\">.</span><span class=\"n\">coe_eq</span>\n\n<span class=\"kn\">instance</span> <span class=\"n\">numeral_zero</span> <span class=\"o\">:</span> <span class=\"n\">numeral</span> <span class=\"o\">(</span><span class=\"mi\">0</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"bp\">⟨</span><span class=\"mi\">0</span><span class=\"o\">,</span> <span class=\"n\">rfl</span><span class=\"bp\">⟩</span>\n\n<span class=\"kn\">instance</span> <span class=\"n\">numeral_one</span> <span class=\"o\">:</span> <span class=\"n\">numeral</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"bp\">⟨</span><span class=\"mi\">1</span><span class=\"o\">,</span> <span class=\"n\">zero_add</span> <span class=\"mi\">1</span><span class=\"bp\">⟩</span>\n\n<span class=\"kn\">instance</span> <span class=\"n\">numeral_bit0</span> <span class=\"o\">[</span><span class=\"n\">numeral</span> <span class=\"n\">a</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">numeral</span> <span class=\"o\">(</span><span class=\"n\">bit0</span> <span class=\"n\">a</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"bp\">⟨</span><span class=\"n\">bit0</span> <span class=\"o\">(</span><span class=\"n\">numeral</span><span class=\"bp\">.</span><span class=\"n\">as_nat</span> <span class=\"n\">a</span><span class=\"o\">),</span> <span class=\"k\">by</span> <span class=\"n\">simp</span> <span class=\"o\">[</span><span class=\"n\">coe_as_nat_eq</span> <span class=\"n\">a</span><span class=\"o\">]</span><span class=\"bp\">⟩</span>\n\n<span class=\"kn\">instance</span> <span class=\"n\">numeral_bit1</span> <span class=\"o\">[</span><span class=\"n\">numeral</span> <span class=\"n\">a</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">numeral</span> <span class=\"o\">(</span><span class=\"n\">bit1</span> <span class=\"n\">a</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"bp\">⟨</span><span class=\"n\">bit1</span> <span class=\"o\">(</span><span class=\"n\">numeral</span><span class=\"bp\">.</span><span class=\"n\">as_nat</span> <span class=\"n\">a</span><span class=\"o\">),</span> <span class=\"k\">by</span> <span class=\"n\">simp</span> <span class=\"o\">[</span><span class=\"n\">coe_as_nat_eq</span> <span class=\"n\">a</span><span class=\"o\">]</span><span class=\"bp\">⟩</span>\n\n<span class=\"kn\">lemma</span> <span class=\"n\">bit1_nonzero</span> <span class=\"o\">[</span><span class=\"n\">semiring</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">char_zero</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">numeral</span> <span class=\"n\">a</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">bit1</span> <span class=\"n\">a</span> <span class=\"bp\">≠</span> <span class=\"mi\">0</span> <span class=\"o\">:=</span>\n<span class=\"bp\">λ</span> <span class=\"n\">h</span><span class=\"o\">,</span> <span class=\"n\">nat</span><span class=\"bp\">.</span><span class=\"n\">cast_ne_zero</span><span class=\"bp\">.</span><span class=\"n\">mpr</span> <span class=\"o\">(</span><span class=\"n\">nat</span><span class=\"bp\">.</span><span class=\"n\">bit1_ne_zero</span> <span class=\"o\">(</span><span class=\"n\">numeral</span><span class=\"bp\">.</span><span class=\"n\">as_nat</span> <span class=\"n\">a</span><span class=\"o\">))</span> <span class=\"o\">(</span><span class=\"n\">trans</span> <span class=\"o\">(</span><span class=\"n\">coe_as_nat_eq</span> <span class=\"o\">(</span><span class=\"n\">bit1</span> <span class=\"n\">a</span><span class=\"o\">))</span> <span class=\"n\">h</span><span class=\"o\">)</span>\n\n<span class=\"kn\">end</span> <span class=\"n\">numeral</span>\n\n<span class=\"kn\">instance</span> <span class=\"n\">invertible_bit1_of_char_zero</span> <span class=\"o\">[</span><span class=\"n\">division_ring</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">char_zero</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">numeral</span> <span class=\"n\">a</span><span class=\"o\">]</span> <span class=\"o\">:</span>\n  <span class=\"n\">invertible</span> <span class=\"o\">(</span><span class=\"n\">bit1</span> <span class=\"n\">a</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"n\">invertible_of_nonzero</span> <span class=\"o\">(</span><span class=\"n\">bit1_nonzero</span> <span class=\"n\">a</span><span class=\"o\">)</span>\n\n<span class=\"bp\">#</span><span class=\"kn\">eval</span> <span class=\"o\">(</span><span class=\"err\">⅟</span> <span class=\"mi\">3</span> <span class=\"o\">:</span> <span class=\"n\">ℚ</span><span class=\"o\">)</span>\n<span class=\"bp\">#</span><span class=\"kn\">eval</span> <span class=\"o\">(</span><span class=\"err\">⅟</span> <span class=\"mi\">37</span> <span class=\"o\">:</span> <span class=\"n\">ℚ</span><span class=\"o\">)</span>\n<span class=\"bp\">#</span><span class=\"kn\">eval</span> <span class=\"o\">(</span><span class=\"err\">⅟</span> <span class=\"mi\">256</span> <span class=\"o\">:</span> <span class=\"n\">ℚ</span><span class=\"o\">)</span>\n</pre></div>",
+        "id": 195048874,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587642548
+    },
+    {
+        "content": "<p>It suffices to have a typeclass for <code>ge_zero</code></p>",
+        "id": 195049157,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587642738
+    },
+    {
+        "content": "<p><code>nonneg</code> is shorter</p>",
+        "id": 195049206,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587642767
+    },
+    {
+        "content": "<p>but actually I think I would rather just have instances for 2 and 3</p>",
+        "id": 195049230,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587642783
+    },
+    {
+        "content": "<p>That type class is <code>[fact (0 ≤ n)]</code>, right?</p>",
+        "id": 195049238,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587642789
+    },
+    {
+        "content": "<p><code>nonneg</code> assumes an order on the ring though</p>",
+        "id": 195049246,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587642800
+    },
+    {
+        "content": "<p>Q has an order fyi</p>",
+        "id": 195049253,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587642808
+    },
+    {
+        "content": "<p>Duh</p>",
+        "id": 195049267,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587642815
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110049\">@Mario Carneiro</span> How about <code>zmod 5</code>?</p>",
+        "id": 195049286,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587642827
+    },
+    {
+        "content": "<p>this isn't true in general... it's true when <code>invertible n</code></p>",
+        "id": 195049307,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587642842
+    },
+    {
+        "content": "<p>what about zmod 5?</p>",
+        "id": 195049405,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587642892
+    },
+    {
+        "content": "<p>What about <code>ℂ</code>?</p>",
+        "id": 195049465,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587642926
+    },
+    {
+        "content": "<p>If you have <code>char_zero</code> then there is no need to play around with invertible assumptions</p>",
+        "id": 195049492,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587642950
+    },
+    {
+        "content": "<p>But for representation theory you probably just want to assume you have an alg closed field where |G| is invertible</p>",
+        "id": 195049569,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587642979
+    },
+    {
+        "content": "<p>and you can do that, with a hypothesis</p>",
+        "id": 195049608,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587642993
+    },
+    {
+        "content": "<p>who cares how it gets inferred</p>",
+        "id": 195049621,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587643000
+    },
+    {
+        "content": "<p>I don't think we should be trying to come up with some fancy typeclass mechanism to prove that 7 is invertible in zmod 41</p>",
+        "id": 195049687,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587643049
+    },
+    {
+        "content": "<p>that's what <code>norm_num</code> is for</p>",
+        "id": 195049717,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587643075
+    },
+    {
+        "content": "<p>Dang, I was just going to propose writing a fancy metaprogram to take the definition of <code>prime</code> and turn it into a pile of type class instances that test primality Prolog-style.</p>",
+        "id": 195049904,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587643189
+    },
+    {
+        "content": "<p>this is absolutely possible, and definitely a bad idea</p>",
+        "id": 195049992,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587643210
+    },
+    {
+        "content": "<p>I have seen a few examples of these kinds of programs, and they fail surprisingly early because the typeclass depth limit is not calibrated well for them</p>",
+        "id": 195050069,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587643256
     }
 ]
