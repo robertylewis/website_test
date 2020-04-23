@@ -322,6 +322,19 @@ However, none of them seem perfect, especially with a file like <code>ring_theor
 
 
 
+<a name="195125716"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/lean-client-python/near/195125716" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/website_test/stream/113488-general/topic/lean-client-python.html#195125716">(Apr 23 2020 at 22:11)</a>:</h4>
+<p><span class="user-mention" data-user-id="110031">@Patrick Massot</span>  I found another error (more subtle this time).  Should I make a PR (and if so how?), or should I just tell you the fix?  It is short.</p>
+
+
+
+<a name="195127275"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/lean-client-python/near/195127275" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Florian Dupeyron <a href="http://robertylewis.com/website_test/stream/113488-general/topic/lean-client-python.html#195127275">(Apr 23 2020 at 22:27)</a>:</h4>
+<p>Hi everyone,<br>
+<span class="user-mention" data-user-id="110031">@Patrick Massot</span> why using a third-party instead of just using the asyncio library ? I think it should be possible to have a lighter code using the <a href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.subprocess_exec" title="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.subprocess_exec"><code>loop.subprocess_shell</code></a> function for this little application, and implementing a <a href="https://docs.python.org/3/library/asyncio-protocol.html#asyncio.SubprocessProtocol" title="https://docs.python.org/3/library/asyncio-protocol.html#asyncio.SubprocessProtocol"><code>asyncio.SubprocessProtocol</code></a> to handle incoming data. I am also learning the async paradigm so I maybe missed some point. I will give it a try on my own and maybe send a PR if I get something interesting ?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 22:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 23:01 UTC</p>

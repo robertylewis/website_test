@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [Natural Numbers Game](topic/Natural.20Numbers.20Game.html) (98 messages, latest: Apr 23 2020 at 21:52)
+* [Natural Numbers Game](topic/Natural.20Numbers.20Game.html) (99 messages, latest: Apr 23 2020 at 22:23)
 * [Multiplication in Pattern Matching](topic/Multiplication.20in.20Pattern.20Matching.html) (18 messages, latest: Apr 23 2020 at 19:52)
 * [lean code formatter](topic/lean.20code.20formatter.html) (4 messages, latest: Apr 23 2020 at 19:15)
 * [Multiplying by 2](topic/Multiplying.20by.202.html) (20 messages, latest: Apr 23 2020 at 16:00)
@@ -966,4 +966,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 22:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 23:01 UTC</p>

@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195112467,
+            "latest_id": 195127275,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -8257,8 +8257,8 @@
                     "size": 11
                 },
                 "lean-client-python": {
-                    "latest_date": 1587632946,
-                    "size": 35
+                    "latest_date": 1587680857,
+                    "size": 37
                 },
                 "lean-nightly": {
                     "latest_date": 1519725068,
@@ -15856,7 +15856,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195124015,
+            "latest_id": 195126900,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17063,8 +17063,8 @@
                     "size": 47
                 },
                 "Natural Numbers Game": {
-                    "latest_date": 1587678752,
-                    "size": 98
+                    "latest_date": 1587680606,
+                    "size": 99
                 },
                 "Naturals plus infinity": {
                     "latest_date": 1541927085,
@@ -19685,5 +19685,5 @@
             }
         }
     },
-    "time": 1587679317.3302803
+    "time": 1587682902.865173
 }

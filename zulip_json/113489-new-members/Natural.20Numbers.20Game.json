@@ -586,5 +586,11 @@
         "id": 195124015,
         "sender_full_name": "Sam Raleigh",
         "timestamp": 1587678752
+    },
+    {
+        "content": "<p>I think it is because all relation <code>≤ </code> are not total !  For example,   the relation <code>  ⊆  </code> on subset of a set <code> X </code>.  If we take  <code> X = { 0,1}</code>  and the relation  <code>  ⊆  </code>on the subset of  <code>X</code> we  have   <code>¬  {1} ≤ {0} </code> and you don't want to tell that <code> {0} &lt; {1} </code> ! It's ok for the relation where all element are comparable.</p>",
+        "id": 195126900,
+        "sender_full_name": "orlando",
+        "timestamp": 1587680606
     }
 ]
