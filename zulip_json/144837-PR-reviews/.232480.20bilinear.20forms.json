@@ -1066,5 +1066,59 @@
         "id": 195073779,
         "sender_full_name": "Sebastien Gouezel",
         "timestamp": 1587654029
+    },
+    {
+        "content": "<p>here's a perfectly natural definition, that works on any ring and gives the right division by 0: <code>if h : is_unit x then classical.some h else 0</code></p>",
+        "id": 195076680,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587655104
+    },
+    {
+        "content": "<p>this can be a <code>def</code> for <code> has_div</code> in case you feel like using division notation</p>",
+        "id": 195076768,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587655153
+    },
+    {
+        "content": "<p>Then you get two conflicting notations on the integers.</p>",
+        "id": 195076840,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587655191
+    },
+    {
+        "content": "<p>but in statements you stick to things like <code>inv 2</code> to keep the choices canonical</p>",
+        "id": 195076850,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587655195
+    },
+    {
+        "content": "<p>you wouldn't use that definition on the integers</p>",
+        "id": 195076921,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587655215
+    },
+    {
+        "content": "<p>it's not a blanket instance, it's an opt in def</p>",
+        "id": 195076953,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587655231
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195076921\" title=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195076921\">said</a>:</p>\n<blockquote>\n<p>you wouldn't use that definition on the integers</p>\n</blockquote>\n<p>Some of us wouldn't use the current <code>/</code> on the integers either ;-)</p>",
+        "id": 195077233,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587655362
+    },
+    {
+        "content": "<p>So... shall we merge the PR? Currently there are only instances for <code>2</code> and <code>3</code>.</p>",
+        "id": 195077246,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587655367
+    },
+    {
+        "content": "<p>I am fully aware that not all rings have the luxury of nice values when you start dividing by weird things. But that doesn't matter, we are not new to totalized functions</p>",
+        "id": 195077277,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587655384
     }
 ]

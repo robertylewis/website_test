@@ -1166,6 +1166,64 @@ permalink: /stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html
 
 
 
+<a name="195076680"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195076680" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195076680">(Apr 23 2020 at 15:18)</a>:</h4>
+<p>here's a perfectly natural definition, that works on any ring and gives the right division by 0: <code>if h : is_unit x then classical.some h else 0</code></p>
+
+
+
+<a name="195076768"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195076768" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195076768">(Apr 23 2020 at 15:19)</a>:</h4>
+<p>this can be a <code>def</code> for <code> has_div</code> in case you feel like using division notation</p>
+
+
+
+<a name="195076840"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195076840" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195076840">(Apr 23 2020 at 15:19)</a>:</h4>
+<p>Then you get two conflicting notations on the integers.</p>
+
+
+
+<a name="195076850"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195076850" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195076850">(Apr 23 2020 at 15:19)</a>:</h4>
+<p>but in statements you stick to things like <code>inv 2</code> to keep the choices canonical</p>
+
+
+
+<a name="195076921"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195076921" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195076921">(Apr 23 2020 at 15:20)</a>:</h4>
+<p>you wouldn't use that definition on the integers</p>
+
+
+
+<a name="195076953"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195076953" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195076953">(Apr 23 2020 at 15:20)</a>:</h4>
+<p>it's not a blanket instance, it's an opt in def</p>
+
+
+
+<a name="195077233"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195077233" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195077233">(Apr 23 2020 at 15:22)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195076921" title="#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195076921">said</a>:</p>
+<blockquote>
+<p>you wouldn't use that definition on the integers</p>
+</blockquote>
+<p>Some of us wouldn't use the current <code>/</code> on the integers either ;-)</p>
+
+
+
+<a name="195077246"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195077246" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195077246">(Apr 23 2020 at 15:22)</a>:</h4>
+<p>So... shall we merge the PR? Currently there are only instances for <code>2</code> and <code>3</code>.</p>
+
+
+
+<a name="195077277"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195077277" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195077277">(Apr 23 2020 at 15:23)</a>:</h4>
+<p>I am fully aware that not all rings have the luxury of nice values when you start dividing by weird things. But that doesn't matter, we are not new to totalized functions</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 15:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 16:02 UTC</p>

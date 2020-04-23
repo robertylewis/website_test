@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195073779,
+            "latest_id": 195077277,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1005,8 +1005,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587654029,
-                    "size": 178
+                    "latest_date": 1587655384,
+                    "size": 187
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195068403,
+            "latest_id": 195082462,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -7760,6 +7760,10 @@
                     "latest_date": 1545209185,
                     "size": 1
                 },
+                "import order": {
+                    "latest_date": 1587657622,
+                    "size": 1
+                },
                 "import renaming?": {
                     "latest_date": 1533834158,
                     "size": 8
@@ -11904,6 +11908,10 @@
                     "latest_date": 1561934705,
                     "size": 5
                 },
+                "unnecessary imports": {
+                    "latest_date": 1587657238,
+                    "size": 33
+                },
                 "unoption": {
                     "latest_date": 1532029694,
                     "size": 5
@@ -12406,7 +12414,7 @@
         },
         "maths": {
             "id": 116395,
-            "latest_id": 194981930,
+            "latest_id": 195082190,
             "topic_data": {
                 "\"nice\" group homs": {
                     "latest_date": 1584024523,
@@ -14224,6 +14232,10 @@
                     "latest_date": 1575761012,
                     "size": 5
                 },
+                "finite sum": {
+                    "latest_date": 1587657531,
+                    "size": 12
+                },
                 "finite sums": {
                     "latest_date": 1551021706,
                     "size": 119
@@ -15844,7 +15856,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195071213,
+            "latest_id": 195082552,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17031,8 +17043,8 @@
                     "size": 7
                 },
                 "Multiplying by 2": {
-                    "latest_date": 1587653056,
-                    "size": 16
+                    "latest_date": 1587657657,
+                    "size": 20
                 },
                 "Mutual recursioon madness": {
                     "latest_date": 1532861527,
@@ -19665,5 +19677,5 @@
             }
         }
     },
-    "time": 1587654106.1004267
+    "time": 1587657724.1517825
 }

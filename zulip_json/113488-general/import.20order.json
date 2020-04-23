@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/113488-general/topic/unnecessary.20imports/near/195081354\" title=\"#narrow/stream/113488-general/topic/unnecessary.20imports/near/195081354\">said</a>:</p>\n<blockquote>\n<p>(modulo quirks where import order matters)</p>\n</blockquote>\n<p>Does this really happen? Is it something like: we toss all the <code>simp</code> lemmas that are transitively imported into some data structure, and then the order <code>simp</code> tries them can depend on the order they were inserted?</p>",
+        "id": 195082462,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587657622
+    }
+]
