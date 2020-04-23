@@ -568,5 +568,11 @@
         "id": 195029749,
         "sender_full_name": "Yury G. Kudryashov",
         "timestamp": 1587629634
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110064\">Kenny Lau</span> <a href=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195024860\" title=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195024860\">said</a>:</p>\n<blockquote>\n<p>I don't think the mathematicians here care about non-commutative rings</p>\n</blockquote>\n<p>Kenny... after all this time, you still can't recognize when Kevin keeps repeating some absurd stuff he doesn't really believe in?</p>",
+        "id": 195034212,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587632623
     }
 ]

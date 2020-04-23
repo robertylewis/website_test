@@ -202,5 +202,11 @@
         "id": 195014382,
         "sender_full_name": "Jason Rute",
         "timestamp": 1587610852
+    },
+    {
+        "content": "<p>Great! This async thing clearly requires some adaptation. I didn't know any of this one week ago, and I spent quite a few hours reading documentation and blog posts about all this. But our problem is really typical of what this async/await stuff is meant to solve. All the examples are always talking about talking to a server over internet, but conceptually there are no difference (although the practical detail differences took me a while to figure out).</p>",
+        "id": 195034730,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587632946
     }
 ]
