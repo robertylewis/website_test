@@ -946,6 +946,226 @@ permalink: /stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html
 
 
 
+<a name="195062342"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195062342" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195062342">(Apr 23 2020 at 13:43)</a>:</h4>
+<p><a href="https://github.com/leanprover-community/mathlib/pull/2504" title="https://github.com/leanprover-community/mathlib/pull/2504">Created PR #2504</a></p>
+
+
+
+<a name="195066068"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195066068" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195066068">(Apr 23 2020 at 14:10)</a>:</h4>
+<p>I see in the PR that you explain how to deduce invertibility of some elements (for instance <code>-a</code>) from the invertibility of <code>a</code>, but I think this mightcreate problems down the road. For instance, in a field, <code>-1</code> could be invertible because it is the neg of <code>1</code> which is invertible, but also because it is nonzero and therefore invertible. With a prop, this is never an issue, but with data this will be a problem if the inverses you get following different paths are not defeq. </p>
+<p>This is already the case in groups, where you have the two instances</p>
+<div class="codehilite"><pre><span></span><span class="kn">instance</span> <span class="n">invertible_of_group</span> <span class="o">[</span><span class="n">group</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="n">invertible</span> <span class="n">a</span> <span class="o">:=</span>
+<span class="bp">⟨</span><span class="n">a</span><span class="bp">⁻¹</span><span class="o">,</span> <span class="n">inv_mul_self</span> <span class="n">a</span><span class="o">,</span> <span class="n">mul_inv_self</span> <span class="n">a</span><span class="bp">⟩</span>
+</pre></div>
+
+
+<p>and </p>
+<div class="codehilite"><pre><span></span><span class="kn">instance</span> <span class="n">invertible_one</span> <span class="o">[</span><span class="n">monoid</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span> <span class="n">invertible</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="o">:=</span>
+<span class="bp">⟨</span> <span class="mi">1</span><span class="o">,</span> <span class="n">mul_one</span> <span class="bp">_</span><span class="o">,</span> <span class="n">one_mul</span> <span class="bp">_</span> <span class="bp">⟩</span>
+</pre></div>
+
+
+<p>Since <code>1</code> and <code>1⁻¹</code> are not defeq, this gives you two conflicting values for the inverse of <code>1</code>.</p>
+<p>I guess the solution here is to <em>not</em> declare all these as instances, only as defs, and let the user activate the ones he needs when necessary. Opinions of type classes experts welcome!</p>
+
+
+
+<a name="195066523"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195066523" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195066523">(Apr 23 2020 at 14:13)</a>:</h4>
+<p>I think it will not be a problem, because I think these should <em>not</em> be considered simp normal form expressions, and there should be lemmas rewriting <code>inv 2 = 1 / 2</code> in division rings and so on.</p>
+
+
+
+<a name="195067040"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067040" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067040">(Apr 23 2020 at 14:17)</a>:</h4>
+<p>So the only time an <code>inv</code> will appear in a statement is if it is in a general context and that's the only way to obtain the element in question. Of course no one is going to use <code>inv 1</code> directly, it will only appear as <code>inv a</code>, applied in a context with <code>a := 1</code>, and then the simp lemma will trigger and it becomes <code>1</code></p>
+
+
+
+<a name="195067385"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067385" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067385">(Apr 23 2020 at 14:19)</a>:</h4>
+<p>What about <code>inv (-4)</code> in <code>ℤ[1/2]</code>? It could appear as <code>- (inv 2) * (inv 2)</code> or <code>(inv 2) * (-inv 2)</code> depending on the chosen path, and I don't expect any reasonable simp normal form here.</p>
+
+
+
+<a name="195067473"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067473" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067473">(Apr 23 2020 at 14:20)</a>:</h4>
+<p>It will be <code>- 1/4</code></p>
+
+
+
+<a name="195067501"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067501" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067501">(Apr 23 2020 at 14:20)</a>:</h4>
+<p>with division in Z[1/2]</p>
+
+
+
+<a name="195067640"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067640" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067640">(Apr 23 2020 at 14:21)</a>:</h4>
+<p><code>inv 2</code> is not the canonical way of referring to 1/2 in Z[1/2]</p>
+
+
+
+<a name="195067715"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067715" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067715">(Apr 23 2020 at 14:21)</a>:</h4>
+<p>it would be some constructor, <code>Z_one_half.one_half</code></p>
+
+
+
+<a name="195067731"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067731" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067731">(Apr 23 2020 at 14:21)</a>:</h4>
+<p>This only make sense if you can craft a division with nice enough properties, otherwise we should not declare a <code>has_div</code> instance here.</p>
+
+
+
+<a name="195067767"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067767" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067767">(Apr 23 2020 at 14:22)</a>:</h4>
+<p>I mentioned the divison on Z[1/2] above</p>
+
+
+
+<a name="195067840"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067840" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067840">(Apr 23 2020 at 14:22)</a>:</h4>
+<p>Yes, but I am not sure I was convinced it behaves nicely enough...</p>
+
+
+
+<a name="195067844"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067844" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067844">(Apr 23 2020 at 14:22)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574" title="#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574">said</a>:</p>
+<blockquote>
+<p>I would propose <code>(a * 2^b) / (c * 2^d)</code> (where a and c are odd) evaluates to <code>2^(b-d) * (a / c)</code> with the division evaluated in Z</p>
+</blockquote>
+
+
+
+<a name="195067862"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067862" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067862">(Apr 23 2020 at 14:22)</a>:</h4>
+<p>You could make any ring in which 2 was invertible into a Z[1/2]-algebra and then make all your decisions in Z[1/2]</p>
+
+
+
+<a name="195067901"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067901" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067901">(Apr 23 2020 at 14:22)</a>:</h4>
+<p>I don't really care if it returns 37 on bad inputs in this case</p>
+
+
+
+<a name="195067930"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195067930" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195067930">(Apr 23 2020 at 14:23)</a>:</h4>
+<p>I would be actively for this decision</p>
+
+
+
+<a name="195068062"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068062" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068062">(Apr 23 2020 at 14:24)</a>:</h4>
+<p>I think that the gain of being able to write <code>1/4</code> outweighs the mess of numbers like <code>1/5</code></p>
+
+
+
+<a name="195068101"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068101" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068101">(Apr 23 2020 at 14:24)</a>:</h4>
+<p>Btw, the simp lemma in the PR is currently</p>
+<div class="codehilite"><pre><span></span><span class="bp">@</span><span class="o">[</span><span class="n">simp</span><span class="o">]</span> <span class="kn">lemma</span> <span class="n">inv_of_one</span> <span class="o">[</span><span class="n">monoid</span> <span class="n">α</span><span class="o">]</span> <span class="o">:</span> <span class="err">⅟</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">1</span> <span class="o">:=</span> <span class="n">rfl</span>
+</pre></div>
+
+
+<p>and I don't know which instance it uses. It should probably be</p>
+<div class="codehilite"><pre><span></span><span class="bp">@</span><span class="o">[</span><span class="n">simp</span><span class="o">]</span> <span class="kn">lemma</span> <span class="n">inv_of_one</span> <span class="o">[</span><span class="n">monoid</span> <span class="n">α</span><span class="o">]</span> <span class="o">[</span><span class="n">invertible</span> <span class="mi">1</span><span class="o">]</span> <span class="o">:</span> <span class="err">⅟</span> <span class="o">(</span><span class="mi">1</span> <span class="o">:</span> <span class="n">α</span><span class="o">)</span> <span class="bp">=</span> <span class="mi">1</span> <span class="o">:=</span> <span class="k">begin</span> <span class="bp">...</span> <span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195068181"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068181" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068181">(Apr 23 2020 at 14:25)</a>:</h4>
+<p>I don't think it is a question about <code>simp</code>. I mean in the bilinear forms PR, the choice of 1/2 is embedded in further constructions like the discriminant of a quadratic form. If you end up with the discriminant of the same form but with two definitionally different 1/2s, aren't you going to be in a bit of trouble?</p>
+
+
+
+<a name="195068198"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068198" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068198">(Apr 23 2020 at 14:25)</a>:</h4>
+<p>It should be <code>{_:invertible 1}</code> if you want to make it agnostic to the instance</p>
+
+
+
+<a name="195068255"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068255" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068255">(Apr 23 2020 at 14:25)</a>:</h4>
+<p>Yes, even better</p>
+
+
+
+<a name="195068477"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068477" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068477">(Apr 23 2020 at 14:27)</a>:</h4>
+<p>(actually, I know which instance it uses, because only one of them is <code>rfl</code> <span aria-label="mischievous" class="emoji emoji-1f61b" role="img" title="mischievous">:mischievous:</span> )</p>
+
+
+
+<a name="195068499"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068499" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068499">(Apr 23 2020 at 14:27)</a>:</h4>
+<p>If I understand correctly the goal of this typeclass, it is not to deduce automatically invertibility, only to provide an inverse to some fixed number, say <code>2</code> or <code>3</code>. Why not remove all these instances and turn them into defs?</p>
+
+
+
+<a name="195068550"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195068550" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195068550">(Apr 23 2020 at 14:27)</a>:</h4>
+<p>I agree that this is not something we need a bunch of instances for</p>
+
+
+
+<a name="195070058"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195070058" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195070058">(Apr 23 2020 at 14:37)</a>:</h4>
+<p>OK <span aria-label="+1" class="emoji emoji-1f44d" role="img" title="+1">:+1:</span> Which <code>instance</code>s should stay that way? Definitely <code>invertible 2</code>, <code>invertible 3</code>. Also <code>invertible 1</code>, <code>invertible -(a)</code>?</p>
+
+
+
+<a name="195070265"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195070265" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195070265">(Apr 23 2020 at 14:38)</a>:</h4>
+<p>I'm not sure we will ever need any instances besides <code>invertible 2</code>, <code>invertible 3</code>, and <code>invertible (\u n)</code> under some assumptions</p>
+
+
+
+<a name="195070375"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195070375" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195070375">(Apr 23 2020 at 14:39)</a>:</h4>
+<p>so the last one isn't even really an instance</p>
+
+
+
+<a name="195070470"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195070470" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195070470">(Apr 23 2020 at 14:39)</a>:</h4>
+<p>It's really a ring structure assumption, like <code>char_zero</code>, so it's fine if it is fairly rigid</p>
+
+
+
+<a name="195071732"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195071732" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195071732">(Apr 23 2020 at 14:47)</a>:</h4>
+<p>Too few instances is easier to deal with than too many instances, so I would keep it simple to start</p>
+
+
+
+<a name="195072590"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195072590" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195072590">(Apr 23 2020 at 14:52)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574" title="#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574">said</a>:</p>
+<blockquote>
+<p>I would propose <code>(a * 2^b) / (c * 2^d)</code> (where a and c are odd) evaluates to <code>2^(b-d) * (a / c)</code> with the division evaluated in Z</p>
+</blockquote>
+<p>To play this game in <code>R[1/2]</code>, you need to have some kind of division on <code>R</code>. If you start from a nice and natural example such as <code>R = ℤ[√-5]</code>, I don't think you will be able to cook up such a natural division.</p>
+
+
+
+<a name="195073678"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195073678" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195073678">(Apr 23 2020 at 15:00)</a>:</h4>
+<p>Because R isn't a UFD, you have real problems deciding what a quotient and a remainder are (the "remainder" cannot be made to be smaller than the thing you're dividing by, for any reasonable concept of size)</p>
+
+
+
+<a name="195073779"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195073779" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastien Gouezel <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195073779">(Apr 23 2020 at 15:00)</a>:</h4>
+<p>Yes, I didn't choose my example completely at random :)</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 13:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 15:01 UTC</p>

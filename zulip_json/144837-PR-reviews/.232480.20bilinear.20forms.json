@@ -874,5 +874,197 @@
         "id": 195054497,
         "sender_full_name": "Johan Commelin",
         "timestamp": 1587645796
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib/pull/2504\" title=\"https://github.com/leanprover-community/mathlib/pull/2504\">Created PR #2504</a></p>",
+        "id": 195062342,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587649429
+    },
+    {
+        "content": "<p>I see in the PR that you explain how to deduce invertibility of some elements (for instance <code>-a</code>) from the invertibility of <code>a</code>, but I think this mightcreate problems down the road. For instance, in a field, <code>-1</code> could be invertible because it is the neg of <code>1</code> which is invertible, but also because it is nonzero and therefore invertible. With a prop, this is never an issue, but with data this will be a problem if the inverses you get following different paths are not defeq. </p>\n<p>This is already the case in groups, where you have the two instances</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"kn\">instance</span> <span class=\"n\">invertible_of_group</span> <span class=\"o\">[</span><span class=\"n\">group</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">invertible</span> <span class=\"n\">a</span> <span class=\"o\">:=</span>\n<span class=\"bp\">⟨</span><span class=\"n\">a</span><span class=\"bp\">⁻¹</span><span class=\"o\">,</span> <span class=\"n\">inv_mul_self</span> <span class=\"n\">a</span><span class=\"o\">,</span> <span class=\"n\">mul_inv_self</span> <span class=\"n\">a</span><span class=\"bp\">⟩</span>\n</pre></div>\n\n\n<p>and </p>\n<div class=\"codehilite\"><pre><span></span><span class=\"kn\">instance</span> <span class=\"n\">invertible_one</span> <span class=\"o\">[</span><span class=\"n\">monoid</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">invertible</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"bp\">⟨</span> <span class=\"mi\">1</span><span class=\"o\">,</span> <span class=\"n\">mul_one</span> <span class=\"bp\">_</span><span class=\"o\">,</span> <span class=\"n\">one_mul</span> <span class=\"bp\">_</span> <span class=\"bp\">⟩</span>\n</pre></div>\n\n\n<p>Since <code>1</code> and <code>1⁻¹</code> are not defeq, this gives you two conflicting values for the inverse of <code>1</code>.</p>\n<p>I guess the solution here is to <em>not</em> declare all these as instances, only as defs, and let the user activate the ones he needs when necessary. Opinions of type classes experts welcome!</p>",
+        "id": 195066068,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587651042
+    },
+    {
+        "content": "<p>I think it will not be a problem, because I think these should <em>not</em> be considered simp normal form expressions, and there should be lemmas rewriting <code>inv 2 = 1 / 2</code> in division rings and so on.</p>",
+        "id": 195066523,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651231
+    },
+    {
+        "content": "<p>So the only time an <code>inv</code> will appear in a statement is if it is in a general context and that's the only way to obtain the element in question. Of course no one is going to use <code>inv 1</code> directly, it will only appear as <code>inv a</code>, applied in a context with <code>a := 1</code>, and then the simp lemma will trigger and it becomes <code>1</code></p>",
+        "id": 195067040,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651423
+    },
+    {
+        "content": "<p>What about <code>inv (-4)</code> in <code>ℤ[1/2]</code>? It could appear as <code>- (inv 2) * (inv 2)</code> or <code>(inv 2) * (-inv 2)</code> depending on the chosen path, and I don't expect any reasonable simp normal form here.</p>",
+        "id": 195067385,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587651571
+    },
+    {
+        "content": "<p>It will be <code>- 1/4</code></p>",
+        "id": 195067473,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651606
+    },
+    {
+        "content": "<p>with division in Z[1/2]</p>",
+        "id": 195067501,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651620
+    },
+    {
+        "content": "<p><code>inv 2</code> is not the canonical way of referring to 1/2 in Z[1/2]</p>",
+        "id": 195067640,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651671
+    },
+    {
+        "content": "<p>it would be some constructor, <code>Z_one_half.one_half</code></p>",
+        "id": 195067715,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651700
+    },
+    {
+        "content": "<p>This only make sense if you can craft a division with nice enough properties, otherwise we should not declare a <code>has_div</code> instance here.</p>",
+        "id": 195067731,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587651708
+    },
+    {
+        "content": "<p>I mentioned the divison on Z[1/2] above</p>",
+        "id": 195067767,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651722
+    },
+    {
+        "content": "<p>Yes, but I am not sure I was convinced it behaves nicely enough...</p>",
+        "id": 195067840,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587651746
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574\" title=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574\">said</a>:</p>\n<blockquote>\n<p>I would propose <code>(a * 2^b) / (c * 2^d)</code> (where a and c are odd) evaluates to <code>2^(b-d) * (a / c)</code> with the division evaluated in Z</p>\n</blockquote>",
+        "id": 195067844,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651748
+    },
+    {
+        "content": "<p>You could make any ring in which 2 was invertible into a Z[1/2]-algebra and then make all your decisions in Z[1/2]</p>",
+        "id": 195067862,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587651758
+    },
+    {
+        "content": "<p>I don't really care if it returns 37 on bad inputs in this case</p>",
+        "id": 195067901,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651777
+    },
+    {
+        "content": "<p>I would be actively for this decision</p>",
+        "id": 195067930,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587651791
+    },
+    {
+        "content": "<p>I think that the gain of being able to write <code>1/4</code> outweighs the mess of numbers like <code>1/5</code></p>",
+        "id": 195068062,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651853
+    },
+    {
+        "content": "<p>Btw, the simp lemma in the PR is currently</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"bp\">@</span><span class=\"o\">[</span><span class=\"n\">simp</span><span class=\"o\">]</span> <span class=\"kn\">lemma</span> <span class=\"n\">inv_of_one</span> <span class=\"o\">[</span><span class=\"n\">monoid</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"err\">⅟</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"mi\">1</span> <span class=\"o\">:=</span> <span class=\"n\">rfl</span>\n</pre></div>\n\n\n<p>and I don't know which instance it uses. It should probably be</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"bp\">@</span><span class=\"o\">[</span><span class=\"n\">simp</span><span class=\"o\">]</span> <span class=\"kn\">lemma</span> <span class=\"n\">inv_of_one</span> <span class=\"o\">[</span><span class=\"n\">monoid</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">invertible</span> <span class=\"mi\">1</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"err\">⅟</span> <span class=\"o\">(</span><span class=\"mi\">1</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"mi\">1</span> <span class=\"o\">:=</span> <span class=\"k\">begin</span> <span class=\"bp\">...</span> <span class=\"kn\">end</span>\n</pre></div>",
+        "id": 195068101,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587651869
+    },
+    {
+        "content": "<p>I don't think it is a question about <code>simp</code>. I mean in the bilinear forms PR, the choice of 1/2 is embedded in further constructions like the discriminant of a quadratic form. If you end up with the discriminant of the same form but with two definitionally different 1/2s, aren't you going to be in a bit of trouble?</p>",
+        "id": 195068181,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587651906
+    },
+    {
+        "content": "<p>It should be <code>{_:invertible 1}</code> if you want to make it agnostic to the instance</p>",
+        "id": 195068198,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587651912
+    },
+    {
+        "content": "<p>Yes, even better</p>",
+        "id": 195068255,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587651940
+    },
+    {
+        "content": "<p>(actually, I know which instance it uses, because only one of them is <code>rfl</code> <span aria-label=\"mischievous\" class=\"emoji emoji-1f61b\" role=\"img\" title=\"mischievous\">:mischievous:</span> )</p>",
+        "id": 195068477,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587652025
+    },
+    {
+        "content": "<p>If I understand correctly the goal of this typeclass, it is not to deduce automatically invertibility, only to provide an inverse to some fixed number, say <code>2</code> or <code>3</code>. Why not remove all these instances and turn them into defs?</p>",
+        "id": 195068499,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587652032
+    },
+    {
+        "content": "<p>I agree that this is not something we need a bunch of instances for</p>",
+        "id": 195068550,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587652053
+    },
+    {
+        "content": "<p>OK <span aria-label=\"+1\" class=\"emoji emoji-1f44d\" role=\"img\" title=\"+1\">:+1:</span> Which <code>instance</code>s should stay that way? Definitely <code>invertible 2</code>, <code>invertible 3</code>. Also <code>invertible 1</code>, <code>invertible -(a)</code>?</p>",
+        "id": 195070058,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587652651
+    },
+    {
+        "content": "<p>I'm not sure we will ever need any instances besides <code>invertible 2</code>, <code>invertible 3</code>, and <code>invertible (\\u n)</code> under some assumptions</p>",
+        "id": 195070265,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587652719
+    },
+    {
+        "content": "<p>so the last one isn't even really an instance</p>",
+        "id": 195070375,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587652758
+    },
+    {
+        "content": "<p>It's really a ring structure assumption, like <code>char_zero</code>, so it's fine if it is fairly rigid</p>",
+        "id": 195070470,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587652793
+    },
+    {
+        "content": "<p>Too few instances is easier to deal with than too many instances, so I would keep it simple to start</p>",
+        "id": 195071732,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587653251
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574\" title=\"#narrow/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms/near/195018574\">said</a>:</p>\n<blockquote>\n<p>I would propose <code>(a * 2^b) / (c * 2^d)</code> (where a and c are odd) evaluates to <code>2^(b-d) * (a / c)</code> with the division evaluated in Z</p>\n</blockquote>\n<p>To play this game in <code>R[1/2]</code>, you need to have some kind of division on <code>R</code>. If you start from a nice and natural example such as <code>R = ℤ[√-5]</code>, I don't think you will be able to cook up such a natural division.</p>",
+        "id": 195072590,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587653557
+    },
+    {
+        "content": "<p>Because R isn't a UFD, you have real problems deciding what a quotient and a remainder are (the \"remainder\" cannot be made to be smaller than the thing you're dividing by, for any reasonable concept of size)</p>",
+        "id": 195073678,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587654002
+    },
+    {
+        "content": "<p>Yes, I didn't choose my example completely at random :)</p>",
+        "id": 195073779,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587654029
     }
 ]

@@ -682,5 +682,11 @@
         "id": 195030254,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1587629992
+    },
+    {
+        "content": "<p>I just saw on Twitter that (a) Coq just moved from beta to stable in codewars, (b) Coq has been on Codewars for nearly a year and (c) they have 74 Coq kata in total.</p>",
+        "id": 195068403,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587651990
     }
 ]

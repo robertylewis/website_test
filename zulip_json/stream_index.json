@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195054497,
+            "latest_id": 195073779,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1005,8 +1005,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587645796,
-                    "size": 146
+                    "latest_date": 1587654029,
+                    "size": 178
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195051454,
+            "latest_id": 195068403,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -2832,6 +2832,10 @@
                     "latest_date": 1533181383,
                     "size": 3
                 },
+                "How does one prove unit ≠ bool": {
+                    "latest_date": 1587650604,
+                    "size": 11
+                },
                 "How long should lines be?": {
                     "latest_date": 1549305585,
                     "size": 13
@@ -3053,8 +3057,8 @@
                     "size": 141
                 },
                 "Invitation to join the Codewars Lean community, Round 2": {
-                    "latest_date": 1587629992,
-                    "size": 114
+                    "latest_date": 1587651990,
+                    "size": 115
                 },
                 "Is free group a \"recursive type\"?": {
                     "latest_date": 1551233903,
@@ -15840,7 +15844,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195047394,
+            "latest_id": 195071213,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17025,6 +17029,10 @@
                 "Multiple uses of existsi": {
                     "latest_date": 1542759677,
                     "size": 7
+                },
+                "Multiplying by 2": {
+                    "latest_date": 1587653056,
+                    "size": 16
                 },
                 "Mutual recursioon madness": {
                     "latest_date": 1532861527,
@@ -19657,5 +19665,5 @@
             }
         }
     },
-    "time": 1587646896.4355876
+    "time": 1587654106.1004267
 }
