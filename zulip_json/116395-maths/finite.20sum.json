@@ -76,5 +76,41 @@
         "id": 195115450,
         "sender_full_name": "orlando",
         "timestamp": 1587673810
+    },
+    {
+        "content": "<p>I'm pretty sure that's somewhere, but I'm not sure where. It might be in <code>group_theory.perm</code> somewhere.</p>",
+        "id": 195115936,
+        "sender_full_name": "Chris Hughes",
+        "timestamp": 1587674119
+    },
+    {
+        "content": "<p>hum good idea ! I try to find !</p>",
+        "id": 195115985,
+        "sender_full_name": "orlando",
+        "timestamp": 1587674147
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"kn\">lemma</span> <span class=\"n\">finset</span><span class=\"bp\">.</span><span class=\"n\">sum_univ_perm</span> <span class=\"o\">[</span><span class=\"n\">fintype</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">add_comm_monoid</span> <span class=\"n\">β</span><span class=\"o\">]</span> <span class=\"o\">{</span><span class=\"n\">f</span> <span class=\"o\">:</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">β</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">σ</span> <span class=\"o\">:</span> <span class=\"n\">perm</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"o\">:</span>\n  <span class=\"o\">(</span><span class=\"n\">univ</span> <span class=\"o\">:</span> <span class=\"n\">finset</span> <span class=\"n\">α</span><span class=\"o\">)</span><span class=\"bp\">.</span><span class=\"n\">sum</span> <span class=\"n\">f</span> <span class=\"bp\">=</span> <span class=\"n\">univ</span><span class=\"bp\">.</span><span class=\"n\">sum</span> <span class=\"o\">(</span><span class=\"bp\">λ</span> <span class=\"n\">z</span><span class=\"o\">,</span> <span class=\"n\">f</span> <span class=\"o\">(</span><span class=\"n\">σ</span> <span class=\"n\">z</span><span class=\"o\">))</span> <span class=\"o\">:=</span>\n<span class=\"bp\">@</span><span class=\"n\">finset</span><span class=\"bp\">.</span><span class=\"n\">prod_univ_perm</span> <span class=\"bp\">_</span> <span class=\"o\">(</span><span class=\"n\">multiplicative</span> <span class=\"n\">β</span><span class=\"o\">)</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span> <span class=\"n\">f</span> <span class=\"n\">σ</span>\n</pre></div>\n\n\n<p>in group_theory.perm.sign</p>",
+        "id": 195116178,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587674246
+    },
+    {
+        "content": "<p>World champion <span aria-label=\"tada\" class=\"emoji emoji-1f389\" role=\"img\" title=\"tada\">:tada:</span></p>",
+        "id": 195116802,
+        "sender_full_name": "orlando",
+        "timestamp": 1587674523
+    },
+    {
+        "content": "<p>Probably should be moved closer to <code>finset.prod_bij</code> with <code>equiv</code> instead of <code>perm</code>.</p>",
+        "id": 195117358,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587674808
+    },
+    {
+        "content": "<p>No, it should be moved to <code>fintype</code> because <code>big_operators</code> does not import <code>fintype</code>.</p>",
+        "id": 195118904,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587675598
     }
 ]

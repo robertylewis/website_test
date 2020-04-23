@@ -12414,7 +12414,7 @@
         },
         "maths": {
             "id": 116395,
-            "latest_id": 195115450,
+            "latest_id": 195118904,
             "topic_data": {
                 "\"nice\" group homs": {
                     "latest_date": 1584024523,
@@ -14233,8 +14233,8 @@
                     "size": 5
                 },
                 "finite sum": {
-                    "latest_date": 1587673810,
-                    "size": 13
+                    "latest_date": 1587675598,
+                    "size": 19
                 },
                 "finite sums": {
                     "latest_date": 1551021706,
@@ -19685,5 +19685,5 @@
             }
         }
     },
-    "time": 1587673923.3210993
+    "time": 1587675711.2584763
 }
