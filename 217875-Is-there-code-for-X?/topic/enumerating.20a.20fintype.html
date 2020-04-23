@@ -27,6 +27,48 @@ permalink: /stream/217875-Is-there-code-for-X?/topic/enumerating.20a.20fintype.h
 
 
 
+<a name="195019101"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/enumerating%20a%20fintype/near/195019101" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/217875-Is-there-code-for-X?/topic/enumerating.20a.20fintype.html#195019101">(Apr 23 2020 at 05:04)</a>:</h4>
+<p>I don't think we have this particular proof but it is not hard:</p>
+<div class="codehilite"><pre><span></span><span class="kn">example</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">finset</span><span class="bp">.</span><span class="n">card</span> <span class="n">X</span> <span class="bp">=</span> <span class="n">fintype</span><span class="bp">.</span><span class="n">card</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">X</span> <span class="o">:=</span>
+<span class="k">begin</span>
+  <span class="n">suffices</span> <span class="o">:</span> <span class="n">finset</span><span class="bp">.</span><span class="n">univ</span> <span class="err">⊆</span> <span class="n">X</span><span class="o">,</span> <span class="o">{</span><span class="n">exact</span> <span class="bp">λ</span> <span class="n">x</span><span class="o">,</span> <span class="n">this</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">mem_univ</span> <span class="bp">_</span><span class="o">)},</span>
+  <span class="n">classical</span><span class="o">,</span>
+  <span class="n">rw</span> <span class="o">[</span><span class="err">←</span> <span class="n">finset</span><span class="bp">.</span><span class="n">sdiff_eq_empty_iff_subset</span><span class="o">,</span> <span class="err">←</span> <span class="n">finset</span><span class="bp">.</span><span class="n">card_eq_zero</span><span class="o">,</span> <span class="n">finset</span><span class="bp">.</span><span class="n">card_univ_diff</span><span class="o">],</span>
+  <span class="n">simp</span> <span class="o">[</span><span class="n">h</span><span class="o">]</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+
+<a name="195019119"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/enumerating%20a%20fintype/near/195019119" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jalex Stark <a href="http://robertylewis.com/website_test/stream/217875-Is-there-code-for-X?/topic/enumerating.20a.20fintype.html#195019119">(Apr 23 2020 at 05:05)</a>:</h4>
+<p>wow, thanks!</p>
+
+
+
+<a name="195019121"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/enumerating%20a%20fintype/near/195019121" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/217875-Is-there-code-for-X?/topic/enumerating.20a.20fintype.html#195019121">(Apr 23 2020 at 05:05)</a>:</h4>
+<p>the key fact is <code>finset.card_univ_diff</code></p>
+
+
+
+<a name="195019162"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/enumerating%20a%20fintype/near/195019162" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/217875-Is-there-code-for-X?/topic/enumerating.20a.20fintype.html#195019162">(Apr 23 2020 at 05:06)</a>:</h4>
+<p>there is also a constructive proof but meh</p>
+
+
+
+<a name="195019640"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/217875-Is%20there%20code%20for%20X%3F/topic/enumerating%20a%20fintype/near/195019640" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/217875-Is-there-code-for-X?/topic/enumerating.20a.20fintype.html#195019640">(Apr 23 2020 at 05:21)</a>:</h4>
+<p>actually there is an even better match, <code>finset.eq_of_subset_of_card_le</code>:</p>
+<div class="codehilite"><pre><span></span><span class="kn">example</span> <span class="o">(</span><span class="n">α</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">[</span><span class="n">fintype</span> <span class="n">α</span><span class="o">]</span> <span class="o">(</span><span class="n">X</span> <span class="o">:</span> <span class="n">finset</span> <span class="n">α</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">finset</span><span class="bp">.</span><span class="n">card</span> <span class="n">X</span> <span class="bp">=</span> <span class="n">fintype</span><span class="bp">.</span><span class="n">card</span> <span class="n">α</span><span class="o">)</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">x</span> <span class="o">:</span> <span class="n">α</span><span class="o">,</span> <span class="n">x</span> <span class="err">∈</span> <span class="n">X</span> <span class="o">:=</span>
+<span class="k">by</span> <span class="n">rw</span> <span class="n">finset</span><span class="bp">.</span><span class="n">eq_of_subset_of_card_le</span> <span class="o">(</span><span class="n">finset</span><span class="bp">.</span><span class="n">subset_univ</span> <span class="bp">_</span><span class="o">)</span> <span class="o">(</span><span class="n">ge_of_eq</span> <span class="n">h</span><span class="o">)</span><span class="bp">;</span>
+   <span class="n">apply</span> <span class="n">finset</span><span class="bp">.</span><span class="n">mem_univ</span>
+</pre></div>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 05:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 06:01 UTC</p>

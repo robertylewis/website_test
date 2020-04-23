@@ -286,7 +286,7 @@
         },
         "Is there code for X?": {
             "id": 217875,
-            "latest_id": 195018905,
+            "latest_id": 195019640,
             "topic_data": {
                 "Bolzano-Weirstrass": {
                     "latest_date": 1586691221,
@@ -345,8 +345,8 @@
                     "size": 12
                 },
                 "enumerating a fintype": {
-                    "latest_date": 1587617910,
-                    "size": 1
+                    "latest_date": 1587619288,
+                    "size": 6
                 },
                 "fintype (s.to_set)": {
                     "latest_date": 1586688843,
@@ -19653,5 +19653,5 @@
             }
         }
     },
-    "time": 1587618105.9749506
+    "time": 1587621680.4524496
 }
