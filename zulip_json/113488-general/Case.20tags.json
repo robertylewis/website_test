@@ -52,5 +52,11 @@
         "id": 195012742,
         "sender_full_name": "Jannis Limperg",
         "timestamp": 1587608392
+    },
+    {
+        "content": "<p>I don't think the C++ needs to do much? Just associate an expr to the goal instead of a list name. I don't think these tags are used much on the C++ side</p>",
+        "id": 195016054,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587613733
     }
 ]

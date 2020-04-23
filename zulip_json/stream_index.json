@@ -1598,7 +1598,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195014382,
+            "latest_id": 195016054,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -2209,8 +2209,8 @@
                     "size": 8
                 },
                 "Case tags": {
-                    "latest_date": 1587608392,
-                    "size": 9
+                    "latest_date": 1587613733,
+                    "size": 10
                 },
                 "Casting from Prop to Type u": {
                     "latest_date": 1533030503,
@@ -19649,5 +19649,5 @@
             }
         }
     },
-    "time": 1587610907.7090852
+    "time": 1587614492.5671883
 }
