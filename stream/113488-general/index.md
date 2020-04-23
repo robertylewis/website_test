@@ -9,6 +9,7 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (114 messages, latest: Apr 23 2020 at 08:19)
 * [Case tags](topic/Case.20tags.html) (10 messages, latest: Apr 23 2020 at 03:48)
 * [lean-client-python](topic/lean-client-python.html) (34 messages, latest: Apr 23 2020 at 03:00)
 * [`precedence` command](topic/.60precedence.60.20command.html) (3 messages, latest: Apr 23 2020 at 00:05)
@@ -22,7 +23,6 @@ permalink: /stream/113488-general/index.html
 * [de Bruijn factor of Lean?](topic/de.20Bruijn.20factor.20of.20Lean.3F.html) (6 messages, latest: Apr 21 2020 at 15:21)
 * [Custom highlighting](topic/Custom.20highlighting.html) (6 messages, latest: Apr 21 2020 at 12:47)
 * [hole? golf!](topic/hole.3F.20golf!.html) (22 messages, latest: Apr 21 2020 at 12:29)
-* [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (113 messages, latest: Apr 21 2020 at 08:29)
 * [video tutorials](topic/video.20tutorials.html) (29 messages, latest: Apr 21 2020 at 08:22)
 * [Linter rejects automatic instance](topic/Linter.20rejects.20automatic.20instance.html) (9 messages, latest: Apr 21 2020 at 08:18)
 * [What's the deal with `open`](topic/What's.20the.20deal.20with.20.60open.60.html) (19 messages, latest: Apr 21 2020 at 07:54)
@@ -2693,4 +2693,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 08:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 09:01 UTC</p>

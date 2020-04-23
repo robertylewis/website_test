@@ -550,5 +550,23 @@
         "id": 195028171,
         "sender_full_name": "Mario Carneiro",
         "timestamp": 1587628521
+    },
+    {
+        "content": "<p>Note that in the basic theory of elliptic curves, \"a field of characteristic not equal to 2 or 3\" is a very common assumption.</p>",
+        "id": 195029477,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587629418
+    },
+    {
+        "content": "<p>Ring of matrices is a non-commutative ring that I care about.</p>",
+        "id": 195029622,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587629527
+    },
+    {
+        "content": "<p>I mean, <code>linear_map.End</code>.</p>",
+        "id": 195029749,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587629634
     }
 ]

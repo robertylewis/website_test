@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195028171,
+            "latest_id": 195029749,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1005,8 +1005,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587628521,
-                    "size": 92
+                    "latest_date": 1587629634,
+                    "size": 95
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195016054,
+            "latest_id": 195030254,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -3053,8 +3053,8 @@
                     "size": 141
                 },
                 "Invitation to join the Codewars Lean community, Round 2": {
-                    "latest_date": 1587457787,
-                    "size": 113
+                    "latest_date": 1587629992,
+                    "size": 114
                 },
                 "Is free group a \"recursive type\"?": {
                     "latest_date": 1551233903,
@@ -15836,7 +15836,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195026104,
+            "latest_id": 195032307,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17263,8 +17263,8 @@
                     "size": 7
                 },
                 "Representation Theory": {
-                    "latest_date": 1587200630,
-                    "size": 272
+                    "latest_date": 1587631425,
+                    "size": 273
                 },
                 "Return of the monolith": {
                     "latest_date": 1586599347,
@@ -19653,5 +19653,5 @@
             }
         }
     },
-    "time": 1587628890.330396
+    "time": 1587632505.309577
 }

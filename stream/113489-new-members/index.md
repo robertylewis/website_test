@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [Representation Theory](topic/Representation.20Theory.html) (273 messages, latest: Apr 23 2020 at 08:43)
 * [What is going on?](topic/What.20is.20going.20on.3F.html) (20 messages, latest: Apr 23 2020 at 07:26)
 * [noob question(s)](topic/noob.20question(s).html) (4412 messages, latest: Apr 23 2020 at 02:15)
 * [permutation](topic/permutation.html) (6 messages, latest: Apr 22 2020 at 18:25)
@@ -29,7 +30,6 @@ permalink: /stream/113489-new-members/index.html
 * [rw not working with nat.fib](topic/rw.20not.20working.20with.20nat.2Efib.html) (10 messages, latest: Apr 19 2020 at 07:20)
 * [Simp not working inside a predicate](topic/Simp.20not.20working.20inside.20a.20predicate.html) (8 messages, latest: Apr 18 2020 at 23:17)
 * [Computability](topic/Computability.html) (17 messages, latest: Apr 18 2020 at 09:11)
-* [Representation Theory](topic/Representation.20Theory.html) (272 messages, latest: Apr 18 2020 at 09:03)
 * [¬ (p ↔ ¬ p)](topic/.C2.AC.20(p.20.E2.86.94.20.C2.AC.20p).html) (29 messages, latest: Apr 17 2020 at 00:59)
 * [CoCalc functionality](topic/CoCalc.20functionality.html) (67 messages, latest: Apr 16 2020 at 08:10)
 * [changing indices](topic/changing.20indices.html) (3 messages, latest: Apr 15 2020 at 17:57)
@@ -963,4 +963,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 08:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 09:01 UTC</p>
