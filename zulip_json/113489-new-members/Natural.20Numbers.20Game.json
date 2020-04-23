@@ -580,5 +580,11 @@
         "id": 195114599,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1587673374
+    },
+    {
+        "content": "<p>Level 15 of inequality world says, \"By default, the definition of a &lt; b in Lean, once ≤ is defined, is this: <code>a &lt; b := a ≤ b ∧ ¬ (b ≤ a)</code>\". Why doesn't lean simply define a &lt; b as <code>a &lt; b := ¬ (b ≤ a)</code>? Is it for the convenience of easily obtaining  a ≤ b from a &lt; b?</p>",
+        "id": 195124015,
+        "sender_full_name": "Sam Raleigh",
+        "timestamp": 1587678752
     }
 ]

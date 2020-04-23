@@ -15856,7 +15856,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195114599,
+            "latest_id": 195124015,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17063,8 +17063,8 @@
                     "size": 47
                 },
                 "Natural Numbers Game": {
-                    "latest_date": 1587673374,
-                    "size": 97
+                    "latest_date": 1587678752,
+                    "size": 98
                 },
                 "Naturals plus infinity": {
                     "latest_date": 1541927085,
@@ -19685,5 +19685,5 @@
             }
         }
     },
-    "time": 1587675711.2584763
+    "time": 1587679317.3302803
 }
