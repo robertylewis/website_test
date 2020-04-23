@@ -9,6 +9,7 @@ permalink: /stream/217875-Is-there-code-for-X?/index.html
 
 ### Topics:
 
+* [enumerating a fintype](topic/enumerating.20a.20fintype.html) (1 message, latest: Apr 23 2020 at 04:58)
 * [last n elements of a list](topic/last.20n.20elements.20of.20a.20list.html) (10 messages, latest: Apr 21 2020 at 09:35)
 * [continuous functions commute with limits?](topic/continuous.20functions.20commute.20with.20limits.3F.html) (15 messages, latest: Apr 19 2020 at 19:25)
 * [list.is_palindrome](topic/list.2Eis_palindrome.html) (6 messages, latest: Apr 19 2020 at 00:11)
@@ -36,4 +37,4 @@ permalink: /stream/217875-Is-there-code-for-X?/index.html
 * [Super vector space](topic/Super.20vector.20space.html) (1 message, latest: Dec 22 2019 at 14:10)
 * [stream events](topic/stream.20events.html) (1 message, latest: Dec 22 2019 at 14:08)
 
-<hr><p>Last updated: Apr 23 2020 at 04:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 05:01 UTC</p>

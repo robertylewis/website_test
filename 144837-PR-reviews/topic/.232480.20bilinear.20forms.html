@@ -79,6 +79,79 @@ permalink: /stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html
 
 
 
+<a name="195017190"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195017190" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195017190">(Apr 23 2020 at 04:13)</a>:</h4>
+<p>So, maybe we add <code>has_half</code> as a class that only captures the data of the term and enables the notation (like <code>has_zero</code> and <code>has_one</code>) and another class</p>
+<div class="codehilite"><pre><span></span><span class="n">class</span> <span class="n">two_invertible</span> <span class="o">(</span><span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span><span class="bp">*</span><span class="o">)</span> <span class="o">[</span><span class="n">semiring</span> <span class="n">R</span><span class="o">]</span> <span class="kn">extends</span> <span class="n">has_half</span> <span class="n">R</span> <span class="o">:=</span>
+<span class="o">(</span><span class="n">half_mul_two</span> <span class="o">:</span> <span class="err">½</span> <span class="bp">*</span> <span class="mi">2</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)</span>
+<span class="o">(</span><span class="n">two_mul_half</span> <span class="o">:</span> <span class="mi">2</span> <span class="bp">*</span> <span class="err">½</span> <span class="bp">=</span> <span class="mi">1</span><span class="o">)</span>
+</pre></div>
+
+
+<p>What do people think of this idea? (In particular, I'd like to know what <span class="user-mention" data-user-id="238446">@Anne Baanen</span> thinks.)</p>
+
+
+
+<a name="195017253"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195017253" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195017253">(Apr 23 2020 at 04:14)</a>:</h4>
+<p>(I don't know if <code>semiring R</code> can be weakened... you need <code>1</code>, <code>2</code> and <code>*</code>. So you probably need <code>has_one</code>, <code>has_mul</code> and <code>has_add</code>? Maybe also <code>has_zero</code>?</p>
+
+
+
+<a name="195017915"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195017915" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195017915">(Apr 23 2020 at 04:30)</a>:</h4>
+<p>Why not parameterize this over <code>2</code>?</p>
+
+
+
+<a name="195017922"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195017922" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195017922">(Apr 23 2020 at 04:31)</a>:</h4>
+<p>like <code>invertible a</code> for numeral <code>a</code></p>
+
+
+
+<a name="195017932"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195017932" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195017932">(Apr 23 2020 at 04:31)</a>:</h4>
+<p>I'm not a fan of the notation though. It's a bit hard to see in a monospace font</p>
+
+
+
+<a name="195017987"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195017987" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195017987">(Apr 23 2020 at 04:32)</a>:</h4>
+<p>plus it's yet another way to express this constant, making simp normal form more complicated</p>
+
+
+
+<a name="195018195"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195018195" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195018195">(Apr 23 2020 at 04:38)</a>:</h4>
+<p>I like the idea of parametrising. We need a "characteristic does not divide the order of G" class, and <code>invertible (fintype.card G)</code> seems pretty good.</p>
+
+
+
+<a name="195018199"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195018199" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195018199">(Apr 23 2020 at 04:38)</a>:</h4>
+<p>Is there any reasonable definition of <code>has_div</code> for Z[1/2] that does some suitable truncation?</p>
+
+
+
+<a name="195018292"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195018292" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195018292">(Apr 23 2020 at 04:40)</a>:</h4>
+<p>I would really like to be able to use <code>1 / 2</code> if possible. <code>rat.cast</code> already does division by zero sometimes if you are in a ring with the wrong characteristic</p>
+
+
+
+<a name="195018574"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195018574" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195018574">(Apr 23 2020 at 04:48)</a>:</h4>
+<p>I would propose <code>(a * 2^b) / (c * 2^d)</code> (where a and c are odd) evaluates to <code>2^(b-d) * (a / c)</code> with the division evaluated in Z</p>
+
+
+
+<a name="195018593"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195018593" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195018593">(Apr 23 2020 at 04:49)</a>:</h4>
+<p>that should give the correct result in all reasonable cases, returns 0 on division by 0, and is a kind of p-adic approximation otherwise</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 04:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 05:01 UTC</p>
