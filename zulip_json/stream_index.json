@@ -1598,7 +1598,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195008268,
+            "latest_id": 195014382,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -2209,8 +2209,8 @@
                     "size": 8
                 },
                 "Case tags": {
-                    "latest_date": 1587602574,
-                    "size": 8
+                    "latest_date": 1587608392,
+                    "size": 9
                 },
                 "Casting from Prop to Type u": {
                     "latest_date": 1533030503,
@@ -8241,8 +8241,8 @@
                     "size": 11
                 },
                 "lean-client-python": {
-                    "latest_date": 1587591504,
-                    "size": 33
+                    "latest_date": 1587610852,
+                    "size": 34
                 },
                 "lean-nightly": {
                     "latest_date": 1519725068,
@@ -15832,7 +15832,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195009954,
+            "latest_id": 195012578,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -18915,8 +18915,8 @@
                     "size": 4
                 },
                 "noob question(s)": {
-                    "latest_date": 1587604405,
-                    "size": 4410
+                    "latest_date": 1587608149,
+                    "size": 4412
                 },
                 "noob question: vscode and LEAN_PATH": {
                     "latest_date": 1570517846,
@@ -19649,5 +19649,5 @@
             }
         }
     },
-    "time": 1587607285.9640343
+    "time": 1587610907.7090852
 }

@@ -196,5 +196,11 @@
         "id": 194994587,
         "sender_full_name": "Patrick Massot",
         "timestamp": 1587591504
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span> I spent some time today learning about <code>async</code> and <code>await</code> in Python, so I'm much more familiar with how your code works.  (For example, my concern about <code>before</code> and <code>after</code> calling the \"info\" command in parallel is clearly wrong.  The <code>after</code> value won't start be computed until <code>before</code> is done being computed.)  (For another example, I also found that same error in your code--but you fixed it before I had a chance to tell you.)  I tried your new code and it works really well.  It seems to be much more robust than my code which is great!  I haven't found any cases so far where the server doesn't return results when it should, but I'd like to test it out more.  Thanks for making this!</p>",
+        "id": 195014382,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1587610852
     }
 ]

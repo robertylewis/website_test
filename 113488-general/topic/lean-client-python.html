@@ -310,6 +310,12 @@ However, none of them seem perfect, especially with a file like <code>ring_theor
 
 
 
+<a name="195014382"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/lean-client-python/near/195014382" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/website_test/stream/113488-general/topic/lean-client-python.html#195014382">(Apr 23 2020 at 03:00)</a>:</h4>
+<p><span class="user-mention" data-user-id="110031">@Patrick Massot</span> I spent some time today learning about <code>async</code> and <code>await</code> in Python, so I'm much more familiar with how your code works.  (For example, my concern about <code>before</code> and <code>after</code> calling the "info" command in parallel is clearly wrong.  The <code>after</code> value won't start be computed until <code>before</code> is done being computed.)  (For another example, I also found that same error in your code--but you fixed it before I had a chance to tell you.)  I tried your new code and it works really well.  It seems to be much more robust than my code which is great!  I haven't found any cases so far where the server doesn't return results when it should, but I'd like to test it out more.  Thanks for making this!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 02:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 03:01 UTC</p>

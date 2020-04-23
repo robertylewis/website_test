@@ -46,5 +46,11 @@
         "id": 195008268,
         "sender_full_name": "Mario Carneiro",
         "timestamp": 1587602574
+    },
+    {
+        "content": "<p>I'd also prefer more structured data. However, that would require changes to the C++ (tags are part of the tactic state), which I'd rather avoid.</p>",
+        "id": 195012742,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587608392
     }
 ]

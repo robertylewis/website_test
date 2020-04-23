@@ -26458,5 +26458,17 @@
         "id": 195009954,
         "sender_full_name": "Shing Tak Lam",
         "timestamp": 1587604405
+    },
+    {
+        "content": "<p>My instinct would be to do this:</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"kn\">import</span> <span class=\"n\">tactic</span>\n\n<span class=\"n\">def</span> <span class=\"n\">star</span> <span class=\"o\">:</span> <span class=\"bp\">ℕ+</span> <span class=\"bp\">→</span> <span class=\"bp\">ℕ+</span> <span class=\"bp\">→</span> <span class=\"bp\">ℕ+</span>\n<span class=\"bp\">|</span> <span class=\"bp\">⟨</span><span class=\"mi\">1</span><span class=\"o\">,</span> <span class=\"n\">h1</span><span class=\"bp\">⟩</span> <span class=\"bp\">⟨</span><span class=\"n\">n</span><span class=\"o\">,</span> <span class=\"n\">hn</span><span class=\"bp\">⟩</span> <span class=\"o\">:=</span> <span class=\"bp\">⟨</span><span class=\"n\">n</span> <span class=\"bp\">+</span> <span class=\"mi\">1</span><span class=\"o\">,</span> <span class=\"k\">by</span> <span class=\"n\">linarith</span><span class=\"bp\">⟩</span>\n<span class=\"bp\">|</span> <span class=\"bp\">⟨</span><span class=\"n\">n1</span><span class=\"o\">,</span> <span class=\"n\">hn1</span><span class=\"bp\">⟩</span> <span class=\"bp\">⟨</span><span class=\"n\">n2</span><span class=\"o\">,</span> <span class=\"n\">hn2</span><span class=\"bp\">⟩</span> <span class=\"o\">:=</span> <span class=\"n\">sorry</span>\n</pre></div>",
+        "id": 195012569,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1587608108
+    },
+    {
+        "content": "<p>Ok thank you. I'll give that a shot.</p>",
+        "id": 195012578,
+        "sender_full_name": "Shing Tak Lam",
+        "timestamp": 1587608149
     }
 ]

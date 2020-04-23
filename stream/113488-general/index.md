@@ -9,9 +9,9 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Case tags](topic/Case.20tags.html) (8 messages, latest: Apr 23 2020 at 00:42)
+* [lean-client-python](topic/lean-client-python.html) (34 messages, latest: Apr 23 2020 at 03:00)
+* [Case tags](topic/Case.20tags.html) (9 messages, latest: Apr 23 2020 at 02:19)
 * [`precedence` command](topic/.60precedence.60.20command.html) (3 messages, latest: Apr 23 2020 at 00:05)
-* [lean-client-python](topic/lean-client-python.html) (33 messages, latest: Apr 22 2020 at 21:38)
 * [`variables` introduction rules](topic/.60variables.60.20introduction.20rules.html) (4 messages, latest: Apr 22 2020 at 21:16)
 * [Show the objects for an equality of morphisms](topic/Show.20the.20objects.20for.20an.20equality.20of.20morphisms.html) (11 messages, latest: Apr 22 2020 at 17:22)
 * [universe enlargement](topic/universe.20enlargement.html) (7 messages, latest: Apr 22 2020 at 14:17)
@@ -2693,4 +2693,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 23 2020 at 02:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 03:01 UTC</p>
