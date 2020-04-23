@@ -31,6 +31,25 @@ permalink: /stream/113488-general/topic/import.20order.html
 
 
 
+<a name="195094406"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/import%20order/near/195094406" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/website_test/stream/113488-general/topic/import.20order.html#195094406">(Apr 23 2020 at 17:30)</a>:</h4>
+<p>This actually happened a few weeks ago, where the <code>simp_nf</code> linter suddenly failed after a merge to master: <a href="https://github.com/leanprover-community/mathlib/issues/2291" title="https://github.com/leanprover-community/mathlib/issues/2291">#2291</a>  (The <code>mk_all.sh</code> script generates import statements in a nondeterministic way, making this particularly interesting to debug.)</p>
+
+
+
+<a name="195094502"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/import%20order/near/195094502" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/website_test/stream/113488-general/topic/import.20order.html#195094502">(Apr 23 2020 at 17:31)</a>:</h4>
+<p>Should we replace <code>mk_all</code> with a <code>leanproject</code> command that will use, e.g., alphabetical order?</p>
+
+
+
+<a name="195094716"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/import%20order/near/195094716" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/website_test/stream/113488-general/topic/import.20order.html#195094716">(Apr 23 2020 at 17:33)</a>:</h4>
+<p>Personally, I would prefer if <code>mk_all.sh</code> would generate just a single file with a few hundred imports (in alphabetical order).  The current setup takes forever to compile.<br>
+So far we've tried to keep <code>leanproject</code> out of the CI setup, but I'm not opposed to change that.  The <code>mk_all.sh</code> script is tiny though.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 17:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 18:01 UTC</p>

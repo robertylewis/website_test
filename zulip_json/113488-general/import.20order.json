@@ -10,5 +10,23 @@
         "id": 195083263,
         "sender_full_name": "Mario Carneiro",
         "timestamp": 1587657916
+    },
+    {
+        "content": "<p>This actually happened a few weeks ago, where the <code>simp_nf</code> linter suddenly failed after a merge to master: <a href=\"https://github.com/leanprover-community/mathlib/issues/2291\" title=\"https://github.com/leanprover-community/mathlib/issues/2291\">#2291</a>  (The <code>mk_all.sh</code> script generates import statements in a nondeterministic way, making this particularly interesting to debug.)</p>",
+        "id": 195094406,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1587663051
+    },
+    {
+        "content": "<p>Should we replace <code>mk_all</code> with a <code>leanproject</code> command that will use, e.g., alphabetical order?</p>",
+        "id": 195094502,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587663108
+    },
+    {
+        "content": "<p>Personally, I would prefer if <code>mk_all.sh</code> would generate just a single file with a few hundred imports (in alphabetical order).  The current setup takes forever to compile.<br>\nSo far we've tried to keep <code>leanproject</code> out of the CI setup, but I'm not opposed to change that.  The <code>mk_all.sh</code> script is tiny though.</p>",
+        "id": 195094716,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1587663224
     }
 ]
