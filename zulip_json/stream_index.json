@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195050069,
+            "latest_id": 195054497,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1005,8 +1005,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587643256,
-                    "size": 121
+                    "latest_date": 1587645796,
+                    "size": 146
                 },
                 "#311 dfinsupp and direct sum": {
                     "latest_date": 1541504552,
@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195049702,
+            "latest_id": 195051454,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -7413,8 +7413,8 @@
                     "size": 1
                 },
                 "hammers": {
-                    "latest_date": 1587643058,
-                    "size": 30
+                    "latest_date": 1587643973,
+                    "size": 32
                 },
                 "hanoi notes": {
                     "latest_date": 1528616192,
@@ -19657,5 +19657,5 @@
             }
         }
     },
-    "time": 1587643304.611239
+    "time": 1587646896.4355876
 }

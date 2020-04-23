@@ -724,5 +724,155 @@
         "id": 195050069,
         "sender_full_name": "Mario Carneiro",
         "timestamp": 1587643256
+    },
+    {
+        "content": "<p>I love the way that this started off as a question about 1/2 and has become a conversation about typeclass depth limit.</p>",
+        "id": 195050154,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587643312
+    },
+    {
+        "content": "<p>Can we make this work?</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"n\">meta</span> <span class=\"n\">def</span> <span class=\"n\">tactic</span><span class=\"bp\">.</span><span class=\"n\">norm_num_basic</span> <span class=\"o\">:=</span>\n<span class=\"n\">tactic</span><span class=\"bp\">.</span><span class=\"n\">interactive</span><span class=\"bp\">.</span><span class=\"n\">norm_num</span> <span class=\"o\">[]</span> <span class=\"o\">(</span><span class=\"n\">interactive</span><span class=\"bp\">.</span><span class=\"n\">loc</span><span class=\"bp\">.</span><span class=\"n\">ns</span> <span class=\"o\">[</span><span class=\"n\">none</span><span class=\"o\">])</span>\n\n<span class=\"kn\">instance</span> <span class=\"n\">invertible_of_nonzero</span> <span class=\"o\">[</span><span class=\"n\">division_ring</span> <span class=\"n\">α</span><span class=\"o\">]</span> <span class=\"o\">{</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">a</span> <span class=\"bp\">≠</span> <span class=\"mi\">0</span> <span class=\"bp\">.</span> <span class=\"n\">tactic</span><span class=\"bp\">.</span><span class=\"n\">norm_num_basic</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">invertible</span> <span class=\"n\">a</span> <span class=\"o\">:=</span>\n<span class=\"bp\">⟨</span> <span class=\"n\">a</span><span class=\"bp\">⁻¹</span><span class=\"o\">,</span> <span class=\"n\">inv_mul_cancel</span> <span class=\"n\">h</span><span class=\"o\">,</span> <span class=\"n\">mul_inv_cancel</span> <span class=\"n\">h</span> <span class=\"bp\">⟩</span>\n\n<span class=\"n\">def</span> <span class=\"n\">foo</span> <span class=\"o\">:</span> <span class=\"n\">invertible</span> <span class=\"o\">(</span><span class=\"mi\">3</span> <span class=\"o\">:</span> <span class=\"n\">ℚ</span><span class=\"o\">)</span> <span class=\"o\">:=</span> <span class=\"n\">infer_instance</span>\n</pre></div>",
+        "id": 195051634,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644066
+    },
+    {
+        "content": "<p>auto params in typeclass instances currently don't work, but I think this should be fixed in the C++</p>",
+        "id": 195051677,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644100
+    },
+    {
+        "content": "<p>there are reasons for this decision but I don't think they are very good</p>",
+        "id": 195051705,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644126
+    },
+    {
+        "content": "<p>There was a big discussion about invoking tactics from type class search, let me see if I can find it.</p>",
+        "id": 195051719,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644145
+    },
+    {
+        "content": "<p><a href=\"#narrow/stream/113488-general/topic/instances.20and.20parameters\" title=\"#narrow/stream/113488-general/topic/instances.20and.20parameters\">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/instances.20and.20parameters</a> ?</p>",
+        "id": 195051834,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587644221
+    },
+    {
+        "content": "<p>Right, specifically starting at <a href=\"#narrow/stream/113488-general/topic/instances.20and.20parameters/near/178609338\" title=\"#narrow/stream/113488-general/topic/instances.20and.20parameters/near/178609338\">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/instances.20and.20parameters/near/178609338</a> (but it's just a few messages down)</p>",
+        "id": 195051869,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644262
+    },
+    {
+        "content": "<p>I no longer recall what the outcome of that discussion was, though</p>",
+        "id": 195051883,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644276
+    },
+    {
+        "content": "<p>Haven't we been told that in Lean 4 it will definitely not be possible to run tactics from inside typeclass search?</p>",
+        "id": 195052122,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587644416
+    },
+    {
+        "content": "<p>the linked discussion seems to say the opposite</p>",
+        "id": 195052160,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644454
+    },
+    {
+        "content": "<p>but I think if you follow it (much) farther, thing became murkier?</p>",
+        "id": 195052184,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644477
+    },
+    {
+        "content": "<p>I don't really remember now though</p>",
+        "id": 195052191,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644481
+    },
+    {
+        "content": "<p>I'm mostly curious how costly it would be to implement this in lean 3</p>",
+        "id": 195052214,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644508
+    },
+    {
+        "content": "<p>(costly in terms of development work, not runtime)</p>",
+        "id": 195052229,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644518
+    },
+    {
+        "content": "<p>I guess the issue was whether you want to be able to backtrack out of tactics that fail</p>",
+        "id": 195052291,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644548
+    },
+    {
+        "content": "<p>e.g. zmod n being a field only when n is prime</p>",
+        "id": 195052319,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644569
+    },
+    {
+        "content": "<p>I think that it should be implemented in the most straightforward way: tactics get called synchronously in the middle of the search</p>",
+        "id": 195052328,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644581
+    },
+    {
+        "content": "<p>this puts some constraints on the tactics to not misbehave too badly but I think this is reasonable for a rarely used feature</p>",
+        "id": 195052402,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644625
+    },
+    {
+        "content": "<p>Anyways, I don't think this approach helps for this PR</p>",
+        "id": 195052559,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587644714
+    },
+    {
+        "content": "<p>we might also consider an opt in marker on classes to allow auto params, so that most regular instance searches guarantee no tactic calls</p>",
+        "id": 195052576,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644726
+    },
+    {
+        "content": "<p>For this PR, we just need an instance <code>invertible (2 : Q)</code>, or perhaps <code>[char_zero A] : invertible (2 : A)</code></p>",
+        "id": 195052757,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644828
+    },
+    {
+        "content": "<p>maybe we will get another instance for 3 when people start working with elliptic curves</p>",
+        "id": 195052829,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587644880
+    },
+    {
+        "content": "<p>Only if they choose to focus on Weierstrass form...</p>",
+        "id": 195053883,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587645468
+    },
+    {
+        "content": "<p>I've updated <a href=\"https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2\" title=\"https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2\">the gist</a> to only include the non-controversial parts. Any suggestions before I turn it into a PR?</p>",
+        "id": 195054197,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1587645609
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"238446\">@Anne Baanen</span> The stuff on division rings should maybe be generalised to <code>group_with_zero</code>?</p>",
+        "id": 195054497,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587645796
     }
 ]

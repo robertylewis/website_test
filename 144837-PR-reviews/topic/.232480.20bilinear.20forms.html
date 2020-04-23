@@ -788,6 +788,164 @@ permalink: /stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html
 
 
 
+<a name="195050154"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195050154" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195050154">(Apr 23 2020 at 12:01)</a>:</h4>
+<p>I love the way that this started off as a question about 1/2 and has become a conversation about typeclass depth limit.</p>
+
+
+
+<a name="195051634"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195051634" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195051634">(Apr 23 2020 at 12:14)</a>:</h4>
+<p>Can we make this work?</p>
+<div class="codehilite"><pre><span></span><span class="n">meta</span> <span class="n">def</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">norm_num_basic</span> <span class="o">:=</span>
+<span class="n">tactic</span><span class="bp">.</span><span class="n">interactive</span><span class="bp">.</span><span class="n">norm_num</span> <span class="o">[]</span> <span class="o">(</span><span class="n">interactive</span><span class="bp">.</span><span class="n">loc</span><span class="bp">.</span><span class="n">ns</span> <span class="o">[</span><span class="n">none</span><span class="o">])</span>
+
+<span class="kn">instance</span> <span class="n">invertible_of_nonzero</span> <span class="o">[</span><span class="n">division_ring</span> <span class="n">α</span><span class="o">]</span> <span class="o">{</span><span class="n">a</span> <span class="o">:</span> <span class="n">α</span><span class="o">}</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">≠</span> <span class="mi">0</span> <span class="bp">.</span> <span class="n">tactic</span><span class="bp">.</span><span class="n">norm_num_basic</span><span class="o">)</span> <span class="o">:</span> <span class="n">invertible</span> <span class="n">a</span> <span class="o">:=</span>
+<span class="bp">⟨</span> <span class="n">a</span><span class="bp">⁻¹</span><span class="o">,</span> <span class="n">inv_mul_cancel</span> <span class="n">h</span><span class="o">,</span> <span class="n">mul_inv_cancel</span> <span class="n">h</span> <span class="bp">⟩</span>
+
+<span class="n">def</span> <span class="n">foo</span> <span class="o">:</span> <span class="n">invertible</span> <span class="o">(</span><span class="mi">3</span> <span class="o">:</span> <span class="n">ℚ</span><span class="o">)</span> <span class="o">:=</span> <span class="n">infer_instance</span>
+</pre></div>
+
+
+
+<a name="195051677"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195051677" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195051677">(Apr 23 2020 at 12:15)</a>:</h4>
+<p>auto params in typeclass instances currently don't work, but I think this should be fixed in the C++</p>
+
+
+
+<a name="195051705"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195051705" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195051705">(Apr 23 2020 at 12:15)</a>:</h4>
+<p>there are reasons for this decision but I don't think they are very good</p>
+
+
+
+<a name="195051719"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195051719" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195051719">(Apr 23 2020 at 12:15)</a>:</h4>
+<p>There was a big discussion about invoking tactics from type class search, let me see if I can find it.</p>
+
+
+
+<a name="195051834"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195051834" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195051834">(Apr 23 2020 at 12:17)</a>:</h4>
+<p><a href="#narrow/stream/113488-general/topic/instances.20and.20parameters" title="#narrow/stream/113488-general/topic/instances.20and.20parameters">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/instances.20and.20parameters</a> ?</p>
+
+
+
+<a name="195051869"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195051869" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195051869">(Apr 23 2020 at 12:17)</a>:</h4>
+<p>Right, specifically starting at <a href="#narrow/stream/113488-general/topic/instances.20and.20parameters/near/178609338" title="#narrow/stream/113488-general/topic/instances.20and.20parameters/near/178609338">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/instances.20and.20parameters/near/178609338</a> (but it's just a few messages down)</p>
+
+
+
+<a name="195051883"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195051883" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195051883">(Apr 23 2020 at 12:17)</a>:</h4>
+<p>I no longer recall what the outcome of that discussion was, though</p>
+
+
+
+<a name="195052122"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052122" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052122">(Apr 23 2020 at 12:20)</a>:</h4>
+<p>Haven't we been told that in Lean 4 it will definitely not be possible to run tactics from inside typeclass search?</p>
+
+
+
+<a name="195052160"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052160" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052160">(Apr 23 2020 at 12:20)</a>:</h4>
+<p>the linked discussion seems to say the opposite</p>
+
+
+
+<a name="195052184"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052184" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052184">(Apr 23 2020 at 12:21)</a>:</h4>
+<p>but I think if you follow it (much) farther, thing became murkier?</p>
+
+
+
+<a name="195052191"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052191" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052191">(Apr 23 2020 at 12:21)</a>:</h4>
+<p>I don't really remember now though</p>
+
+
+
+<a name="195052214"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052214" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052214">(Apr 23 2020 at 12:21)</a>:</h4>
+<p>I'm mostly curious how costly it would be to implement this in lean 3</p>
+
+
+
+<a name="195052229"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052229" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052229">(Apr 23 2020 at 12:21)</a>:</h4>
+<p>(costly in terms of development work, not runtime)</p>
+
+
+
+<a name="195052291"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052291" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052291">(Apr 23 2020 at 12:22)</a>:</h4>
+<p>I guess the issue was whether you want to be able to backtrack out of tactics that fail</p>
+
+
+
+<a name="195052319"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052319" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052319">(Apr 23 2020 at 12:22)</a>:</h4>
+<p>e.g. zmod n being a field only when n is prime</p>
+
+
+
+<a name="195052328"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052328" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052328">(Apr 23 2020 at 12:23)</a>:</h4>
+<p>I think that it should be implemented in the most straightforward way: tactics get called synchronously in the middle of the search</p>
+
+
+
+<a name="195052402"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052402" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052402">(Apr 23 2020 at 12:23)</a>:</h4>
+<p>this puts some constraints on the tactics to not misbehave too badly but I think this is reasonable for a rarely used feature</p>
+
+
+
+<a name="195052559"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052559" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052559">(Apr 23 2020 at 12:25)</a>:</h4>
+<p>Anyways, I don't think this approach helps for this PR</p>
+
+
+
+<a name="195052576"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052576" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052576">(Apr 23 2020 at 12:25)</a>:</h4>
+<p>we might also consider an opt in marker on classes to allow auto params, so that most regular instance searches guarantee no tactic calls</p>
+
+
+
+<a name="195052757"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052757" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052757">(Apr 23 2020 at 12:27)</a>:</h4>
+<p>For this PR, we just need an instance <code>invertible (2 : Q)</code>, or perhaps <code>[char_zero A] : invertible (2 : A)</code></p>
+
+
+
+<a name="195052829"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195052829" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195052829">(Apr 23 2020 at 12:28)</a>:</h4>
+<p>maybe we will get another instance for 3 when people start working with elliptic curves</p>
+
+
+
+<a name="195053883"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195053883" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Kevin Buzzard <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195053883">(Apr 23 2020 at 12:37)</a>:</h4>
+<p>Only if they choose to focus on Weierstrass form...</p>
+
+
+
+<a name="195054197"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195054197" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Anne Baanen <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195054197">(Apr 23 2020 at 12:40)</a>:</h4>
+<p>I've updated <a href="https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2" title="https://gist.github.com/Vierkantor/e73209684c16b725e29880de7443c9f2">the gist</a> to only include the non-controversial parts. Any suggestions before I turn it into a PR?</p>
+
+
+
+<a name="195054497"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232480%20bilinear%20forms/near/195054497" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232480.20bilinear.20forms.html#195054497">(Apr 23 2020 at 12:43)</a>:</h4>
+<p><span class="user-mention" data-user-id="238446">@Anne Baanen</span> The stuff on division rings should maybe be generalised to <code>group_with_zero</code>?</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 23 2020 at 12:01 UTC</p>
+<hr><p>Last updated: Apr 23 2020 at 13:01 UTC</p>

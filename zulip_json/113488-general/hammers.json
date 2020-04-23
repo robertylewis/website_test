@@ -178,5 +178,17 @@
         "id": 195049702,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1587643058
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"121058\">Jasmin Blanchette</span> <a href=\"#narrow/stream/113488-general/topic/hammers/near/195048182\" title=\"#narrow/stream/113488-general/topic/hammers/near/195048182\">said</a>:</p>\n<blockquote>\n<p>Its four authors can be considered the main hammer people (Sledgehammer, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mi mathvariant=\"normal\">M</mi><mi mathvariant=\"normal\">i</mi><mi mathvariant=\"normal\">z</mi></mrow><mrow><mi mathvariant=\"double-struck\">A</mi><mi mathvariant=\"double-struck\">R</mi></mrow></mrow><annotation encoding=\"application/x-tex\">\\mathrm{Miz}\\mathbb{AR}</annotation></semantics></math></span><span aria-hidden=\"true\" class=\"katex-html\"><span class=\"base\"><span class=\"strut\" style=\"height:0.68889em;vertical-align:0em;\"></span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"mord mathrm\">i</span><span class=\"mord mathrm\">z</span></span><span class=\"mord\"><span class=\"mord mathbb\">A</span><span class=\"mord mathbb\">R</span></span></span></span></span>, HOLyHammer, CoqHammer).</p>\n</blockquote>\n<p>Sounds like some theorem provers/Avengers crossover</p>",
+        "id": 195050155,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587643312
+    },
+    {
+        "content": "<p>The four riders of the acoqalypse.</p>",
+        "id": 195051454,
+        "sender_full_name": "Jasmin Blanchette",
+        "timestamp": 1587643973
     }
 ]
