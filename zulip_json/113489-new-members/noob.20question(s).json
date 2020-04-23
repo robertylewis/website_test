@@ -26440,5 +26440,23 @@
         "id": 195008601,
         "sender_full_name": "Nam",
         "timestamp": 1587602883
+    },
+    {
+        "content": "<p>(I think Mario's is much more readable, for what it's worth.)</p>",
+        "id": 195009716,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587604115
+    },
+    {
+        "content": "<p>i can see why that style is more prevalent in the repo now :-D</p>",
+        "id": 195009800,
+        "sender_full_name": "Nam",
+        "timestamp": 1587604220
+    },
+    {
+        "content": "<p>How should I pattern match on <code>ℕ+</code>? since the  way I'd expect doesn't work</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"n\">def</span> <span class=\"n\">star</span> <span class=\"o\">:</span> <span class=\"bp\">ℕ+</span> <span class=\"bp\">→</span> <span class=\"bp\">ℕ+</span> <span class=\"bp\">→</span> <span class=\"bp\">ℕ+</span>\n<span class=\"bp\">|</span> <span class=\"mi\">1</span> <span class=\"n\">n</span> <span class=\"o\">:=</span> <span class=\"n\">n</span> <span class=\"bp\">+</span> <span class=\"mi\">1</span> <span class=\"c1\">-- error</span>\n</pre></div>",
+        "id": 195009954,
+        "sender_full_name": "Shing Tak Lam",
+        "timestamp": 1587604405
     }
 ]
