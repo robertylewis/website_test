@@ -40,5 +40,29 @@
         "id": 195161706,
         "sender_full_name": "Scott Morrison",
         "timestamp": 1587718756
+    },
+    {
+        "content": "<p>And they're not defeq?</p>",
+        "id": 195162276,
+        "sender_full_name": "Chris Hughes",
+        "timestamp": 1587719055
+    },
+    {
+        "content": "<p>Definition of <code>comm_semiring</code> is here: <a href=\"https://github.com/leanprover-community/mathlib/blob/polynomial-review/src/data/monoid_algebra.lean#L469\" title=\"https://github.com/leanprover-community/mathlib/blob/polynomial-review/src/data/monoid_algebra.lean#L469\">https://github.com/leanprover-community/mathlib/blob/polynomial-review/src/data/monoid_algebra.lean#L469</a></p>",
+        "id": 195164782,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587720708
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"kn\">instance</span> <span class=\"o\">[</span><span class=\"n\">comm_semiring</span> <span class=\"n\">k</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">add_comm_monoid</span> <span class=\"n\">G</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">comm_semiring</span> <span class=\"o\">(</span><span class=\"n\">add_monoid_algebra</span> <span class=\"n\">k</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"o\">{</span> <span class=\"bp\">..</span> <span class=\"n\">add_monoid_algebra</span><span class=\"bp\">.</span><span class=\"n\">semiring</span><span class=\"o\">,</span> <span class=\"bp\">..</span> <span class=\"bp\">@</span><span class=\"n\">monoid_algebra</span><span class=\"bp\">.</span><span class=\"n\">comm_semiring</span> <span class=\"n\">k</span> <span class=\"o\">(</span><span class=\"n\">multiplicative</span> <span class=\"n\">G</span><span class=\"o\">)</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span> <span class=\"o\">}</span>\n</pre></div>\n\n\n<p>I wonder why they're not defeq.</p>",
+        "id": 195164853,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587720736
+    },
+    {
+        "content": "<p>This works:</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"n\">attribute</span> <span class=\"o\">[</span><span class=\"n\">ext</span><span class=\"o\">]</span> <span class=\"n\">semiring</span>\n<span class=\"kn\">instance</span> <span class=\"o\">:</span> <span class=\"n\">algebra</span> <span class=\"n\">R</span> <span class=\"o\">(</span><span class=\"n\">polynomial</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n   <span class=\"n\">convert</span> <span class=\"bp\">@</span><span class=\"n\">add_monoid_algebra</span><span class=\"bp\">.</span><span class=\"n\">algebra</span> <span class=\"n\">R</span> <span class=\"bp\">ℕ</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span><span class=\"o\">,</span>\n   <span class=\"n\">ext1</span><span class=\"bp\">;</span> <span class=\"n\">refl</span>\n<span class=\"kn\">end</span>\n</pre></div>",
+        "id": 195165782,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587721313
     }
 ]
