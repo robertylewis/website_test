@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195137376,
+            "latest_id": 195139425,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -2213,8 +2213,8 @@
                     "size": 8
                 },
                 "Case tags": {
-                    "latest_date": 1587690142,
-                    "size": 14
+                    "latest_date": 1587693197,
+                    "size": 15
                 },
                 "Casting from Prop to Type u": {
                     "latest_date": 1533030503,
@@ -12197,8 +12197,8 @@
                     "size": 14
                 },
                 "why does a sync command take so long in the lean server": {
-                    "latest_date": 1587688404,
-                    "size": 3
+                    "latest_date": 1587692662,
+                    "size": 4
                 },
                 "why does or only eliminate to Prop?": {
                     "latest_date": 1521901432,
@@ -15860,7 +15860,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195135904,
+            "latest_id": 195139111,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17047,8 +17047,8 @@
                     "size": 7
                 },
                 "Multiplication in Pattern Matching": {
-                    "latest_date": 1587671540,
-                    "size": 18
+                    "latest_date": 1587692567,
+                    "size": 19
                 },
                 "Multiplying by 2": {
                     "latest_date": 1587657657,
@@ -17067,8 +17067,8 @@
                     "size": 47
                 },
                 "Natural Numbers Game": {
-                    "latest_date": 1587688460,
-                    "size": 105
+                    "latest_date": 1587692717,
+                    "size": 106
                 },
                 "Naturals plus infinity": {
                     "latest_date": 1541927085,
@@ -19693,5 +19693,5 @@
             }
         }
     },
-    "time": 1587690152.8236706
+    "time": 1587693703.5911012
 }

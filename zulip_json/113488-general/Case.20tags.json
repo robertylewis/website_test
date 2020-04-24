@@ -82,5 +82,11 @@
         "id": 195137376,
         "sender_full_name": "Mario Carneiro",
         "timestamp": 1587690142
+    },
+    {
+        "content": "<p>I agree that it would be nice to have more flexibility in the metadata, to support other uses of tags. However, there needs to be some structure to the data because Lean needs to know how to print a tag. How about this: a tag is a <code>list (name x list name x expr)</code>. The first component identifies what kind of tag this is, e.g. <code>_case</code> or <code>_field</code>. The second component gives names that should be displayed in the goal state (<code>['c, 'd]</code> becomes \"case c, d\"). The third component is arbitrary metadata. This certainly covers all current uses and imposes only minimal structure. The printing is still a bit restrictive, but I don't immediately see a way around that.</p>\n<p>To support <code>rcases</code>, one would need to identify cases by a sequence of names (rather than one name): <code>sum.inj/sum.inr</code> could be one case if we split a nested sum. However, I'm not sure that this is worth the extra complexity.</p>\n<p>I'm afraid I don't understand your remark about the unique names. How should <code>revert</code> interact with them?</p>",
+        "id": 195139425,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587693197
     }
 ]

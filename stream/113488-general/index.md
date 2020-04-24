@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [Case tags](topic/Case.20tags.html) (14 messages, latest: Apr 24 2020 at 01:02)
-* [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (3 messages, latest: Apr 24 2020 at 00:33)
+* [Case tags](topic/Case.20tags.html) (15 messages, latest: Apr 24 2020 at 01:53)
+* [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (4 messages, latest: Apr 24 2020 at 01:44)
 * [lean-client-python](topic/lean-client-python.html) (37 messages, latest: Apr 23 2020 at 22:27)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (117 messages, latest: Apr 23 2020 at 20:03)
 * [import order](topic/import.20order.html) (5 messages, latest: Apr 23 2020 at 17:33)
@@ -2698,4 +2698,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 01:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 02:01 UTC</p>
