@@ -1,0 +1,9 @@
+---
+layout: archive
+title: Lean Prover Zulip Chat Archive
+permalink: archive/116395maths/index.html
+---
+
+The archive URL format has changed. Please find this page at:
+
+<https://leanprover-community.github.io/archive/stream/116395-maths/index.html>
