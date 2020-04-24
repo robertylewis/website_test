@@ -1606,7 +1606,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195191113,
+            "latest_id": 195199490,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -3713,8 +3713,8 @@
                     "size": 1
                 },
                 "Notices of the AMS paper": {
-                    "latest_date": 1587736664,
-                    "size": 4
+                    "latest_date": 1587740053,
+                    "size": 13
                 },
                 "Ofer Gabber on formal proof": {
                     "latest_date": 1547765016,
@@ -11717,8 +11717,8 @@
                     "size": 21
                 },
                 "typeclass instances help": {
-                    "latest_date": 1587736099,
-                    "size": 21
+                    "latest_date": 1587737369,
+                    "size": 22
                 },
                 "typeclass or implicit arguments": {
                     "latest_date": 1573257792,
@@ -19717,5 +19717,5 @@
             }
         }
     },
-    "time": 1587736925.4823933
+    "time": 1587740526.0240507
 }

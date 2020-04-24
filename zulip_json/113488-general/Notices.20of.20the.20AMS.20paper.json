@@ -22,5 +22,59 @@
         "id": 195191113,
         "sender_full_name": "Johan Commelin",
         "timestamp": 1587736664
+    },
+    {
+        "content": "<p>Some examples from <code>analysis</code>: analytic functions, C^r functions, mean value theorem and friends, uniqueness of a solution of an ODE, inverse function thm and implicit function thm (PRed, hopefully will land before May 1st).</p>",
+        "id": 195195175,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587738379
+    },
+    {
+        "content": "<p>Probably <span class=\"user-mention\" data-user-id=\"110050\">@Sebastien Gouezel</span> will come up with a different list, and you'll be able to choose from the union.</p>",
+        "id": 195195558,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587738537
+    },
+    {
+        "content": "<p>I wouldn't mention uniqueness in ODEs until we have existence.</p>",
+        "id": 195195851,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587738646
+    },
+    {
+        "content": "<blockquote>\n<p>Lean’s tactic state can often be easily understood by mathematicians without any specialist knowledge of ITP’s, because the notation used is standard mathematical notation.</p>\n</blockquote>\n<p><span class=\"user-mention\" data-user-id=\"110038\">@Kevin Buzzard</span> Apart from the fact that you write <code>x : X</code> <span aria-label=\"rofl\" class=\"emoji emoji-1f923\" role=\"img\" title=\"rofl\">:rofl:</span></p>",
+        "id": 195196292,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587738817
+    },
+    {
+        "content": "<p>Maybe add a link to the Codewars website, when you first mention it?</p>",
+        "id": 195197257,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587739202
+    },
+    {
+        "content": "<p>In your discussion of gaps, you might mention that we have measure theory, but no applications to probability theory/stochastics. Combinatorics and graph theory is under construction.... but lots of gaps there.</p>",
+        "id": 195198059,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587739498
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/113488-general/topic/Notices.20of.20the.20AMS.20paper/near/195191073\" title=\"#narrow/stream/113488-general/topic/Notices.20of.20the.20AMS.20paper/near/195191073\">said</a>:</p>\n<blockquote>\n<p>I don't like the spacing in footnote <code>*</code> on page 1.</p>\n</blockquote>\n<p>Eew! Neither do I!</p>",
+        "id": 195198305,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587739585
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110038\">@Kevin Buzzard</span> I've read it, and I like it! You've already seen all my <em>brutal</em> comments above (-;</p>",
+        "id": 195199290,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587739980
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110038\">@Kevin Buzzard</span> Thanks for mentioning Codewars in your paper!</p>\n<p>I've skimmed through the first one and a half pages and found a typo (or is it a pun?) on page 2. Near the end of subsection 1.1, it says, \"At this stage in the development of mathematics, every proof can be chased right down to the axioms of the system we are considering, and students are expected to <em>lean</em> from such courses that mathematics can be done in this way.\" I suppose it should say \"learn\"?</p>",
+        "id": 195199490,
+        "sender_full_name": "Donald Sebastian Leung",
+        "timestamp": 1587740053
     }
 ]
