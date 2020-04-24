@@ -30,4 +30,4 @@ permalink: /stream/187764-Lean-for-teaching/index.html
 * [Discrete Mathematics - Kevin Sullivan](topic/Discrete.20Mathematics.20-.20Kevin.20Sullivan.html) (1 message, latest: Mar 01 2019 at 00:16)
 * [hello](topic/hello.html) (1 message, latest: Feb 28 2019 at 21:02)
 
-<hr><p>Last updated: Apr 24 2020 at 03:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 04:01 UTC</p>
