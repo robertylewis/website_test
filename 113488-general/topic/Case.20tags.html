@@ -99,6 +99,30 @@ This ensures that <code>with_cases</code> can be used both with <code>cases</cod
 
 
 
+<a name="195136533"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195136533" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jannis Limperg <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195136533">(Apr 24 2020 at 00:47)</a>:</h4>
+<p>An <code>expr</code> would be doable, yes. However, I don't understand what this would buy us. We'd still need to define which <code>expr</code>s are valid tags and what their semantics are, right? Could you maybe elaborate on the design you were thinking of?</p>
+
+
+
+<a name="195137132"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195137132" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195137132">(Apr 24 2020 at 00:58)</a>:</h4>
+<p>It leaves the door open for other uses of tags, like in <code>refine_struct</code>, without constraining the form of the metadata</p>
+
+
+
+<a name="195137186"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195137186" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195137186">(Apr 24 2020 at 01:00)</a>:</h4>
+<p>Yes, for case tags we would still need roughly the same structure, although I think the way it is currently done is a bit idiosyncratic. What should case tags for <code>rcases</code> look like, for instance?</p>
+
+
+
+<a name="195137376"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195137376" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195137376">(Apr 24 2020 at 01:02)</a>:</h4>
+<p>Also, the hypotheses pointing to unique names need to be organized in a way so that they can be updated without regard for the surrounding data structure, for things like <code>revert</code></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 00:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 01:02 UTC</p>

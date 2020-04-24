@@ -10,5 +10,11 @@
         "id": 195132285,
         "sender_full_name": "Jason Rute",
         "timestamp": 1587685133
+    },
+    {
+        "content": "<p>Ok, <a href=\"https://github.com/leanprover-community/lean/blob/c4c131ee30dc132e4dec003c82a60c8275f8b4ae/src/shell/server.cpp#L255\" title=\"https://github.com/leanprover-community/lean/blob/c4c131ee30dc132e4dec003c82a60c8275f8b4ae/src/shell/server.cpp#L255\">it looks like it is intentional</a>.</p>",
+        "id": 195135827,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1587688404
     }
 ]

@@ -58,5 +58,29 @@
         "id": 195016054,
         "sender_full_name": "Mario Carneiro",
         "timestamp": 1587613733
+    },
+    {
+        "content": "<p>An <code>expr</code> would be doable, yes. However, I don't understand what this would buy us. We'd still need to define which <code>expr</code>s are valid tags and what their semantics are, right? Could you maybe elaborate on the design you were thinking of?</p>",
+        "id": 195136533,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1587689268
+    },
+    {
+        "content": "<p>It leaves the door open for other uses of tags, like in <code>refine_struct</code>, without constraining the form of the metadata</p>",
+        "id": 195137132,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587689901
+    },
+    {
+        "content": "<p>Yes, for case tags we would still need roughly the same structure, although I think the way it is currently done is a bit idiosyncratic. What should case tags for <code>rcases</code> look like, for instance?</p>",
+        "id": 195137186,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587690001
+    },
+    {
+        "content": "<p>Also, the hypotheses pointing to unique names need to be organized in a way so that they can be updated without regard for the surrounding data structure, for things like <code>revert</code></p>",
+        "id": 195137376,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587690142
     }
 ]

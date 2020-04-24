@@ -776,6 +776,41 @@ the file is called "not used" though.</p>
 
 
 
+<a name="195135060"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20Numbers%20Game/near/195135060" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sam Raleigh <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/Natural.20Numbers.20Game.html#195135060">(Apr 24 2020 at 00:19)</a>:</h4>
+<p>Level 7 of inequality world says "Note that you can do things like have h2 := add_right_eq_zero _ _ h1 if h1 : a + c = 0."  What exactly do the underscores do here? The level doesn't give any more details beyond that note, and this is my first time seeing them in the game.</p>
+
+
+
+<a name="195135336"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20Numbers%20Game/near/195135336" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/Natural.20Numbers.20Game.html#195135336">(Apr 24 2020 at 00:23)</a>:</h4>
+<p>The underscores mean that Lean should try and infer those arguments, in this case add_right_eq_zero has type</p>
+<div class="codehilite"><pre><span></span><span class="kn">lemma</span> <span class="n">add_right_eq_zero</span> <span class="o">(</span><span class="n">a</span> <span class="n">b</span> <span class="o">:</span> <span class="n">mynat</span><span class="o">)</span> <span class="o">:</span> <span class="n">a</span> <span class="bp">+</span> <span class="n">b</span> <span class="bp">=</span> <span class="mi">0</span> <span class="bp">→</span> <span class="n">a</span> <span class="bp">=</span> <span class="mi">0</span>
+</pre></div>
+
+
+<p>but we can see that if we apply add_right_eq_zero with <code>a c h1</code> as arguments where <code>h1</code> has type <code>a+c = 0</code> then the first two arguments (<code>a</code> and <code>c</code>) aren't strictly needed, theres only one possible thing they can be given the type of <code>h1</code>  for everything to make sense, so the underscores tell lean to work out those arguments automatically.</p>
+
+
+
+<a name="195135440"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20Numbers%20Game/near/195135440" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/Natural.20Numbers.20Game.html#195135440">(Apr 24 2020 at 00:25)</a>:</h4>
+<p>In this case theres not a huge amount of savings (you only have to type one character anyway), generally it saves us from having to retype long complicated terms sometimes,  which can also improve readability, or from having to remember which way round arguments go. And it can make it easier to change variable names later or copy lines to different contexts.</p>
+
+
+
+<a name="195135819"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20Numbers%20Game/near/195135819" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/Natural.20Numbers.20Game.html#195135819">(Apr 24 2020 at 00:33)</a>:</h4>
+<p>But I think this is a bit confusing actually, as in the latest version of the natural number game the arguments for add_right_eq_zero are always implicit (this was changed only recently) so depending on which version is live for you it may be that you never needed to type <code>add_right_eq_zero a c h1</code>.</p>
+
+
+
+<a name="195135904"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/Natural%20Numbers%20Game/near/195135904" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Alex J. Best <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/Natural.20Numbers.20Game.html#195135904">(Apr 24 2020 at 00:34)</a>:</h4>
+<p>Looks like this is PR <a href="https://github.com/ImperialCollegeLondon/natural_number_game/pull/69/" title="https://github.com/ImperialCollegeLondon/natural_number_game/pull/69/">https://github.com/ImperialCollegeLondon/natural_number_game/pull/69/</a></p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 00:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 01:02 UTC</p>
