@@ -14,4 +14,4 @@ permalink: /stream/187724-concrete-semantics/index.html
 * [signup sheet](topic/signup.20sheet.html) (1 message, latest: Mar 01 2019 at 19:00)
 * [hello](topic/hello.html) (14 messages, latest: Feb 28 2019 at 20:51)
 
-<hr><p>Last updated: Apr 24 2020 at 08:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 09:02 UTC</p>

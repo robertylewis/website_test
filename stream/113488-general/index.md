@@ -9,8 +9,8 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [class instance unification fails](topic/class.20instance.20unification.20fails.html) (7 messages, latest: Apr 24 2020 at 08:59)
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (5 messages, latest: Apr 24 2020 at 07:42)
-* [class instance unification fails](topic/class.20instance.20unification.20fails.html) (3 messages, latest: Apr 24 2020 at 07:26)
 * [lean-client-python](topic/lean-client-python.html) (38 messages, latest: Apr 24 2020 at 02:59)
 * [unnecessary imports](topic/unnecessary.20imports.html) (47 messages, latest: Apr 24 2020 at 02:28)
 * [Case tags](topic/Case.20tags.html) (19 messages, latest: Apr 24 2020 at 02:10)
@@ -2699,4 +2699,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 08:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 09:02 UTC</p>

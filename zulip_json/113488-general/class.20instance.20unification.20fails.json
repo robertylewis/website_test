@@ -16,5 +16,29 @@
         "id": 195154006,
         "sender_full_name": "Yury G. Kudryashov",
         "timestamp": 1587713199
+    },
+    {
+        "content": "<p>I think</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"kn\">instance</span> <span class=\"o\">:</span> <span class=\"n\">algebra</span> <span class=\"n\">R</span> <span class=\"o\">(</span><span class=\"n\">polynomial</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">:=</span>\n<span class=\"k\">begin</span>\n   <span class=\"n\">convert</span> <span class=\"bp\">@</span><span class=\"n\">add_monoid_algebra</span><span class=\"bp\">.</span><span class=\"n\">algebra</span> <span class=\"n\">R</span> <span class=\"bp\">ℕ</span> <span class=\"bp\">_</span> <span class=\"bp\">_</span><span class=\"o\">,</span>\n<span class=\"kn\">end</span>\n</pre></div>\n\n\n<p>helps.</p>",
+        "id": 195161432,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587718607
+    },
+    {
+        "content": "<p>That then fails with:</p>",
+        "id": 195161462,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587718626
+    },
+    {
+        "content": "<div class=\"codehilite\"><pre><span></span><span class=\"mi\">1</span> <span class=\"n\">goal</span>\n<span class=\"n\">R</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span> <span class=\"n\">u</span><span class=\"o\">,</span>\n<span class=\"bp\">_</span><span class=\"n\">inst_1</span> <span class=\"o\">:</span> <span class=\"n\">comm_semiring</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"n\">R</span>\n<span class=\"err\">⊢</span> <span class=\"bp\">@</span><span class=\"n\">eq</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"bp\">+</span><span class=\"mi\">1</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">semiring</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"bp\">@</span><span class=\"n\">polynomial</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"n\">R</span> <span class=\"bp\">_</span><span class=\"n\">inst_1</span><span class=\"o\">))</span>\n    <span class=\"o\">(</span><span class=\"bp\">@</span><span class=\"n\">comm_semiring</span><span class=\"bp\">.</span><span class=\"n\">to_semiring</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"bp\">@</span><span class=\"n\">polynomial</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"n\">R</span> <span class=\"bp\">_</span><span class=\"n\">inst_1</span><span class=\"o\">)</span> <span class=\"o\">(</span><span class=\"bp\">@</span><span class=\"n\">polynomial</span><span class=\"bp\">.</span><span class=\"n\">comm_semiring</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"n\">R</span> <span class=\"bp\">_</span><span class=\"n\">inst_1</span><span class=\"o\">))</span>\n    <span class=\"o\">(</span><span class=\"bp\">@</span><span class=\"n\">add_monoid_algebra</span><span class=\"bp\">.</span><span class=\"n\">semiring</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span> <span class=\"mi\">0</span><span class=\"o\">}</span> <span class=\"n\">R</span> <span class=\"n\">nat</span> <span class=\"o\">(</span><span class=\"bp\">@</span><span class=\"n\">comm_semiring</span><span class=\"bp\">.</span><span class=\"n\">to_semiring</span><span class=\"bp\">.</span><span class=\"o\">{</span><span class=\"n\">u</span><span class=\"o\">}</span> <span class=\"n\">R</span> <span class=\"bp\">_</span><span class=\"n\">inst_1</span><span class=\"o\">)</span> <span class=\"n\">nat</span><span class=\"bp\">.</span><span class=\"n\">add_monoid</span><span class=\"o\">)</span>\n</pre></div>",
+        "id": 195161473,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587718630
+    },
+    {
+        "content": "<p>So we're ending up in <code>semiring</code> two different ways.</p>",
+        "id": 195161706,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587718756
     }
 ]

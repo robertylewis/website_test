@@ -46,6 +46,44 @@ permalink: /stream/113488-general/topic/class.20instance.20unification.20fails.h
 
 
 
+<a name="195161432"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195161432" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195161432">(Apr 24 2020 at 08:56)</a>:</h4>
+<p>I think</p>
+<div class="codehilite"><pre><span></span><span class="kn">instance</span> <span class="o">:</span> <span class="n">algebra</span> <span class="n">R</span> <span class="o">(</span><span class="n">polynomial</span> <span class="n">R</span><span class="o">)</span> <span class="o">:=</span>
+<span class="k">begin</span>
+   <span class="n">convert</span> <span class="bp">@</span><span class="n">add_monoid_algebra</span><span class="bp">.</span><span class="n">algebra</span> <span class="n">R</span> <span class="bp">ℕ</span> <span class="bp">_</span> <span class="bp">_</span><span class="o">,</span>
+<span class="kn">end</span>
+</pre></div>
+
+
+<p>helps.</p>
+
+
+
+<a name="195161462"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195161462" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195161462">(Apr 24 2020 at 08:57)</a>:</h4>
+<p>That then fails with:</p>
+
+
+
+<a name="195161473"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195161473" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195161473">(Apr 24 2020 at 08:57)</a>:</h4>
+<div class="codehilite"><pre><span></span><span class="mi">1</span> <span class="n">goal</span>
+<span class="n">R</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span><span class="o">,</span>
+<span class="bp">_</span><span class="n">inst_1</span> <span class="o">:</span> <span class="n">comm_semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span>
+<span class="err">⊢</span> <span class="bp">@</span><span class="n">eq</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="bp">+</span><span class="mi">1</span><span class="o">}</span> <span class="o">(</span><span class="n">semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="o">(</span><span class="bp">@</span><span class="n">polynomial</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="bp">_</span><span class="n">inst_1</span><span class="o">))</span>
+    <span class="o">(</span><span class="bp">@</span><span class="n">comm_semiring</span><span class="bp">.</span><span class="n">to_semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="o">(</span><span class="bp">@</span><span class="n">polynomial</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="bp">_</span><span class="n">inst_1</span><span class="o">)</span> <span class="o">(</span><span class="bp">@</span><span class="n">polynomial</span><span class="bp">.</span><span class="n">comm_semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="bp">_</span><span class="n">inst_1</span><span class="o">))</span>
+    <span class="o">(</span><span class="bp">@</span><span class="n">add_monoid_algebra</span><span class="bp">.</span><span class="n">semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span> <span class="mi">0</span><span class="o">}</span> <span class="n">R</span> <span class="n">nat</span> <span class="o">(</span><span class="bp">@</span><span class="n">comm_semiring</span><span class="bp">.</span><span class="n">to_semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="bp">_</span><span class="n">inst_1</span><span class="o">)</span> <span class="n">nat</span><span class="bp">.</span><span class="n">add_monoid</span><span class="o">)</span>
+</pre></div>
+
+
+
+<a name="195161706"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195161706" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Scott Morrison <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195161706">(Apr 24 2020 at 08:59)</a>:</h4>
+<p>So we're ending up in <code>semiring</code> two different ways.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 08:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 09:02 UTC</p>

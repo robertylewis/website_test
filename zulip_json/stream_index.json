@@ -1606,7 +1606,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195155198,
+            "latest_id": 195161706,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -5821,8 +5821,8 @@
                     "size": 5
                 },
                 "class instance unification fails": {
-                    "latest_date": 1587713199,
-                    "size": 3
+                    "latest_date": 1587718756,
+                    "size": 7
                 },
                 "class on itp": {
                     "latest_date": 1539566823,
@@ -19705,5 +19705,5 @@
             }
         }
     },
-    "time": 1587715321.2141597
+    "time": 1587718936.7208092
 }
