@@ -1,0 +1,56 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/index.html">PR reviews</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html">#2511 refactor zmod</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195145868"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232511%20refactor%20zmod/near/195145868" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html#195145868">(Apr 24 2020 at 04:27)</a>:</h4>
+<p>As identified in <a href="https://github.com/leanprover-community/mathlib/issues/1564" title="https://github.com/leanprover-community/mathlib/issues/1564">#1564</a> and <a href="https://github.com/leanprover-community/mathlib/issues/1601" title="https://github.com/leanprover-community/mathlib/issues/1601">#1601</a>, there is currently a bit of a mess involved with primality assumptions. I've made an attempt at refactoring the library, and this is the first step. If people like this, it shouldn't be hard to move the padics over to this framework as well.</p>
+
+
+
+<a name="195146752"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232511%20refactor%20zmod/near/195146752" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html#195146752">(Apr 24 2020 at 04:52)</a>:</h4>
+<p>I'm not sure the change to make <code>zmod n</code> be two different types depending on <code>n</code> is going to be a net positive. It means you can't do <code>cases (i : zmod n)</code></p>
+
+
+
+<a name="195146831"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232511%20refactor%20zmod/near/195146831" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html#195146831">(Apr 24 2020 at 04:54)</a>:</h4>
+<p>Here's a crazy idea: <code>zmod n := quotient int (int.modeq n)</code></p>
+
+
+
+<a name="195146847"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232511%20refactor%20zmod/near/195146847" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html#195146847">(Apr 24 2020 at 04:55)</a>:</h4>
+<p>with the sizes of numbers in the computational fragment being controlled by appropriate calls to <code>normalize : zmod n -&gt; zmod n</code> that is provably equal to the identity</p>
+
+
+
+<a name="195146985"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232511%20refactor%20zmod/near/195146985" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html#195146985">(Apr 24 2020 at 04:58)</a>:</h4>
+<p>BTW, can we use the general <code>add_subgroup.quotient</code> framework here?</p>
+
+
+
+<a name="195147095"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/144837-PR%20reviews/topic/%232511%20refactor%20zmod/near/195147095" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/144837-PR-reviews/topic/.232511.20refactor.20zmod.html#195147095">(Apr 24 2020 at 05:01)</a>:</h4>
+<p>I think I prefer <code>modeq</code> for its defeq</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 24 2020 at 05:01 UTC</p>

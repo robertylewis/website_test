@@ -1,0 +1,38 @@
+[
+    {
+        "content": "<p>As identified in <a href=\"https://github.com/leanprover-community/mathlib/issues/1564\" title=\"https://github.com/leanprover-community/mathlib/issues/1564\">#1564</a> and <a href=\"https://github.com/leanprover-community/mathlib/issues/1601\" title=\"https://github.com/leanprover-community/mathlib/issues/1601\">#1601</a>, there is currently a bit of a mess involved with primality assumptions. I've made an attempt at refactoring the library, and this is the first step. If people like this, it shouldn't be hard to move the padics over to this framework as well.</p>",
+        "id": 195145868,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587702469
+    },
+    {
+        "content": "<p>I'm not sure the change to make <code>zmod n</code> be two different types depending on <code>n</code> is going to be a net positive. It means you can't do <code>cases (i : zmod n)</code></p>",
+        "id": 195146752,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587703925
+    },
+    {
+        "content": "<p>Here's a crazy idea: <code>zmod n := quotient int (int.modeq n)</code></p>",
+        "id": 195146831,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587704094
+    },
+    {
+        "content": "<p>with the sizes of numbers in the computational fragment being controlled by appropriate calls to <code>normalize : zmod n -&gt; zmod n</code> that is provably equal to the identity</p>",
+        "id": 195146847,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587704146
+    },
+    {
+        "content": "<p>BTW, can we use the general <code>add_subgroup.quotient</code> framework here?</p>",
+        "id": 195146985,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587704311
+    },
+    {
+        "content": "<p>I think I prefer <code>modeq</code> for its defeq</p>",
+        "id": 195147095,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587704498
+    }
+]
