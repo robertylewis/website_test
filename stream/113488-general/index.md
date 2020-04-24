@@ -9,13 +9,13 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
+* [lean-client-python](topic/lean-client-python.html) (43 messages, latest: Apr 24 2020 at 18:04)
 * [parser fun](topic/parser.20fun.html) (10 messages, latest: Apr 24 2020 at 17:06)
 * [Case tags](topic/Case.20tags.html) (20 messages, latest: Apr 24 2020 at 16:54)
 * [Notices of the AMS paper](topic/Notices.20of.20the.20AMS.20paper.html) (27 messages, latest: Apr 24 2020 at 16:33)
 * [typeclass instances help](topic/typeclass.20instances.20help.html) (22 messages, latest: Apr 24 2020 at 14:09)
 * [tooltips on keywords](topic/tooltips.20on.20keywords.html) (4 messages, latest: Apr 24 2020 at 13:48)
 * [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (35 messages, latest: Apr 24 2020 at 13:31)
-* [lean-client-python](topic/lean-client-python.html) (41 messages, latest: Apr 24 2020 at 12:50)
 * [class instance unification fails](topic/class.20instance.20unification.20fails.html) (12 messages, latest: Apr 24 2020 at 12:43)
 * [unnecessary imports](topic/unnecessary.20imports.html) (47 messages, latest: Apr 24 2020 at 02:28)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (117 messages, latest: Apr 23 2020 at 20:03)
@@ -2702,4 +2702,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 18:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 19:02 UTC</p>

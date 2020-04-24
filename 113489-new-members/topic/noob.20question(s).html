@@ -32894,6 +32894,84 @@ yet the idea that if you take any two things that prove a third thing and, then,
 
 
 
+<a name="195225923"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195225923" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Johan Commelin <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195225923">(Apr 24 2020 at 18:17)</a>:</h4>
+<p>Coq has a lot on that. And then there are others that I know very little about, like TLA+ and such</p>
+
+
+
+<a name="195226946"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195226946" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195226946">(Apr 24 2020 at 18:27)</a>:</h4>
+<p>I was trying the nat.below and nat.brec_on things. I am having some trouble prooving a few things not sure how to go about doing these</p>
+<div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">fib1</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">ℕ</span>
+    <span class="bp">|</span> <span class="mi">0</span> <span class="o">:=</span> <span class="mi">1</span>
+    <span class="bp">|</span> <span class="mi">1</span> <span class="o">:=</span> <span class="mi">1</span>
+    <span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:=</span> <span class="n">fib1</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">1</span><span class="o">)</span> <span class="bp">+</span> <span class="n">fib1</span> <span class="n">n</span>
+
+    <span class="n">def</span> <span class="n">fib2</span> <span class="o">:</span> <span class="bp">ℕ</span> <span class="bp">→</span> <span class="bp">ℕ</span> <span class="o">:=</span>
+        <span class="k">assume</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+        <span class="bp">@</span><span class="n">nat</span><span class="bp">.</span><span class="n">brec_on</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="n">n</span>
+        <span class="o">(</span>
+            <span class="k">assume</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+            <span class="k">assume</span> <span class="n">h</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="n">n</span><span class="o">,</span>
+            <span class="o">(</span>
+                <span class="bp">λ</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">h</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="n">n</span><span class="o">),</span>
+                <span class="o">(</span><span class="bp">@</span><span class="n">nat</span><span class="bp">.</span><span class="n">cases_on</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="n">n</span> <span class="bp">→</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="n">n</span>
+                <span class="o">(</span><span class="bp">λ</span> <span class="n">h</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
+                <span class="o">(</span>
+                    <span class="k">assume</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+                    <span class="k">assume</span> <span class="n">h</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span><span class="o">),</span>
+                    <span class="o">(</span><span class="bp">@</span><span class="n">nat</span><span class="bp">.</span><span class="n">cases_on</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span><span class="o">)</span> <span class="bp">→</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="n">n</span>
+                    <span class="o">(</span><span class="bp">λ</span> <span class="n">h</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
+                    <span class="o">(</span>
+                        <span class="k">assume</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span>
+                        <span class="k">assume</span> <span class="n">h</span> <span class="o">:</span> <span class="n">nat</span><span class="bp">.</span><span class="n">below</span> <span class="o">(</span><span class="bp">λ</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="bp">ℕ</span><span class="o">)</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="o">(</span><span class="n">nat</span><span class="bp">.</span><span class="n">succ</span> <span class="n">n</span><span class="o">)),</span>
+                        <span class="o">(</span><span class="n">h</span><span class="bp">.</span><span class="n">fst</span><span class="bp">.</span><span class="n">fst</span> <span class="bp">+</span> <span class="n">h</span><span class="bp">.</span><span class="n">fst</span><span class="bp">.</span><span class="n">snd</span><span class="bp">.</span><span class="n">fst</span><span class="bp">.</span><span class="n">fst</span><span class="o">)</span>
+                    <span class="o">))</span> <span class="n">h</span>
+                <span class="o">))</span> <span class="n">h</span>
+            <span class="o">)</span> <span class="n">n</span> <span class="n">h</span>
+        <span class="o">)</span>
+
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib1</span> <span class="mi">0</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib1</span> <span class="mi">1</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib1</span> <span class="mi">2</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib1</span> <span class="mi">3</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib1</span> <span class="mi">4</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib1</span> <span class="mi">5</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib1</span> <span class="mi">7</span>
+
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib2</span> <span class="mi">0</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib2</span> <span class="mi">1</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib2</span> <span class="mi">2</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib2</span> <span class="mi">3</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib2</span> <span class="mi">4</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib2</span> <span class="mi">5</span>
+    <span class="bp">#</span><span class="n">reduce</span> <span class="n">fib2</span> <span class="mi">7</span>
+
+    <span class="kn">example</span> <span class="o">:</span> <span class="bp">∀</span> <span class="n">n</span> <span class="o">:</span> <span class="bp">ℕ</span><span class="o">,</span> <span class="n">fib1</span> <span class="n">n</span> <span class="bp">=</span> <span class="n">fib2</span> <span class="n">n</span>
+    <span class="bp">|</span> <span class="mi">0</span> <span class="o">:=</span> <span class="n">rfl</span>
+    <span class="bp">|</span> <span class="mi">1</span> <span class="o">:=</span> <span class="n">rfl</span>
+    <span class="bp">|</span> <span class="o">(</span><span class="n">n</span> <span class="bp">+</span> <span class="mi">2</span><span class="o">)</span> <span class="o">:=</span> <span class="k">by</span> <span class="n">rw</span> <span class="o">[</span><span class="n">fib1</span><span class="o">,</span> <span class="n">fib2</span><span class="o">]</span>
+</pre></div>
+
+
+
+<a name="195227050"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195227050" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sayantan Majumdar <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195227050">(Apr 24 2020 at 18:28)</a>:</h4>
+<p>The last part <code>(n + 2) := sorry</code> case</p>
+
+
+
+<a name="195228717"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113489-new%20members/topic/noob%20question%28s%29/near/195228717" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> AMM <a href="http://robertylewis.com/website_test/stream/113489-new-members/topic/noob.20question(s).html#195228717">(Apr 24 2020 at 18:43)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="112680">Johan Commelin</span> <a href="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195222534" title="#narrow/stream/113489-new-members/topic/noob.20question(s)/near/195222534">said</a>:</p>
+<blockquote>
+<p><span class="user-mention silent" data-user-id="285266">AMM</span> What are you looking for? A comparison can be really long. Is there some specific thing you care about?</p>
+</blockquote>
+<p>Ill have a look at that review, also just the system description was quite helpful. I just wanted some thoughts, this is great!</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 18:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 19:02 UTC</p>
