@@ -1606,7 +1606,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195184124,
+            "latest_id": 195191113,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -3711,6 +3711,10 @@
                 "Notes on well_founded recursion": {
                     "latest_date": 1525026916,
                     "size": 1
+                },
+                "Notices of the AMS paper": {
+                    "latest_date": 1587736664,
+                    "size": 4
                 },
                 "Ofer Gabber on formal proof": {
                     "latest_date": 1547765016,
@@ -11489,8 +11493,8 @@
                     "size": 6
                 },
                 "tooltips on keywords": {
-                    "latest_date": 1587732178,
-                    "size": 3
+                    "latest_date": 1587736125,
+                    "size": 4
                 },
                 "trace a failed tidy": {
                     "latest_date": 1587168634,
@@ -11710,6 +11714,10 @@
                 },
                 "typeclass inferences": {
                     "latest_date": 1522975600,
+                    "size": 21
+                },
+                "typeclass instances help": {
+                    "latest_date": 1587736099,
                     "size": 21
                 },
                 "typeclass or implicit arguments": {
@@ -12205,8 +12213,8 @@
                     "size": 14
                 },
                 "why does a sync command take so long in the lean server": {
-                    "latest_date": 1587733292,
-                    "size": 15
+                    "latest_date": 1587735101,
+                    "size": 35
                 },
                 "why does or only eliminate to Prop?": {
                     "latest_date": 1521901432,
@@ -15868,7 +15876,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195182823,
+            "latest_id": 195190673,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -18254,6 +18262,10 @@
                     "latest_date": 1560117741,
                     "size": 27
                 },
+                "documentation exercise questions": {
+                    "latest_date": 1587736460,
+                    "size": 15
+                },
                 "don't know how to": {
                     "latest_date": 1533768415,
                     "size": 51
@@ -19675,8 +19687,8 @@
                     "size": 5
                 },
                 "zero locus of an ideal": {
-                    "latest_date": 1587732728,
-                    "size": 10
+                    "latest_date": 1587733662,
+                    "size": 14
                 },
                 "zero versus 0": {
                     "latest_date": 1582622504,
@@ -19705,5 +19717,5 @@
             }
         }
     },
-    "time": 1587733319.8720627
+    "time": 1587736925.4823933
 }

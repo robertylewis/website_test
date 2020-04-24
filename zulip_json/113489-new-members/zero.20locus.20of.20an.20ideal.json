@@ -58,5 +58,29 @@
         "id": 195182823,
         "sender_full_name": "Patrick Massot",
         "timestamp": 1587732728
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/113489-new-members/topic/zero.20locus.20of.20an.20ideal/near/195153355\" title=\"#narrow/stream/113489-new-members/topic/zero.20locus.20of.20an.20ideal/near/195153355\">said</a>:</p>\n<blockquote>\n<p>In Lean you cannot (at least you don't want to!) have a set containing a natural number, a list of reals, a group, and a metric space.</p>\n</blockquote>\n<p>If you want to package such data together in Lean, you would use a type (a structure). Sets are more primitive than types, in Lean, because they can only have elements of one type.</p>",
+        "id": 195184383,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587733422
+    },
+    {
+        "content": "<p>I think this is the wrong wording; types are of course more primitive than sets in <em>type</em> theory</p>",
+        "id": 195184694,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587733575
+    },
+    {
+        "content": "<p>I think you mean to say that sets are less flexible than types in lean</p>",
+        "id": 195184757,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587733613
+    },
+    {
+        "content": "<p>He meant \"primitive\" = \"less nice\"</p>",
+        "id": 195184832,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587733662
     }
 ]

@@ -116,6 +116,151 @@ permalink: /stream/113488-general/topic/why.20does.20a.20sync.20command.20take.2
 
 
 
+<a name="195184523"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195184523" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195184523">(Apr 24 2020 at 13:04)</a>:</h4>
+<p>If the LSP is sufficient for your needs, great, but otherwise it's probably easier to write a small Lean 4 library that exposes a C interface to the internal Lean functionality you need. Then you can use that anywhere you want.</p>
+
+
+
+<a name="195184584"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195184584" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195184584">(Apr 24 2020 at 13:05)</a>:</h4>
+<p>Great, I can't wait to read the tutorial you'll write about this way!</p>
+
+
+
+<a name="195184607"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195184607" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195184607">(Apr 24 2020 at 13:05)</a>:</h4>
+<p>I thought you'd write it!</p>
+
+
+
+<a name="195184667"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195184667" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195184667">(Apr 24 2020 at 13:06)</a>:</h4>
+<p>I know <span aria-label="wink" class="emoji emoji-1f609" role="img" title="wink">:wink:</span></p>
+
+
+
+<a name="195184708"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195184708" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195184708">(Apr 24 2020 at 13:06)</a>:</h4>
+<p>I only hope you'll leave enough hints somewhere</p>
+
+
+
+<a name="195184931"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195184931" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195184931">(Apr 24 2020 at 13:08)</a>:</h4>
+<p>Try reading the first letter of every function definition in the elaborator?</p>
+
+
+
+<a name="195185047"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195185047" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195185047">(Apr 24 2020 at 13:09)</a>:</h4>
+<p>I definitely look forward to Lean 4, but I guess I'm too inpatient to wait. <span aria-label="slight smile" class="emoji emoji-1f642" role="img" title="slight smile">:slight_smile:</span>  One application I have in mind is as follows, which I think I can implement directly in Lean 3.  It would take in the following commands:</p>
+<ol>
+<li>Give Lean an expression to set as a theorem.  Lean creates a new tactic state trying to prove that theorem.</li>
+<li>Give it a tactic expression to apply (possibly in a restricted tactic DSL) to this state.  Lean applies it and gives the state and an index for the state.</li>
+<li>Given Lean an index for a previously visited state.  Lean jumps back to that state.</li>
+</ol>
+<p>The largest challenges will be: (1) Creating the tactic DSL which is tedious and I'll do one tactic at a time. (2) Making sure I can set up the environment as needed.  (What if my theorem needs a universe u?).  (3)  Making sure I can enter expressions to Lean either as Lean code or in another form (s-expressions based on the internal Lean expression representation).</p>
+
+
+
+<a name="195185391"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195185391" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Reid Barton <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195185391">(Apr 24 2020 at 13:12)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="115715">Jason Rute</span> <a href="#narrow/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server/near/195185047" title="#narrow/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server/near/195185047">said</a>:</p>
+<blockquote>
+<p>(What if my theorem needs a universe u?)</p>
+</blockquote>
+<p>I'm sure this was not meant as an exhaustive list of concerns, but you can write a universe variable in a theorem statement as <code>theorem {u} my_theorem {a : Type u} ...</code></p>
+
+
+
+<a name="195185525"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195185525" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195185525">(Apr 24 2020 at 13:13)</a>:</h4>
+<p>Wow, I wish I new that earlier!  Thanks!</p>
+
+
+
+<a name="195186015"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195186015" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195186015">(Apr 24 2020 at 13:17)</a>:</h4>
+<p>it annoys me that there is no place in the grammar to put universe declarations in an <code>example</code></p>
+
+
+
+<a name="195186245"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195186245" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195186245">(Apr 24 2020 at 13:19)</a>:</h4>
+<p>If this is still under construction in lean 4 I would like to vote for the syntax <code>def foo.{u v} {A : Sort u} : A := sorry</code></p>
+
+
+
+<a name="195186269"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195186269" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195186269">(Apr 24 2020 at 13:19)</a>:</h4>
+<p>or <code>example.{u v} ...</code> for examples</p>
+
+
+
+<a name="195186606"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195186606" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195186606">(Apr 24 2020 at 13:22)</a>:</h4>
+<p>also what's up with universe shadowing? <code>universe u  def {u} foo := Sort u</code> is a hard fail for no apparent reason</p>
+
+
+
+<a name="195186798"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195186798" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195186798">(Apr 24 2020 at 13:23)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110049">Mario Carneiro</span> <a href="#narrow/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server/near/195186245" title="#narrow/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server/near/195186245">said</a>:</p>
+<blockquote>
+<p>If this is still under construction in lean 4 I would like to vote for the syntax <code>def foo.{u v} {A : Sort u} : A := sorry</code></p>
+</blockquote>
+<p>You're close. <a href="https://github.com/leanprover/lean4/blob/master/src/Init/Lean/Parser/Command.lean#L44" title="https://github.com/leanprover/lean4/blob/master/src/Init/Lean/Parser/Command.lean#L44">https://github.com/leanprover/lean4/blob/master/src/Init/Lean/Parser/Command.lean#L44</a></p>
+
+
+
+<a name="195186804"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195186804" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195186804">(Apr 24 2020 at 13:23)</a>:</h4>
+<p>Why do we need to declare universes in the first place?</p>
+
+
+
+<a name="195187200"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195187200" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195187200">(Apr 24 2020 at 13:26)</a>:</h4>
+<p>That's... a good question. Coincidentally I learned about <a href="https://github.com/rust-lang/rfcs/blob/master/text/2115-argument-lifetimes.md" title="https://github.com/rust-lang/rfcs/blob/master/text/2115-argument-lifetimes.md">https://github.com/rust-lang/rfcs/blob/master/text/2115-argument-lifetimes.md</a> today, a very similar argument could be made about universes.</p>
+
+
+
+<a name="195187255"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195187255" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195187255">(Apr 24 2020 at 13:27)</a>:</h4>
+<p>Maybe we should make a list of all this things we've tried to hack the Lean server to do so that it is clear the sort of stuff we'd love from Lean 4.  Here are some things:</p>
+<ul>
+<li>find all tactic keywords and their states when they are applied (often can do in Lean 3 but with many exceptions)</li>
+<li>find the entire tactic command from beginning to end.  (Note really doable in Lean 3.)</li>
+<li>find all instances of the rw tactic (or the have tactic) so I can replace it with another tactic.  (Finding tactic instances is hard.  The Language server helps, but sometimes behaves weird.)</li>
+<li>replace a tactic- or term-proof of a declaration with another (maybe I'm trying out some automation and I want to see what declarations I can prove with that alone)  (I have no idea how to find the start and end of a proof)</li>
+<li>full proof recording (break up a proof into a data structure which can be used to replay the proof).</li>
+<li>record theorems, states, etc in such a way that they can be consistently entered back into Lean.  (Often fails in Lean 3 usually because of issues with @.)</li>
+</ul>
+
+
+
+<a name="195187260"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195187260" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195187260">(Apr 24 2020 at 13:27)</a>:</h4>
+<p>In Lean 3 at least we had <code>universes</code> vs <code>universe variables</code>, but there's only one kind of universe variable in Lean 4</p>
+
+
+
+<a name="195187462"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195187462" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195187462">(Apr 24 2020 at 13:28)</a>:</h4>
+<p><span class="user-mention silent" data-user-id="110024">Sebastian Ullrich</span> [said](<a href="#narrow/stream/113488-general/topic" title="#narrow/stream/113488-general/topic">https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic</a><br>
+You're close. <a href="https://github.com/leanprover/lean4/blob/master/src/Init/Lean/Parser/Command.lean#L44" title="https://github.com/leanprover/lean4/blob/master/src/Init/Lean/Parser/Command.lean#L44">https://github.com/leanprover/lean4/blob/master/src/Init/Lean/Parser/Command.lean#L44</a></p>
+<div class="codehilite"><pre><span></span><span class="n">Does</span> <span class="n">this</span> <span class="n">cover</span> <span class="bp">`</span><span class="kn">example</span><span class="bp">`</span><span class="err">?</span> <span class="n">It</span> <span class="n">doesn&#39;t</span> <span class="n">look</span> <span class="n">like</span> <span class="n">it</span> <span class="n">does</span><span class="bp">.</span>
+</pre></div>
+
+
+
+<a name="195187769"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195187769" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195187769">(Apr 24 2020 at 13:31)</a>:</h4>
+<p>Jason, you last point is known as the pretty-printer roundtrip issue, and they very much work on it. Search for delaborator in Lean 4 code.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 13:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 14:02 UTC</p>
