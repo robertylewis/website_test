@@ -15864,7 +15864,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195139111,
+            "latest_id": 195152391,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -19670,6 +19670,10 @@
                     "latest_date": 1552703523,
                     "size": 5
                 },
+                "zero locus of an ideal": {
+                    "latest_date": 1587711694,
+                    "size": 1
+                },
                 "zero versus 0": {
                     "latest_date": 1582622504,
                     "size": 21
@@ -19697,5 +19701,5 @@
             }
         }
     },
-    "time": 1587708107.414458
+    "time": 1587711707.214753
 }

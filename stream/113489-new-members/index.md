@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [zero locus of an ideal](topic/zero.20locus.20of.20an.20ideal.html) (1 message, latest: Apr 24 2020 at 07:01)
 * [Natural Numbers Game](topic/Natural.20Numbers.20Game.html) (106 messages, latest: Apr 24 2020 at 01:45)
 * [Multiplication in Pattern Matching](topic/Multiplication.20in.20Pattern.20Matching.html) (19 messages, latest: Apr 24 2020 at 01:42)
 * [leanproject issues](topic/leanproject.20issues.html) (3 messages, latest: Apr 24 2020 at 00:02)
@@ -967,4 +968,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 06:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 07:01 UTC</p>
