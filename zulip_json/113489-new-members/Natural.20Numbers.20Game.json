@@ -592,5 +592,11 @@
         "id": 195126900,
         "sender_full_name": "orlando",
         "timestamp": 1587680606
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/113489-new-members/topic/Natural.20Numbers.20Game/near/195114571\" title=\"#narrow/stream/113489-new-members/topic/Natural.20Numbers.20Game/near/195114571\">said</a>:</p>\n<blockquote>\n<p>We're working on a sequel: <a href=\"https://github.com/ImperialCollegeLondon/real-number-game\" title=\"https://github.com/ImperialCollegeLondon/real-number-game\">https://github.com/ImperialCollegeLondon/real-number-game</a></p>\n</blockquote>\n<p>Do you know when this will be ready? Using Lean to gamify undergrad math is a fantastic idea</p>",
+        "id": 195133403,
+        "sender_full_name": "Aniruddh Agarwal",
+        "timestamp": 1587686016
     }
 ]

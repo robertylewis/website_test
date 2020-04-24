@@ -1,0 +1,14 @@
+[
+    {
+        "content": "<p>In the lean server, if you send a sync command, e.g. even a one line file, and wait for the server to finish syncing (i.e. wait for a a current tasks response with no tasks), it will take about 0.2 seconds.  Why?  That seems really long in computer time.  Is it intentional?</p>",
+        "id": 195131227,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1587684069
+    },
+    {
+        "content": "<p>To be more specific, if you send, say,</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"p\">{</span><span class=\"nt\">&quot;command&quot;</span><span class=\"p\">:</span> <span class=\"s2\">&quot;sync&quot;</span><span class=\"p\">,</span> <span class=\"nt\">&quot;content&quot;</span><span class=\"p\">:</span> <span class=\"s2\">&quot;#eval 1&quot;</span><span class=\"p\">,</span> <span class=\"nt\">&quot;file_name&quot;</span><span class=\"p\">:</span> <span class=\"s2\">&quot;/test.lean&quot;</span><span class=\"p\">,</span> <span class=\"nt\">&quot;seq_num&quot;</span><span class=\"p\">:</span> <span class=\"mi\">100</span><span class=\"p\">}</span>\n</pre></div>\n\n\n<p>then the time it takes to get back</p>\n<div class=\"codehilite\"><pre><span></span><span class=\"p\">{</span><span class=\"nt\">&quot;message&quot;</span><span class=\"p\">:</span><span class=\"s2\">&quot;file invalidated&quot;</span><span class=\"p\">,</span><span class=\"nt\">&quot;response&quot;</span><span class=\"p\">:</span><span class=\"s2\">&quot;ok&quot;</span><span class=\"p\">,</span><span class=\"nt\">&quot;seq_num&quot;</span><span class=\"p\">:</span><span class=\"mi\">100</span><span class=\"p\">}</span>\n<span class=\"p\">{</span><span class=\"nt\">&quot;is_running&quot;</span><span class=\"p\">:</span><span class=\"kc\">false</span><span class=\"p\">,</span><span class=\"nt\">&quot;response&quot;</span><span class=\"p\">:</span><span class=\"s2\">&quot;current_tasks&quot;</span><span class=\"p\">,</span><span class=\"nt\">&quot;tasks&quot;</span><span class=\"p\">:[]}</span>\n</pre></div>\n\n\n<p>is about .2 seconds.  (This is assuming you have already warmed up the server by sending it many requests.)</p>",
+        "id": 195132285,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1587685133
+    }
+]

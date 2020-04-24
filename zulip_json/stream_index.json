@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195127275,
+            "latest_id": 195132285,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -12196,6 +12196,10 @@
                     "latest_date": 1557961241,
                     "size": 14
                 },
+                "why does a sync command take so long in the lean server": {
+                    "latest_date": 1587685133,
+                    "size": 2
+                },
                 "why does or only eliminate to Prop?": {
                     "latest_date": 1521901432,
                     "size": 22
@@ -15856,7 +15860,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195126900,
+            "latest_id": 195133856,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -17063,8 +17067,8 @@
                     "size": 47
                 },
                 "Natural Numbers Game": {
-                    "latest_date": 1587680606,
-                    "size": 99
+                    "latest_date": 1587686016,
+                    "size": 100
                 },
                 "Naturals plus infinity": {
                     "latest_date": 1541927085,
@@ -18718,6 +18722,10 @@
                     "latest_date": 1584386513,
                     "size": 7
                 },
+                "leanproject issues": {
+                    "latest_date": 1587686411,
+                    "size": 2
+                },
                 "learning path": {
                     "latest_date": 1551335401,
                     "size": 50
@@ -19685,5 +19693,5 @@
             }
         }
     },
-    "time": 1587682902.865173
+    "time": 1587686528.4443002
 }
