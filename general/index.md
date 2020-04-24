@@ -1,7 +1,7 @@
 ---
-permalink: general/index.html
+layout: archive
+title: Lean Prover Zulip Chat Archive
+permalink: archive/113488general/index.html
 ---
 
-<html>
-redirect to: <a href="{{site.url}}/stream/113488-general/index.html>{{site.url}}/stream/113488-general/index.html</a>
-</html>
+redirect to: <{{site.url}}/stream/113488-general/index.html>
