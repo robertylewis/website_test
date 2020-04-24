@@ -112,5 +112,11 @@
         "id": 195118904,
         "sender_full_name": "Yury G. Kudryashov",
         "timestamp": 1587675598
+    },
+    {
+        "content": "<p>It is there in <a href=\"https://github.com/leanprover-community/mathlib/issues/2501\" title=\"https://github.com/leanprover-community/mathlib/issues/2501\">#2501</a></p>",
+        "id": 195153108,
+        "sender_full_name": "Sebastien Gouezel",
+        "timestamp": 1587712373
     }
 ]

@@ -4,5 +4,53 @@
         "id": 195152391,
         "sender_full_name": "Aniruddh Agarwal",
         "timestamp": 1587711694
+    },
+    {
+        "content": "<p>try <code>zero_locus (I : set R)</code></p>",
+        "id": 195152728,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587712056
+    },
+    {
+        "content": "<p>That did it!</p>",
+        "id": 195152969,
+        "sender_full_name": "Aniruddh Agarwal",
+        "timestamp": 1587712230
+    },
+    {
+        "content": "<p>Does the notation <code>set R</code> mean subset of <code>R</code>?</p>",
+        "id": 195153252,
+        "sender_full_name": "Aniruddh Agarwal",
+        "timestamp": 1587712523
+    },
+    {
+        "content": "<p>If you are a mathematician: yes</p>",
+        "id": 195153261,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587712537
+    },
+    {
+        "content": "<p>Alternatively, read it as \"a set whose elements are all of type <code>R</code>\"</p>",
+        "id": 195153317,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587712569
+    },
+    {
+        "content": "<p>In Lean you cannot (at least you don't want to!) have a set containing a natural number, a list of reals, a group, and a metric space.</p>",
+        "id": 195153355,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587712617
+    },
+    {
+        "content": "<p>All elements of a set must have the same type.</p>",
+        "id": 195153365,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587712627
+    },
+    {
+        "content": "<p>So you may also think of them as \"subsets of the ambient space\"</p>",
+        "id": 195153386,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587712656
     }
 ]

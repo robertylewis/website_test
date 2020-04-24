@@ -1606,7 +1606,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195142193,
+            "latest_id": 195155198,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -5819,6 +5819,10 @@
                 "circumflex notation": {
                     "latest_date": 1523537682,
                     "size": 5
+                },
+                "class instance unification fails": {
+                    "latest_date": 1587713199,
+                    "size": 3
                 },
                 "class on itp": {
                     "latest_date": 1539566823,
@@ -12201,8 +12205,8 @@
                     "size": 14
                 },
                 "why does a sync command take so long in the lean server": {
-                    "latest_date": 1587692662,
-                    "size": 4
+                    "latest_date": 1587714150,
+                    "size": 5
                 },
                 "why does or only eliminate to Prop?": {
                     "latest_date": 1521901432,
@@ -12422,7 +12426,7 @@
         },
         "maths": {
             "id": 116395,
-            "latest_id": 195118904,
+            "latest_id": 195153108,
             "topic_data": {
                 "\"nice\" group homs": {
                     "latest_date": 1584024523,
@@ -14241,8 +14245,8 @@
                     "size": 5
                 },
                 "finite sum": {
-                    "latest_date": 1587675598,
-                    "size": 19
+                    "latest_date": 1587712373,
+                    "size": 20
                 },
                 "finite sums": {
                     "latest_date": 1551021706,
@@ -15864,7 +15868,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195152391,
+            "latest_id": 195153386,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -19671,8 +19675,8 @@
                     "size": 5
                 },
                 "zero locus of an ideal": {
-                    "latest_date": 1587711694,
-                    "size": 1
+                    "latest_date": 1587712656,
+                    "size": 9
                 },
                 "zero versus 0": {
                     "latest_date": 1582622504,
@@ -19701,5 +19705,5 @@
             }
         }
     },
-    "time": 1587711707.214753
+    "time": 1587715321.2141597
 }

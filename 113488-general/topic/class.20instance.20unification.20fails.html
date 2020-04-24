@@ -1,0 +1,51 @@
+---
+layout: archive
+title: Zulip Chat Archive
+permalink: /stream/113488-general/topic/class.20instance.20unification.20fails.html
+---
+
+<h2>Stream: <a href="http://robertylewis.com/website_test/stream/113488-general/index.html">general</a></h2>
+<h3>Topic: <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html">class instance unification fails</a></h3>
+
+<hr>
+
+<base href="https://leanprover.zulipchat.com/">
+
+<head><link href="/style.css" rel="stylesheet"></head>
+
+{% raw %}
+
+<a name="195153531"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195153531" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195153531">(Apr 24 2020 at 07:19)</a>:</h4>
+<p>I tried to use the <code>@... (multiplicative G) ...</code> trick in <code>data/monoid_algebra</code> to get <code>def</code>s/proofs for <code>add_monoid_algebra</code>. Now <code>polynomial.algebra</code> fails, see <a href="https://github.com/leanprover-community/mathlib/pull/2492/checks?check_run_id=614475313" title="https://github.com/leanprover-community/mathlib/pull/2492/checks?check_run_id=614475313">https://github.com/leanprover-community/mathlib/pull/2492/checks?check_run_id=614475313</a></p>
+
+
+
+<a name="195153931"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195153931" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195153931">(Apr 24 2020 at 07:25)</a>:</h4>
+<p>Here is the error message with <code>set_option pp.all true</code>:</p>
+<div class="codehilite"><pre><span></span><span class="bp">/</span><span class="n">home</span><span class="bp">/</span><span class="n">urkud</span><span class="bp">/</span><span class="n">projects</span><span class="bp">/</span><span class="n">mathlib</span><span class="bp">/</span><span class="n">polynomial</span><span class="bp">/</span><span class="n">src</span><span class="bp">/</span><span class="n">data</span><span class="bp">/</span><span class="n">polynomial</span><span class="bp">.</span><span class="n">lean</span><span class="o">:</span><span class="mi">31</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">type</span> <span class="n">mismatch</span><span class="o">,</span> <span class="n">term</span>
+  <span class="bp">@</span><span class="n">add_monoid_algebra</span><span class="bp">.</span><span class="n">algebra</span><span class="bp">.</span><span class="o">{</span><span class="err">?</span><span class="n">l_1</span> <span class="err">?</span><span class="n">l_2</span><span class="o">}</span> <span class="err">?</span><span class="n">m_3</span> <span class="err">?</span><span class="n">m_4</span> <span class="err">?</span><span class="n">m_5</span> <span class="err">?</span><span class="n">m_6</span>
+<span class="n">has</span> <span class="n">type</span>
+  <span class="bp">@</span><span class="n">algebra</span><span class="bp">.</span><span class="o">{</span><span class="err">?</span><span class="n">l_1</span> <span class="o">(</span><span class="n">max</span> <span class="err">?</span><span class="n">l_2</span> <span class="err">?</span><span class="n">l_1</span><span class="o">)}</span> <span class="err">?</span><span class="n">m_3</span>
+    <span class="o">(</span><span class="bp">@</span><span class="n">add_monoid_algebra</span><span class="bp">.</span><span class="o">{</span><span class="err">?</span><span class="n">l_1</span> <span class="err">?</span><span class="n">l_2</span><span class="o">}</span> <span class="err">?</span><span class="n">m_3</span> <span class="err">?</span><span class="n">m_4</span> <span class="o">(</span><span class="bp">@</span><span class="n">comm_semiring</span><span class="bp">.</span><span class="n">to_semiring</span><span class="bp">.</span><span class="o">{</span><span class="err">?</span><span class="n">l_1</span><span class="o">}</span> <span class="err">?</span><span class="n">m_3</span> <span class="err">?</span><span class="n">m_5</span><span class="o">))</span>
+    <span class="err">?</span><span class="n">m_5</span>
+    <span class="o">(</span><span class="bp">@</span><span class="n">add_monoid_algebra</span><span class="bp">.</span><span class="n">semiring</span><span class="bp">.</span><span class="o">{</span><span class="err">?</span><span class="n">l_1</span> <span class="err">?</span><span class="n">l_2</span><span class="o">}</span> <span class="err">?</span><span class="n">m_3</span> <span class="err">?</span><span class="n">m_4</span> <span class="o">(</span><span class="bp">@</span><span class="n">comm_semiring</span><span class="bp">.</span><span class="n">to_semiring</span><span class="bp">.</span><span class="o">{</span><span class="err">?</span><span class="n">l_1</span><span class="o">}</span> <span class="err">?</span><span class="n">m_3</span> <span class="err">?</span><span class="n">m_5</span><span class="o">)</span> <span class="err">?</span><span class="n">m_6</span><span class="o">)</span> <span class="o">:</span> <span class="kt">Type</span> <span class="o">(</span><span class="n">max</span>
+        <span class="err">?</span><span class="n">l_2</span>
+        <span class="err">?</span><span class="n">l_1</span><span class="o">)</span>
+<span class="n">but</span> <span class="n">is</span> <span class="n">expected</span> <span class="n">to</span> <span class="k">have</span> <span class="n">type</span>
+  <span class="bp">@</span><span class="n">algebra</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span> <span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="o">(</span><span class="bp">@</span><span class="n">polynomial</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="bp">_</span><span class="n">inst_1</span><span class="o">)</span> <span class="bp">_</span><span class="n">inst_1</span>
+    <span class="o">(</span><span class="bp">@</span><span class="n">comm_semiring</span><span class="bp">.</span><span class="n">to_semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="o">(</span><span class="bp">@</span><span class="n">polynomial</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="bp">_</span><span class="n">inst_1</span><span class="o">)</span> <span class="o">(</span><span class="bp">@</span><span class="n">polynomial</span><span class="bp">.</span><span class="n">comm_semiring</span><span class="bp">.</span><span class="o">{</span><span class="n">u</span><span class="o">}</span> <span class="n">R</span> <span class="bp">_</span><span class="n">inst_1</span><span class="o">))</span> <span class="o">:</span> <span class="kt">Type</span> <span class="n">u</span>
+</pre></div>
+
+
+
+<a name="195154006"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195154006" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195154006">(Apr 24 2020 at 07:26)</a>:</h4>
+<p>How can I debug failures like this one?</p>
+
+
+
+{% endraw %}
+
+<hr><p>Last updated: Apr 24 2020 at 08:02 UTC</p>

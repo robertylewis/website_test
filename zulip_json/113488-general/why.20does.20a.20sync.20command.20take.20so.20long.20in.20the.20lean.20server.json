@@ -22,5 +22,11 @@
         "id": 195139092,
         "sender_full_name": "Kenny Lau",
         "timestamp": 1587692662
+    },
+    {
+        "content": "<p>The intention behind that delay was to limit the number of messages from the server to the client.  With the delay, you get at most 5 messages per second.  If you'd send a message every time the server has done something, then there'd be a lot more messages.  In the editors, these messages just update the progress bar on the side so there's no need to be super fast.</p>",
+        "id": 195155198,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1587714150
     }
 ]

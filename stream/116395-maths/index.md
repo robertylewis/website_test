@@ -9,7 +9,7 @@ permalink: /stream/116395-maths/index.html
 
 ### Topics:
 
-* [finite sum](topic/finite.20sum.html) (19 messages, latest: Apr 23 2020 at 20:59)
+* [finite sum](topic/finite.20sum.html) (20 messages, latest: Apr 24 2020 at 07:12)
 * [Hedetniemi](topic/Hedetniemi.html) (322 messages, latest: Apr 23 2020 at 18:45)
 * [absurd](topic/absurd.html) (5 messages, latest: Apr 22 2020 at 19:44)
 * [how to find where the instance are define ?](topic/how.20to.20find.20where.20the.20instance.20are.20define.20.3F.html) (9 messages, latest: Apr 22 2020 at 17:16)
@@ -869,4 +869,4 @@ permalink: /stream/116395-maths/index.html
 * [free group](topic/free.20group.html) (92 messages, latest: Apr 02 2018 at 05:00)
 * [Easy topological space question](topic/Easy.20topological.20space.20question.html) (18 messages, latest: Apr 02 2018 at 01:23)
 
-<hr><p>Last updated: Apr 24 2020 at 07:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 08:02 UTC</p>
