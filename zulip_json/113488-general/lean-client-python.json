@@ -226,5 +226,23 @@
         "id": 195142193,
         "sender_full_name": "Jason Rute",
         "timestamp": 1587697193
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"115715\">@Jason Rute</span> of course you can open PRs!</p>",
+        "id": 195182381,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732518
+    },
+    {
+        "content": "<p>Even more: as I wrote in the very first message of this thread, I'm totally open to moving this repository into the lean-community organization and give write access to other people.</p>",
+        "id": 195182436,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732556
+    },
+    {
+        "content": "<p>I'm currently swamped in PRs <a href=\"https://github.com/plastex/plastex/pulls\" title=\"https://github.com/plastex/plastex/pulls\">here</a> where I'm the only active maintainer, but if you open a small PR in lean-client-python and ping me here then I should be able to handle it.</p>",
+        "id": 195182626,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732640
     }
 ]

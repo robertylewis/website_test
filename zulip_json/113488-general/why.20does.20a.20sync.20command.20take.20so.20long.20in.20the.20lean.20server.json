@@ -28,5 +28,65 @@
         "id": 195155198,
         "sender_full_name": "Gabriel Ebner",
         "timestamp": 1587714150
+    },
+    {
+        "content": "<p>Yeah, this question is really a consequence of the fact that a number of us are trying to basically hack the language server capability of lean to create a way to programmatically interact with lean.  This is really only an issue when I’m trying to interact with Lean in a tight loop.  For example, I send something to Lean, see if it works, and based on that send something different to Lean.  Anyway, it is annoying but not that big deal since the applications I have in mind can either get around the delay by putting multiple commands in the same file or just live with the delay.  Also the language server has larger issues that create more headache for programatic interaction with lean than this delay.  Thanks for the answer.</p>",
+        "id": 195181646,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1587732125
+    },
+    {
+        "content": "<p>Yes, we are clearly bending the tool here. But this is not a bug, this is a feature. One of the motivation for my work on <code>lean-client-python</code> is that someone will hopefully soon start working on Lean 4 server mode, (and hopefully that someone is reading Zulip) and I hope to provide input about what users may want besides what we already have.</p>",
+        "id": 195182135,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732389
+    },
+    {
+        "content": "<p>If you want to interact with Lean in a tight loop, then my suggestion would be to write your own server as a Lean program.  Just a small read-eval-print-loop that accepts the commands you want.</p>",
+        "id": 195182144,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1587732394
+    },
+    {
+        "content": "<p>Gabriel, is there already sufficient exposed interface for this in Lean 3?</p>",
+        "id": 195182201,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732430
+    },
+    {
+        "content": "<p>If yes then maybe we don't need more in Lean 4.</p>",
+        "id": 195182232,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732449
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"221921\">@Marc Huisinga</span> might want to say something about the Lean 4 server mode.  But I think it will just as focused on editor integration as the Lean 3 one.</p>",
+        "id": 195182233,
+        "sender_full_name": "Gabriel Ebner",
+        "timestamp": 1587732450
+    },
+    {
+        "content": "<p>Ah, so Marc could be the mysterious someone :)</p>",
+        "id": 195182278,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732475
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110043\">@Gabriel Ebner</span>  Yeah, that is what I intend to do.  <span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span> I think it will be a little bit tricky, but the io monad and tactic monads (which can interact with each other) are pretty powerful.</p>",
+        "id": 195182399,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1587732529
+    },
+    {
+        "content": "<p>Yeah, if I understand your use case(s) (ML?) correctly, you should have much better and fine-grained options in Lean 4 such as playing your own elaborator than anything superficial you can do via a server API</p>",
+        "id": 195183787,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1587733148
+    },
+    {
+        "content": "<p>Sebastian, what you say seems fair, but there are still people who will want to interact with Lean from another programming language, building interactive interfaces that don't look like a text editor, hence my experiment with Qt (which comes from a real project by Frédéric and Florian).</p>",
+        "id": 195184124,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587733292
     }
 ]

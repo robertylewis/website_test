@@ -9,9 +9,10 @@ permalink: /stream/113488-general/index.html
 
 ### Topics:
 
-* [class instance unification fails](topic/class.20instance.20unification.20fails.html) (11 messages, latest: Apr 24 2020 at 09:41)
-* [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (5 messages, latest: Apr 24 2020 at 07:42)
-* [lean-client-python](topic/lean-client-python.html) (38 messages, latest: Apr 24 2020 at 02:59)
+* [why does a sync command take so long in the lean server](topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html) (15 messages, latest: Apr 24 2020 at 13:01)
+* [lean-client-python](topic/lean-client-python.html) (41 messages, latest: Apr 24 2020 at 12:50)
+* [class instance unification fails](topic/class.20instance.20unification.20fails.html) (12 messages, latest: Apr 24 2020 at 12:43)
+* [tooltips on keywords](topic/tooltips.20on.20keywords.html) (3 messages, latest: Apr 24 2020 at 12:42)
 * [unnecessary imports](topic/unnecessary.20imports.html) (47 messages, latest: Apr 24 2020 at 02:28)
 * [Case tags](topic/Case.20tags.html) (19 messages, latest: Apr 24 2020 at 02:10)
 * [Invitation to join the Codewars Lean community, Round 2](topic/Invitation.20to.20join.20the.20Codewars.20Lean.20community.2C.20Round.202.html) (117 messages, latest: Apr 23 2020 at 20:03)
@@ -33,7 +34,6 @@ permalink: /stream/113488-general/index.html
 * [video tutorials](topic/video.20tutorials.html) (29 messages, latest: Apr 21 2020 at 08:22)
 * [Linter rejects automatic instance](topic/Linter.20rejects.20automatic.20instance.html) (9 messages, latest: Apr 21 2020 at 08:18)
 * [What's the deal with `open`](topic/What's.20the.20deal.20with.20.60open.60.html) (19 messages, latest: Apr 21 2020 at 07:54)
-* [tooltips on keywords](topic/tooltips.20on.20keywords.html) (1 message, latest: Apr 21 2020 at 06:56)
 * [Try this!](topic/Try.20this!.html) (19 messages, latest: Apr 21 2020 at 02:54)
 * [Backtracking](topic/Backtracking.html) (36 messages, latest: Apr 21 2020 at 01:23)
 * [Lean unfolds projections](topic/Lean.20unfolds.20projections.html) (47 messages, latest: Apr 21 2020 at 00:23)
@@ -2699,4 +2699,4 @@ permalink: /stream/113488-general/index.html
 * [test](topic/test.html) (4 messages, latest: Feb 26 2018 at 16:22)
 * [welcome](topic/welcome.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 12:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 13:01 UTC</p>

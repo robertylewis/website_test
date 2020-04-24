@@ -52,5 +52,11 @@
         "id": 195153386,
         "sender_full_name": "Johan Commelin",
         "timestamp": 1587712656
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"294709\">@Aniruddh Agarwal</span>  Let me emphasize that the \"alternative\" reading \"a set whose elements are all of type <code>R</code>\" is the correct one, and you should really try to get used to it.</p>",
+        "id": 195182823,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587732728
     }
 ]

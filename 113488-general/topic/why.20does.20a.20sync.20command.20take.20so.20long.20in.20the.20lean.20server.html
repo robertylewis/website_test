@@ -56,6 +56,66 @@ permalink: /stream/113488-general/topic/why.20does.20a.20sync.20command.20take.2
 
 
 
+<a name="195181646"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195181646" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195181646">(Apr 24 2020 at 12:42)</a>:</h4>
+<p>Yeah, this question is really a consequence of the fact that a number of us are trying to basically hack the language server capability of lean to create a way to programmatically interact with lean.  This is really only an issue when I’m trying to interact with Lean in a tight loop.  For example, I send something to Lean, see if it works, and based on that send something different to Lean.  Anyway, it is annoying but not that big deal since the applications I have in mind can either get around the delay by putting multiple commands in the same file or just live with the delay.  Also the language server has larger issues that create more headache for programatic interaction with lean than this delay.  Thanks for the answer.</p>
+
+
+
+<a name="195182135"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195182135" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195182135">(Apr 24 2020 at 12:46)</a>:</h4>
+<p>Yes, we are clearly bending the tool here. But this is not a bug, this is a feature. One of the motivation for my work on <code>lean-client-python</code> is that someone will hopefully soon start working on Lean 4 server mode, (and hopefully that someone is reading Zulip) and I hope to provide input about what users may want besides what we already have.</p>
+
+
+
+<a name="195182144"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195182144" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195182144">(Apr 24 2020 at 12:46)</a>:</h4>
+<p>If you want to interact with Lean in a tight loop, then my suggestion would be to write your own server as a Lean program.  Just a small read-eval-print-loop that accepts the commands you want.</p>
+
+
+
+<a name="195182201"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195182201" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195182201">(Apr 24 2020 at 12:47)</a>:</h4>
+<p>Gabriel, is there already sufficient exposed interface for this in Lean 3?</p>
+
+
+
+<a name="195182232"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195182232" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195182232">(Apr 24 2020 at 12:47)</a>:</h4>
+<p>If yes then maybe we don't need more in Lean 4.</p>
+
+
+
+<a name="195182233"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195182233" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Gabriel Ebner <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195182233">(Apr 24 2020 at 12:47)</a>:</h4>
+<p><span class="user-mention" data-user-id="221921">@Marc Huisinga</span> might want to say something about the Lean 4 server mode.  But I think it will just as focused on editor integration as the Lean 3 one.</p>
+
+
+
+<a name="195182278"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195182278" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195182278">(Apr 24 2020 at 12:47)</a>:</h4>
+<p>Ah, so Marc could be the mysterious someone :)</p>
+
+
+
+<a name="195182399"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195182399" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Jason Rute <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195182399">(Apr 24 2020 at 12:48)</a>:</h4>
+<p><span class="user-mention" data-user-id="110043">@Gabriel Ebner</span>  Yeah, that is what I intend to do.  <span class="user-mention" data-user-id="110031">@Patrick Massot</span> I think it will be a little bit tricky, but the io monad and tactic monads (which can interact with each other) are pretty powerful.</p>
+
+
+
+<a name="195183787"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195183787" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Sebastian Ullrich <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195183787">(Apr 24 2020 at 12:59)</a>:</h4>
+<p>Yeah, if I understand your use case(s) (ML?) correctly, you should have much better and fine-grained options in Lean 4 such as playing your own elaborator than anything superficial you can do via a server API</p>
+
+
+
+<a name="195184124"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/why%20does%20a%20sync%20command%20take%20so%20long%20in%20the%20lean%20server/near/195184124" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Patrick Massot <a href="http://robertylewis.com/website_test/stream/113488-general/topic/why.20does.20a.20sync.20command.20take.20so.20long.20in.20the.20lean.20server.html#195184124">(Apr 24 2020 at 13:01)</a>:</h4>
+<p>Sebastian, what you say seems fair, but there are still people who will want to interact with Lean from another programming language, building interactive interfaces that don't look like a text editor, hence my experiment with Qt (which comes from a real project by Frédéric and Florian).</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 12:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 13:01 UTC</p>

@@ -120,6 +120,12 @@ permalink: /stream/113488-general/topic/class.20instance.20unification.20fails.h
 
 
 
+<a name="195181739"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/class%20instance%20unification%20fails/near/195181739" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Yury G. Kudryashov <a href="http://robertylewis.com/website_test/stream/113488-general/topic/class.20instance.20unification.20fails.html#195181739">(Apr 24 2020 at 12:43)</a>:</h4>
+<p>If I prove all <code>zero_mul</code> etc as lemmas using the <code>@ ... multiplicative</code> trick, then feed them to <code>instance : semiring (add_monoid_algebra k G)</code>, then <code>polynomial.algebra</code> works without any tricks. If I replace, e.g., <code>one_mul := one_mul</code> with <code>one_mul := @one_mul (monoid_algebra k (multiplicative G)) _</code>, then it doesn't work.</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 12:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 13:01 UTC</p>

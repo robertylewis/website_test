@@ -64,5 +64,11 @@
         "id": 195165782,
         "sender_full_name": "Yury G. Kudryashov",
         "timestamp": 1587721313
+    },
+    {
+        "content": "<p>If I prove all <code>zero_mul</code> etc as lemmas using the <code>@ ... multiplicative</code> trick, then feed them to <code>instance : semiring (add_monoid_algebra k G)</code>, then <code>polynomial.algebra</code> works without any tricks. If I replace, e.g., <code>one_mul := one_mul</code> with <code>one_mul := @one_mul (monoid_algebra k (multiplicative G)) _</code>, then it doesn't work.</p>",
+        "id": 195181739,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1587732195
     }
 ]
