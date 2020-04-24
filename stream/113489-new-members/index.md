@@ -9,7 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
-* [noob question(s)](topic/noob.20question(s).html) (4413 messages, latest: Apr 24 2020 at 16:37)
+* [noob question(s)](topic/noob.20question(s).html) (4420 messages, latest: Apr 24 2020 at 17:53)
 * [documentation exercise questions](topic/documentation.20exercise.20questions.html) (15 messages, latest: Apr 24 2020 at 13:54)
 * [zero locus of an ideal](topic/zero.20locus.20of.20an.20ideal.html) (14 messages, latest: Apr 24 2020 at 13:07)
 * [Natural Numbers Game](topic/Natural.20Numbers.20Game.html) (106 messages, latest: Apr 24 2020 at 01:45)
@@ -969,4 +969,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 17:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 18:01 UTC</p>

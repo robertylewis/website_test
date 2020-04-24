@@ -1606,7 +1606,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195215710,
+            "latest_id": 195217396,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -9725,8 +9725,8 @@
                     "size": 30
                 },
                 "parser fun": {
-                    "latest_date": 1587746412,
-                    "size": 4
+                    "latest_date": 1587747976,
+                    "size": 10
                 },
                 "parser help": {
                     "latest_date": 1582690991,
@@ -15880,7 +15880,7 @@
         },
         "new members": {
             "id": 113489,
-            "latest_id": 195213681,
+            "latest_id": 195223341,
             "topic_data": {
                 "\"Fix an arbitrary x.\"": {
                     "latest_date": 1554023873,
@@ -18983,8 +18983,8 @@
                     "size": 4
                 },
                 "noob question(s)": {
-                    "latest_date": 1587746261,
-                    "size": 4413
+                    "latest_date": 1587750836,
+                    "size": 4420
                 },
                 "noob question: vscode and LEAN_PATH": {
                     "latest_date": 1570517846,
@@ -19721,5 +19721,5 @@
             }
         }
     },
-    "time": 1587747700.908032
+    "time": 1587751310.2409084
 }
