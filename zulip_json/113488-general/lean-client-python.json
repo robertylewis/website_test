@@ -220,5 +220,11 @@
         "id": 195127275,
         "sender_full_name": "Florian Dupeyron",
         "timestamp": 1587680857
+    },
+    {
+        "content": "<p>Here is a tricky case, try running the trio example on <code>category/core.lean</code>.  On line 24, one gets a back an info response with no line or position.  (It is some weird effect of the obviously tactic.)  Anyway, it causes the current code to crash.</p>",
+        "id": 195142193,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1587697193
     }
 ]

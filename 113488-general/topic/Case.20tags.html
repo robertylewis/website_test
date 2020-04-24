@@ -131,6 +131,30 @@ This ensures that <code>with_cases</code> can be used both with <code>cases</cod
 
 
 
+<a name="195140015"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195140015" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195140015">(Apr 24 2020 at 02:07)</a>:</h4>
+<p>There are lots of tactics that use revert/intro to "rewrite in hypotheses", such as <code>rw at h</code>. This changes the unique name of the hypothesis, and the case tag needs to be updated to match. Even <code>cases</code> itself can cause this behavior, which causes some problems in <code>rcases</code> when it loses track of which hypotheses need to be case split. The information about names needs to be stored in such a way that it can be updated by tactics that don't care if it's a case tag or otherwise</p>
+
+
+
+<a name="195140070"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195140070" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195140070">(Apr 24 2020 at 02:08)</a>:</h4>
+<p>Why are there multiple constructor tags on a case tag if not for this?</p>
+
+
+
+<a name="195140116"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195140116" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195140116">(Apr 24 2020 at 02:09)</a>:</h4>
+<p>I think you can store the <code>_case</code>/<code>_field</code> marker in the head of the <code>expr</code></p>
+
+
+
+<a name="195140168"></a>
+<h4><a href="https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Case%20tags/near/195140168" class="zl"><img src="http://robertylewis.com/website_test/assets/img/zulip2.png" alt="view this post on Zulip"></a> Mario Carneiro <a href="http://robertylewis.com/website_test/stream/113488-general/topic/Case.20tags.html#195140168">(Apr 24 2020 at 02:10)</a>:</h4>
+<p>I don't know what the top level <code>list</code> is for in your design</p>
+
+
+
 {% endraw %}
 
-<hr><p>Last updated: Apr 24 2020 at 02:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 03:01 UTC</p>

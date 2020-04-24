@@ -238,5 +238,47 @@
         "id": 195084832,
         "sender_full_name": "Simon Hudon",
         "timestamp": 1587658634
+    },
+    {
+        "content": "<p>Sorry about this. I was experimenting last night with actually reducing the imports in a meaninful way. It's easy to build the graph whose vertices are files, and edges are \"a declaration in X uses a declaration in Y\". However there are many other reasons you might want to import a file. An obvious one is to use tactics or attributes, so I've added the simple mechanism of adding an edge to my graph for every \"file X currently imports file Y, and file Y is under <code>tactics/</code>, or a short list of other tactics files\".</p>",
+        "id": 195140763,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587695149
+    },
+    {
+        "content": "<p>After this, the error messages and failures are ... harder to diagnose.</p>",
+        "id": 195140803,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587695163
+    },
+    {
+        "content": "<p>I haven't had time yet to look at these failures in detail.</p>",
+        "id": 195140809,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587695173
+    },
+    {
+        "content": "<p>For now I'm just doing testing by replacing the entire import block with a new list (hence my desire for one import per line, to make it easy to decided what the import block even is), where that new list contains every import that appears to be needed.</p>",
+        "id": 195140838,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587695249
+    },
+    {
+        "content": "<p>If I can get that to compile, then I will run the same script that removed transitive imports to get back to a manageable list.</p>",
+        "id": 195140853,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587695275
+    },
+    {
+        "content": "<p>So yes, even though I didn't explain it well,  the PR <a href=\"https://github.com/leanprover-community/mathlib/issues/2496\" title=\"https://github.com/leanprover-community/mathlib/issues/2496\">#2496</a> serves very little purpose except to verify that I know how to remove transitive imports, so I can use that step reliably now.</p>",
+        "id": 195140908,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587695315
+    },
+    {
+        "content": "<p>Sorry for the noise.</p>",
+        "id": 195140914,
+        "sender_full_name": "Scott Morrison",
+        "timestamp": 1587695325
     }
 ]

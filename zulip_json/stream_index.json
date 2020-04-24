@@ -1602,7 +1602,7 @@
         },
         "general": {
             "id": 113488,
-            "latest_id": 195139425,
+            "latest_id": 195142193,
             "topic_data": {
                 "\"...then y = z and furthermore...": {
                     "latest_date": 1550001960,
@@ -2213,8 +2213,8 @@
                     "size": 8
                 },
                 "Case tags": {
-                    "latest_date": 1587693197,
-                    "size": 15
+                    "latest_date": 1587694259,
+                    "size": 19
                 },
                 "Casting from Prop to Type u": {
                     "latest_date": 1533030503,
@@ -8257,8 +8257,8 @@
                     "size": 11
                 },
                 "lean-client-python": {
-                    "latest_date": 1587680857,
-                    "size": 37
+                    "latest_date": 1587697193,
+                    "size": 38
                 },
                 "lean-nightly": {
                     "latest_date": 1519725068,
@@ -11909,8 +11909,8 @@
                     "size": 5
                 },
                 "unnecessary imports": {
-                    "latest_date": 1587658634,
-                    "size": 40
+                    "latest_date": 1587695325,
+                    "size": 47
                 },
                 "unoption": {
                     "latest_date": 1532029694,
@@ -19693,5 +19693,5 @@
             }
         }
     },
-    "time": 1587693703.5911012
+    "time": 1587697309.4852405
 }

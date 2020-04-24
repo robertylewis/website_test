@@ -88,5 +88,29 @@
         "id": 195139425,
         "sender_full_name": "Jannis Limperg",
         "timestamp": 1587693197
+    },
+    {
+        "content": "<p>There are lots of tactics that use revert/intro to \"rewrite in hypotheses\", such as <code>rw at h</code>. This changes the unique name of the hypothesis, and the case tag needs to be updated to match. Even <code>cases</code> itself can cause this behavior, which causes some problems in <code>rcases</code> when it loses track of which hypotheses need to be case split. The information about names needs to be stored in such a way that it can be updated by tactics that don't care if it's a case tag or otherwise</p>",
+        "id": 195140015,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587694038
+    },
+    {
+        "content": "<p>Why are there multiple constructor tags on a case tag if not for this?</p>",
+        "id": 195140070,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587694096
+    },
+    {
+        "content": "<p>I think you can store the <code>_case</code>/<code>_field</code> marker in the head of the <code>expr</code></p>",
+        "id": 195140116,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587694193
+    },
+    {
+        "content": "<p>I don't know what the top level <code>list</code> is for in your design</p>",
+        "id": 195140168,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1587694259
     }
 ]
