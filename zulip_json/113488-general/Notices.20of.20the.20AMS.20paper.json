@@ -76,5 +76,77 @@
         "id": 195199490,
         "sender_full_name": "Donald Sebastian Leung",
         "timestamp": 1587740053
+    },
+    {
+        "content": "<p>I might be going crazy but I think on LHS of page 5 in the proof of injectivity of <code>g∘f</code> there are some <code>f</code>s in place of <code>g</code>s and vice-versa.</p>",
+        "id": 195202447,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1587741150
+    },
+    {
+        "content": "<p>\"By  definition,  our  task  is  to  prove  that  if <code>a,b∈X</code> and <code>g(f(a)) =g(f(b))</code>,  then <code>a=b</code>.  By injectivity of <code>f</code>, it suffices to prove that <code>f(a) =f(b)</code>, and this followsfrom injectivity of <code>g</code> and our assumption.\" </p>\n<p>I claim the second sentence should begin \"By injectivity of <code>g</code> ...\" etc.</p>",
+        "id": 195202607,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1587741221
+    },
+    {
+        "content": "<p>Actually maybe it's possible to read it two ways, rendering it correct as written. I take it back.</p>",
+        "id": 195202888,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1587741333
+    },
+    {
+        "content": "<p>oops right</p>",
+        "id": 195203023,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587741376
+    },
+    {
+        "content": "<p>Backwards reasoning strikes again</p>",
+        "id": 195203070,
+        "sender_full_name": "Reid Barton",
+        "timestamp": 1587741404
+    },
+    {
+        "content": "<p>Right!</p>",
+        "id": 195203088,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1587741414
+    },
+    {
+        "content": "<p><code>have</code> vs <code>suffices</code> <span aria-label=\"lol\" class=\"emoji emoji-1f606\" role=\"img\" title=\"lol\">:lol:</span></p>",
+        "id": 195203306,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1587741495
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 195203958,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1587741760
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"240862\">Oliver Nash</span> <a href=\"#narrow/stream/113488-general/topic/Notices.20of.20the.20AMS.20paper/near/195202447\" title=\"#narrow/stream/113488-general/topic/Notices.20of.20the.20AMS.20paper/near/195202447\">said</a>:</p>\n<blockquote>\n<p>I might be going crazy but I think on LHS of page 5 in the proof of injectivity of <code>g∘f</code> there are some <code>f</code>s in place of <code>g</code>s and vice-versa.</p>\n<p>\"By  definition,  our  task  is  to  prove  that  if <code>a,b∈X</code> and <code>g(f(a)) =g(f(b))</code>,  then <code>a=b</code>.  By injectivity of <code>f</code>, it suffices to prove that <code>f(a) =f(b)</code>, and this followsfrom injectivity of <code>g</code> and our assumption.\" </p>\n<p>I claim the second sentence should begin \"By injectivity of <code>g</code> ...\" etc.</p>\n</blockquote>\n<p>I'm used to backwards reasoning since I'm more used to proving theorems in an ITP than on paper (my paper proofs are often unnecessarily long and verbose), but, strangely, I also initially thought the same as you did.</p>",
+        "id": 195204795,
+        "sender_full_name": "Donald Sebastian Leung",
+        "timestamp": 1587742144
+    },
+    {
+        "content": "<p>Thanks. I have no excuse!</p>",
+        "id": 195205069,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1587742293
+    },
+    {
+        "content": "<p>About the Lean example on pages 5-6 about the composition of two injective functions, perhaps it would be better to add a trailing comma to the last tactic invocation (<code>assumption</code>)? I would imagine that someone new to Lean stepping through the proof after clicking on the link might be confused that (s)he cannot see the \"no goals\" message right after the <code>assumption</code> since the theorem is already proven at that point.</p>",
+        "id": 195205349,
+        "sender_full_name": "Donald Sebastian Leung",
+        "timestamp": 1587742422
+    },
+    {
+        "content": "<p>I'll reword the proof. I wanted it to follow the tactic proof. Thanks</p>",
+        "id": 195205507,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1587742476
     }
 ]
