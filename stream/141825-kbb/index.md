@@ -23,4 +23,4 @@ permalink: /stream/141825-kbb/index.html
 * [fourier series](topic/fourier.20series.html) (3 messages, latest: Sep 12 2018 at 19:20)
 * [SL2Z](topic/SL2Z.html) (1 message, latest: Sep 12 2018 at 02:28)
 
-<hr><p>Last updated: Apr 24 2020 at 10:01 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 11:02 UTC</p>

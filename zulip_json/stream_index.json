@@ -670,7 +670,7 @@
         },
         "PR reviews": {
             "id": 144837,
-            "latest_id": 195147882,
+            "latest_id": 195169722,
             "topic_data": {
                 "#1002 monoidal cats": {
                     "latest_date": 1557470666,
@@ -1005,8 +1005,8 @@
                     "size": 1
                 },
                 "#2480 bilinear forms": {
-                    "latest_date": 1587655384,
-                    "size": 187
+                    "latest_date": 1587723959,
+                    "size": 188
                 },
                 "#2511 refactor zmod": {
                     "latest_date": 1587705631,
@@ -19705,5 +19705,5 @@
             }
         }
     },
-    "time": 1587722500.7674763
+    "time": 1587726127.9490144
 }
