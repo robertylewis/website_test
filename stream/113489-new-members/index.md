@@ -9,6 +9,7 @@ permalink: /stream/113489-new-members/index.html
 
 ### Topics:
 
+* [noob question(s)](topic/noob.20question(s).html) (4413 messages, latest: Apr 24 2020 at 16:37)
 * [documentation exercise questions](topic/documentation.20exercise.20questions.html) (15 messages, latest: Apr 24 2020 at 13:54)
 * [zero locus of an ideal](topic/zero.20locus.20of.20an.20ideal.html) (14 messages, latest: Apr 24 2020 at 13:07)
 * [Natural Numbers Game](topic/Natural.20Numbers.20Game.html) (106 messages, latest: Apr 24 2020 at 01:45)
@@ -18,7 +19,6 @@ permalink: /stream/113489-new-members/index.html
 * [Multiplying by 2](topic/Multiplying.20by.202.html) (20 messages, latest: Apr 23 2020 at 16:00)
 * [What is going on?](topic/What.20is.20going.20on.3F.html) (21 messages, latest: Apr 23 2020 at 11:32)
 * [Representation Theory](topic/Representation.20Theory.html) (278 messages, latest: Apr 23 2020 at 10:57)
-* [noob question(s)](topic/noob.20question(s).html) (4412 messages, latest: Apr 23 2020 at 02:15)
 * [permutation](topic/permutation.html) (6 messages, latest: Apr 22 2020 at 18:25)
 * [problem with old_structure_cmd](topic/problem.20with.20old_structure_cmd.html) (17 messages, latest: Apr 22 2020 at 15:40)
 * [why doesn't this work?](topic/why.20doesn't.20this.20work.3F.html) (9 messages, latest: Apr 22 2020 at 13:52)
@@ -969,4 +969,4 @@ permalink: /stream/113489-new-members/index.html
 * [Andrew Ashworth](topic/Andrew.20Ashworth.html) (15 messages, latest: Feb 26 2018 at 16:21)
 * [onboarding](topic/onboarding.html) (1 message, latest: Feb 26 2018 at 16:02)
 
-<hr><p>Last updated: Apr 24 2020 at 16:02 UTC</p>
+<hr><p>Last updated: Apr 24 2020 at 17:01 UTC</p>

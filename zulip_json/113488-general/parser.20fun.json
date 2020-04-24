@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>Did you ever notice the space in <code>#check nat</code> is optional?</p>",
+        "id": 195212507,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587745733
+    },
+    {
+        "content": "<p>Clearly a bug with the syntax highlighting of <code>#checknat</code>.</p>",
+        "id": 195213576,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1587746213
+    },
+    {
+        "content": "<p>Yes, Lean is more lenient than the VScode plugin syntax highlighting...</p>",
+        "id": 195213934,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587746382
+    },
+    {
+        "content": "<p>Of course there is nothing specific to nat here. You can check other things.</p>",
+        "id": 195214018,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1587746412
+    }
+]
